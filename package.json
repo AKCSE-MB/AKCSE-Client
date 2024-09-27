@@ -1,24 +1,68 @@
 {
-  "name": "akcse-client",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13"
-  }
+    "name": "akcse-client",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint-fix": "lint-staged"
+    },
+    "dependencies": {
+        "@sentry/nextjs": "^7.84.0",
+        "@svgr/webpack": "^8.1.0",
+        "@tanstack/query-sync-storage-persister": "^4.33.0",
+        "@tanstack/react-query": "^4.32.6",
+        "@tanstack/react-query-persist-client": "^4.33.0",
+        "@types/node": "20.4.4",
+        "@types/react": "18.2.15",
+        "@types/react-dom": "18.2.7",
+        "axios": "^1.4.0",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "dayjs": "^1.11.10",
+        "eslint": "^8.46.0",
+        "eslint-config-next": "13.4.12",
+        "lottie-react": "^2.4.0",
+        "next": "13.4.12",
+        "rc-progress": "^4.0.0",
+        "rc-slider": "^10.3.0",
+        "react": "18.2.0",
+        "react-daum-postcode": "^3.1.3",
+        "react-dom": "18.2.0",
+        "react-hook-form": "^7.46.1",
+        "react-toastify": "^9.1.3",
+        "styled-components": "^6.0.5",
+        "styled-reset": "^4.5.1",
+        "typescript": "5.1.6",
+        "zustand": "^4.5.0"
+    },
+    "devDependencies": {
+        "@swc/cli": "^0.1.62",
+        "@swc/core": "^1.3.80",
+        "@tanstack/react-query-devtools": "^4.32.6",
+        "@types/crypto-js": "^4.1.3",
+        "@types/loadable__component": "^5.13.4",
+        "@types/styled-components": "^5.1.26",
+        "@typescript-eslint/eslint-plugin": "^6.2.0",
+        "@typescript-eslint/parser": "^6.2.0",
+        "autoprefixer": "^10.4.19",
+        "crypto-js": "^4.1.1",
+        "eslint-config-prettier": "^8.9.0",
+        "eslint-import-resolver-typescript": "^3.5.5",
+        "eslint-plugin-import": "^2.28.0",
+        "eslint-plugin-react": "^7.33.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.3",
+        "postcss": "^8.4.38",
+        "prettier": "^3.0.0"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "prettier --write",
+            "eslint --fix"
+        ]
+    }
 }
