@@ -13,6 +13,9 @@ interface GetPostRepository {
 
 export const getPostRepository = (): GetPostRepository => {
   return {
-    getPosts: async () => await http.get<GetPostsResponse[]>('https://jsonplaceholder.typicode.com/posts'),
+    getPosts: async () =>
+      await http.get<GetPostsResponse[]>(
+        'https://jsonplaceholder.typicode.com/posts',
+      ),
   };
 };

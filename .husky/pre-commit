@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Hello, husky is running!"
+yarn lint-staged
+echo "OK. done."
