@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     ${reset};
 
     * {
-        font-family: var(--Galmuri-9) !important;
+        font-family: var(--Galmuri-9);
         box-sizing: border-box;
         color: ${({ theme }) => theme.colors.neutral.bg80};
     }
@@ -19,9 +19,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     input, textarea {
-        font-family: var(--Pretendard-Variable) !important;
+        font-family: var(--Pretendard-Variable);
         outline: none;
-        border: none;
     }
 
     input[type=number]::-webkit-inner-spin-button,
