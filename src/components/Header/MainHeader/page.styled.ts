@@ -17,18 +17,21 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55px;
-  width: 56px;
+  height: 48px;
+  width: 48px;
   background: none;
   border: none;
   cursor: pointer;
 `;
 
 export const EmptySpace = styled.div`
-  width: 56px;
+  padding-top: 40px;
 `;
 
 export const Title = styled.div`
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
   font-family: 'Pretendard', sans-serif;
   text-align: center;
 

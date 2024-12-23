@@ -19,12 +19,13 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
         {subTitle ? <h2>{subTitle}</h2> : <></>}
       </S.Title>
 
-      <S.EmptySpace />
-
       {BackBtn ? (
-        <S.BackButton onClick={back}>
-          <ARROW />
-        </S.BackButton>
+        <div>
+          <S.BackButton onClick={back}>
+            <ARROW />
+          </S.BackButton>
+          <S.EmptySpace />
+        </div>
       ) : (
         <S.EmptySpace />
       )}
