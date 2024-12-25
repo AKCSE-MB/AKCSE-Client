@@ -16,7 +16,7 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
       <S.Title>
         <h1>{title}</h1>
 
-        {subTitle ? <h2>{subTitle}</h2> : <></>}
+        {subTitle && <h2>{subTitle}</h2>}
       </S.Title>
 
       {BackBtn ? (
