@@ -6,7 +6,6 @@ export const InputContainer = styled.div`
   row-gap: 20px;
 
   button {
-    width: fit-content;
     justify-self: end;
   }
 `;
