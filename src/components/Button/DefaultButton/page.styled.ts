@@ -5,11 +5,12 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  border-radius: 5px;
   font-size: 1rem;
   background-color: #222524;
+  width: fit-content;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 
   &:hover {

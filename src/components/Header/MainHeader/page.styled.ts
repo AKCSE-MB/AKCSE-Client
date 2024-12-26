@@ -32,7 +32,7 @@ export const Title = styled.div`
   padding-top: 40px;
   padding-right: 40px;
   padding-left: 40px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard', serif;
   text-align: center;
 
   h1,
@@ -42,11 +42,11 @@ export const Title = styled.div`
 
   h1 {
     font-weight: bolder;
-    font-size: large;
+    font-size: x-large;
   }
 
   h2 {
     font-weight: normal;
-    font-size: small;
+    font-size: medium;
   }
 `;
