@@ -1,5 +1,5 @@
 import ARROW from '@/assets/common/logo/arrow.svg';
-import * as S from './page.styled';
+import * as S from '@/components/Header/MainHeader/page.styled';
 import { useRouter } from 'next/navigation';
 
 interface Props {

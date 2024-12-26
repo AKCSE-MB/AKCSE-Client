@@ -1,4 +1,4 @@
-import * as S from './page.styled';
+import * as S from '@/components/layout/mobile-layout/page.styled';
 interface Props {
   children: React.ReactNode;
 }
@@ -7,8 +7,7 @@ export default function MobileLayout({ children }: Props) {
   return (
     <S.LayoutWrapper>
       <S.Layout>
-        <S.LogoWrapper>
-        </S.LogoWrapper>
+        <S.LogoWrapper></S.LogoWrapper>
         {children}
       </S.Layout>
     </S.LayoutWrapper>

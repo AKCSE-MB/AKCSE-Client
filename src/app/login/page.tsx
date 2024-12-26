@@ -1,6 +1,6 @@
 'use client';
 
-import * as S from './page.styled';
+import * as S from '@/app/login/page.styled';
 import Header from '@/components/Header/MainHeader';
 import TextInput from '@/components/Input/TextInput';
 import DefaultButton from '@/components/Button/DefaultButton';
