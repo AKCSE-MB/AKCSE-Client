@@ -4,8 +4,8 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 50vh;
+  justify-content: flex-start;
+  padding-top: 100px;
 `;
 
 export const InputContainer = styled.div`
@@ -13,7 +13,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 100px;
+  margin-top: 100px;
 `;
 
 export const HeaderContainer = styled.div`

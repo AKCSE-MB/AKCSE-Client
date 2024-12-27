@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const MainContent = styled.main`
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
-  padding-top: 80px;
-  margin-top: 20px;
+  padding-top: 100px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -15,5 +18,5 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 100px;
 `;
