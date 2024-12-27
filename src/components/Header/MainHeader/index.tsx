@@ -1,6 +1,8 @@
 import ARROW from '@/assets/common/logo/arrow.svg';
+import MENU from '@/assets/common/logo/menu.svg';
 import * as S from '@/components/Header/MainHeader/page.styled';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface Props {
   title: string;
@@ -9,26 +11,75 @@ interface Props {
 }
 
 export default function Header({ title, subTitle, BackBtn }: Props) {
-  const { back } = useRouter();
+  const { back, push } = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleHomeClick = () => {
+    toggleMenu();
+    push('/');
+  };
+
+  const handleEventsClick = () => {
+    toggleMenu();
+    push('/');
+  };
+
+  const handleResourcesClick = () => {
+    toggleMenu();
+    push('/');
+  };
+
+  const handleLeaderboardClick = () => {
+    toggleMenu();
+    push('/');
+  };
+
+  const handleLoginClick = () => {
+    toggleMenu();
+    push('/login');
+  };
 
   return (
-    <S.HeaderWrapper>
-      <S.Title>
-        <h1>{title}</h1>
-
-        {subTitle && <h2>{subTitle}</h2>}
-      </S.Title>
-
-      {BackBtn ? (
+    <>
+      <S.HeaderWrapper>
         <div>
-          <S.BackButton onClick={back}>
-            <ARROW />
-          </S.BackButton>
-          <S.EmptySpace />
+          <S.MenuButton onClick={toggleMenu}>
+            <MENU />
+          </S.MenuButton>
+
+          <S.Title>
+            <h1>{title}</h1>
+
+            {subTitle && <h2>{subTitle}</h2>}
+          </S.Title>
         </div>
-      ) : (
-        <S.EmptySpace />
+
+        {BackBtn ? (
+          <div>
+            <S.BackButton onClick={back}>
+              <ARROW />
+            </S.BackButton>
+            <S.EmptySpace />
+          </div>
+        ) : (
+          <S.EmptySpace />
+        )}
+      </S.HeaderWrapper>
+
+      {isMenuOpen && (
+        <S.SideMenu>
+          <S.CloseButton onClick={toggleMenu}>×</S.CloseButton>
+          <S.MenuItem onClick={handleHomeClick}>Home</S.MenuItem>
+          <S.MenuItem onClick={handleEventsClick}>Events</S.MenuItem>
+          <S.MenuItem onClick={handleResourcesClick}>Resources</S.MenuItem>
+          <S.MenuItem onClick={handleLeaderboardClick}>Leaderboard</S.MenuItem>
+          <S.MenuItem onClick={handleLoginClick}>Log In / Admin</S.MenuItem>
+        </S.SideMenu>
       )}
-    </S.HeaderWrapper>
+    </>
   );
 }

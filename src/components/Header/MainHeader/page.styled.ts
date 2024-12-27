@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
   position: fixed;
-  top: 0;
+  top: 25px;
   z-index: 1;
-  display: contents;
+  display: flex;
+  flex-direction: column;
   height: 56px;
   width: 360px;
 
@@ -14,9 +15,6 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const BackButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 48px;
   width: 48px;
   background: none;
@@ -29,11 +27,9 @@ export const EmptySpace = styled.div`
 `;
 
 export const Title = styled.div`
-  padding-top: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
   font-family: 'Pretendard', serif;
   text-align: center;
+  flex-grow: 1;
 
   h1,
   h2 {
@@ -42,11 +38,53 @@ export const Title = styled.div`
 
   h1 {
     font-weight: bolder;
-    font-size: x-large;
+    font-size: large;
   }
 
   h2 {
     font-weight: normal;
-    font-size: medium;
+    font-size: small;
+  }
+`;
+
+export const MenuButton = styled.button`
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+`;
+
+export const SideMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CloseButton = styled.button`
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+`;
+
+export const MenuItem = styled.div`
+  padding: 10px 0;
+  cursor: pointer;
+  font-family: 'Pretendard', serif;
+  font-size: medium;
+
+  &:hover {
+    color: #0070f3;
   }
 `;
