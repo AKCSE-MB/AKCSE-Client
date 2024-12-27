@@ -1,11 +1,38 @@
 import styled from 'styled-components';
 
-export const InputContainer = styled.div`
-  display: grid;
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  row-gap: 20px;
+  min-height: 50vh;
+`;
 
-  button {
-    justify-self: end;
+export const InputContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 100px;
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+
+  h1 {
+    font-size: large;
+    font-weight: bold;
   }
+
+  h2 {
+    font-size: small;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;

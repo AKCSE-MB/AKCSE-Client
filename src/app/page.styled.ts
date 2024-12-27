@@ -1,25 +1,13 @@
 import styled from 'styled-components';
 
 export const MainContent = styled.main`
-  & button:nth-child(1) {
-    margin-top: 36px;
-  }
-`;
-
-export const NavContainer = styled.div`
-  position: fixed;
   display: flex;
-  max-width: 360px;
-  width: 100%;
-  bottom: 0;
-
-  & > button {
-    flex-grow: 1;
-  }
-
-  @media screen and (max-width: 768px) {
-    max-width: 100%;
-  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 80px;
+  margin-top: 20px;
 `;
 
 export const ButtonContainer = styled.div`
