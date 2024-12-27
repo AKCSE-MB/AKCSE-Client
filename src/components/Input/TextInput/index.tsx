@@ -10,12 +10,11 @@ function TextInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   return (
-    <div>
+    <S.InputContainer>
       {label && <S.StyledLabel>{label}</S.StyledLabel>}
-      <S.EmptySpace />
 
       <S.TextInput disabled={disabled} ref={ref} {...rest} />
-    </div>
+    </S.InputContainer>
   );
 }
 

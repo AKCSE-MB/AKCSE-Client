@@ -51,22 +51,26 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
             <MENU />
           </S.MenuButton>
 
-          <S.Title>
+          <S.TitleWrapper>
             <h1>{title}</h1>
 
             {subTitle && <h2>{subTitle}</h2>}
-          </S.Title>
+          </S.TitleWrapper>
         </div>
 
         {BackBtn ? (
           <div>
+            <S.EmptySpace />
             <S.BackButton onClick={back}>
               <ARROW />
             </S.BackButton>
             <S.EmptySpace />
           </div>
         ) : (
-          <S.EmptySpace />
+          <div>
+            <S.EmptySpace />
+            <S.EmptySpace />
+          </div>
         )}
       </S.HeaderWrapper>
 

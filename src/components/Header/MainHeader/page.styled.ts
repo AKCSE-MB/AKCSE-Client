@@ -6,30 +6,20 @@ export const HeaderWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  height: 56px;
   width: 360px;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
   }
+
+  button {
+    justify-content: flex-start;
+  }
 `;
 
-export const BackButton = styled.button`
-  height: 48px;
-  width: 48px;
-  background: none;
-  border: none;
-  cursor: pointer;
-`;
-
-export const EmptySpace = styled.div`
-  padding-top: 40px;
-`;
-
-export const Title = styled.div`
+export const TitleWrapper = styled.div`
   font-family: 'Pretendard', serif;
   text-align: center;
-  flex-grow: 1;
 
   h1,
   h2 {
@@ -56,8 +46,20 @@ export const MenuButton = styled.button`
   cursor: pointer;
 `;
 
+export const BackButton = styled.button`
+  height: 48px;
+  width: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const EmptySpace = styled.div`
+  padding-top: 50px;
+`;
+
 export const SideMenu = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
