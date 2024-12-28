@@ -8,7 +8,7 @@ interface UseUserReturn {
   logout: () => void;
 }
 
-const useUser = (): UseUserReturn => {
+export default function useUser(): UseUserReturn {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const { push } = useRouter();
   const tokenName = 'masterToken';
@@ -46,6 +46,4 @@ const useUser = (): UseUserReturn => {
   }, [push]);
 
   return { isLoggedIn, login, logout };
-};
-
-export default useUser;
+}
