@@ -1,5 +1,5 @@
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
-import * as S from '@/components/Input/TextInput/page.styled';
+import * as S from './page.styled';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;

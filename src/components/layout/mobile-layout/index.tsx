@@ -1,4 +1,4 @@
-import * as S from '@/components/layout/mobile-layout/page.styled';
+import * as S from './page.styled';
 interface Props {
   children: React.ReactNode;
 }

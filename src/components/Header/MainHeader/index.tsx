@@ -1,6 +1,6 @@
 import ARROW from '@/assets/common/logo/arrow.svg';
 import MENU from '@/assets/common/logo/menu.svg';
-import * as S from '@/components/Header/MainHeader/page.styled';
+import * as S from './page.styled';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import useUser from '@/hooks/useUser';
