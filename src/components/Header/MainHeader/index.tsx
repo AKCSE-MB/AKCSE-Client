@@ -3,6 +3,7 @@ import MENU from '@/assets/common/logo/menu.svg';
 import * as S from '@/components/Header/MainHeader/page.styled';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import useUser from '@/hooks/useUser';
 
 interface Props {
   title: string;
@@ -13,6 +14,7 @@ interface Props {
 export default function Header({ title, subTitle, BackBtn }: Props) {
   const { back, push } = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isLoggedIn, logout } = useUser();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -81,7 +83,11 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
           <S.MenuItem onClick={handleEventsClick}>Events</S.MenuItem>
           <S.MenuItem onClick={handleResourcesClick}>Resources</S.MenuItem>
           <S.MenuItem onClick={handleLeaderboardClick}>Leaderboard</S.MenuItem>
-          <S.MenuItem onClick={handleLoginClick}>Log In / Admin</S.MenuItem>
+          {isLoggedIn ? (
+            <S.MenuItem onClick={logout}>Log Out</S.MenuItem>
+          ) : (
+            <S.MenuItem onClick={handleLoginClick}>Log In / Admin</S.MenuItem>
+          )}
         </S.SideMenu>
       )}
     </>
