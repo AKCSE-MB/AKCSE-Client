@@ -14,7 +14,7 @@ export default function useUser(): UseUserReturn {
   const tokenName = 'masterToken';
 
   useEffect(() => {
-    const token = localStorage.getItem(tokenName);
+    const token = sessionStorage.getItem(tokenName);
     setIsLoggedIn(!!token);
   }, [[isLoggedIn]]);
 
@@ -27,7 +27,7 @@ export default function useUser(): UseUserReturn {
         });
         const token = response?.accessToken;
 
-        localStorage.setItem(tokenName, token);
+        sessionStorage.setItem(tokenName, token);
         setIsLoggedIn(true);
 
         return true;
@@ -40,7 +40,7 @@ export default function useUser(): UseUserReturn {
   );
 
   const logout = useCallback(() => {
-    localStorage.removeItem(tokenName);
+    sessionStorage.removeItem(tokenName);
     setIsLoggedIn(false);
     push('/login');
   }, [push]);
