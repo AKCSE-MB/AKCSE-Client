@@ -1,34 +1,23 @@
 import http from '../http';
-
-interface PostLoginParams {
-  identification: string;
-  password: string;
-}
-
-interface PostLoginRes {
-  accessToken: string;
-  refreshToken: string;
-  accessTokenExpiredAt: Date;
-  refreshTokenExpiredAt: Date;
-}
+import {
+  CreateTokenRequest,
+  TokenDTO,
+} from '@dev-taeho/akcse_mb/lib/domain/account/dto/account.dto';
 
 interface AuthRepository {
   postLogin: ({
     identification,
     password,
-  }: PostLoginParams) => Promise<PostLoginRes>;
+  }: CreateTokenRequest) => Promise<TokenDTO>;
 }
 
 const authRepository = (): AuthRepository => {
   return {
     postLogin: async ({ identification, password }) =>
-      await http.post<PostLoginRes, PostLoginParams>(
-        '/apis/v1/account/tokens',
-        {
-          identification,
-          password,
-        },
-      ),
+      await http.post<TokenDTO, CreateTokenRequest>('/apis/v1/account/tokens', {
+        identification,
+        password,
+      }),
   };
 };
 
