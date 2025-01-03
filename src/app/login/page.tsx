@@ -5,19 +5,16 @@ import Header from '@/components/Header/MainHeader';
 import TextInput from '@/components/Input/TextInput';
 import DefaultButton from '@/components/Button/DefaultButton';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import useUser from '@/hooks/useUser';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { push } = useRouter();
   const { login } = useUser();
 
   const handleLogIn = async () => {
     try {
       await login(email, password);
-      push('/');
     } catch (error) {
       console.error('Login Failed:', error);
     }

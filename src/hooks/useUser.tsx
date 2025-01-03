@@ -1,6 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
 import authRepository from '@/apis/auth';
 import { useRouter } from 'next/navigation';
+import { useMutation } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface UseUserReturn {
   isLoggedIn: boolean;
@@ -9,41 +11,45 @@ interface UseUserReturn {
 }
 
 export default function useUser(): UseUserReturn {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const { push } = useRouter();
-  const tokenName = 'masterToken';
+  const tokenName = 'token';
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const token = sessionStorage.getItem(tokenName);
     setIsLoggedIn(!!token);
-  }, [[isLoggedIn]]);
+  }, []);
 
-  const login = useCallback(
-    async (identification: string, password: string): Promise<boolean> => {
-      try {
-        const response = await authRepository().postLogin({
-          identification,
-          password,
-        });
-        const token = response?.accessToken;
-
-        sessionStorage.setItem(tokenName, token);
-        setIsLoggedIn(true);
-
-        return true;
-      } catch (error) {
-        console.error('Login failed:', error);
-        return false;
-      }
+  const loginMutation = useMutation(authRepository().postLogin, {
+    onSuccess: (res) => {
+      const token = res.accessToken;
+      sessionStorage.setItem(tokenName, token);
+      setIsLoggedIn(true);
+      push('/');
+      toast.success('Login successful');
     },
-    [],
-  );
+    onError: (error) => {
+      console.error('Login failed:', error);
+      setIsLoggedIn(false);
+      toast.error('Login failed, please try again');
+      return;
+    },
+  });
 
-  const logout = useCallback(() => {
+  const login = async (
+    identification: string,
+    password: string,
+  ): Promise<boolean> => {
+    await loginMutation.mutateAsync({ identification, password });
+    return true;
+  };
+
+  const logout = () => {
     sessionStorage.removeItem(tokenName);
     setIsLoggedIn(false);
+    toast.info('Log out successful');
     push('/login');
-  }, [push]);
+  };
 
   return { isLoggedIn, login, logout };
 }
