@@ -4,13 +4,22 @@ import * as S from './page.styled';
 import Header from '@/components/Header/MainHeader';
 import TextInput from '@/components/Input/TextInput';
 import DefaultButton from '@/components/Button/DefaultButton';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useUser from '@/hooks/useUser';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useUser();
+
+  useEffect(() => {
+    const loginMessage = sessionStorage.getItem('loginMsg');
+    if (loginMessage) {
+      toast.success(loginMessage);
+      sessionStorage.removeItem('loginMsg');
+    }
+  }, []);
 
   const handleLogIn = async () => {
     try {
@@ -46,6 +55,7 @@ export default function Login() {
 
           <S.ButtonContainer>
             <DefaultButton onClick={handleLogIn}>Log In</DefaultButton>
+            <ToastContainer position="bottom-center" />
           </S.ButtonContainer>
         </S.InputContainer>
       </S.MainContainer>

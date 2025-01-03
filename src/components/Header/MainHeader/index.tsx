@@ -4,6 +4,7 @@ import * as S from './page.styled';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import useUser from '@/hooks/useUser';
+import { ToastContainer } from 'react-toastify';
 
 interface Props {
   title: string;
@@ -84,7 +85,10 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
           <S.MenuItem onClick={handleResourcesClick}>Resources</S.MenuItem>
           <S.MenuItem onClick={handleLeaderboardClick}>Leaderboard</S.MenuItem>
           {isLoggedIn ? (
-            <S.MenuItem onClick={logout}>Log Out</S.MenuItem>
+            <div>
+              <S.MenuItem onClick={logout}>Log Out</S.MenuItem>
+              <ToastContainer />
+            </div>
           ) : (
             <S.MenuItem onClick={handleLoginClick}>Log In / Admin</S.MenuItem>
           )}

@@ -13,6 +13,7 @@ interface UseUserReturn {
 export default function useUser(): UseUserReturn {
   const { push } = useRouter();
   const tokenName = 'token';
+  const loginMsgName = 'loginMsg';
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
@@ -24,14 +25,15 @@ export default function useUser(): UseUserReturn {
     onSuccess: (res) => {
       const token = res.accessToken;
       sessionStorage.setItem(tokenName, token);
+      sessionStorage.setItem(loginMsgName, 'Log In Successful!');
       setIsLoggedIn(true);
       push('/');
-      toast.success('Login successful');
     },
     onError: (error) => {
       console.error('Login failed:', error);
       setIsLoggedIn(false);
-      toast.error('Login failed, please try again');
+      toast.error('Log In Failed, Please Try Again!');
+
       return;
     },
   });
@@ -46,8 +48,8 @@ export default function useUser(): UseUserReturn {
 
   const logout = () => {
     sessionStorage.removeItem(tokenName);
+    sessionStorage.setItem(loginMsgName, 'Log Out Successful!');
     setIsLoggedIn(false);
-    toast.info('Log out successful');
     push('/login');
   };
 

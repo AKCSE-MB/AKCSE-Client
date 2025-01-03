@@ -4,7 +4,6 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios';
-import { toast } from 'react-toastify';
 
 class HttpClient {
   public client: AxiosInstance;
@@ -59,7 +58,7 @@ class HttpClient {
         console.log('error', error.response.data.statusCode);
 
         if (error.response.data.statusCode >= 400) {
-          toast.error('An error occurred. Please check your request.');
+          console.log('Invalid Login Credentials. Please Try Again.');
         }
 
         return Promise.reject(error);
