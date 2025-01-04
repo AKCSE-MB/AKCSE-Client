@@ -23,7 +23,7 @@ export const TitleWrapper = styled.div`
 
   h1,
   h2 {
-    color: #222524;
+    color: ${({ theme }) => theme.colors.primary.dark_brown};
   }
 
   h1 {
@@ -64,7 +64,7 @@ export const SideMenu = styled.div`
   left: 0;
   height: 100%;
   width: 250px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   padding: 16px;
@@ -87,6 +87,6 @@ export const MenuItem = styled.div`
   font-size: medium;
 
   &:hover {
-    color: #0070f3;
+    color: ${({ theme }) => theme.colors.primary.brown};
   }
 `;
