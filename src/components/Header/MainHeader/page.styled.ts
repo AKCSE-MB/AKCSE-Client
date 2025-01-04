@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const TitleWrapper = styled.div`
+export const TitleContainer = styled.div`
   font-family: 'Pretendard', serif;
   text-align: center;
 
@@ -47,15 +47,12 @@ export const MenuButton = styled.button`
 `;
 
 export const BackButton = styled.button`
+  margin-top: 10px;
   height: 48px;
   width: 48px;
   background: none;
   border: none;
   cursor: pointer;
-`;
-
-export const EmptySpace = styled.div`
-  padding-top: 50px;
 `;
 
 export const SideMenu = styled.div`
@@ -90,3 +87,9 @@ export const MenuItem = styled.div`
     color: ${({ theme }) => theme.colors.primary.brown};
   }
 `;
+
+export const Title = styled.h1``;
+
+export const SubTitle = styled.h2``;
+
+export const ButtonContainer = styled.div``;

@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
   padding-top: 100px;
 `;
 
-export const InputContainer = styled.div`
+export const LoginWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -36,3 +36,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const Title = styled.h1``;
+
+export const SubTitle = styled.h2``;

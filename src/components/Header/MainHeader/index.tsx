@@ -49,31 +49,24 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
   return (
     <>
       <S.HeaderWrapper>
-        <div>
-          <S.MenuButton onClick={toggleMenu}>
-            <MENU />
-          </S.MenuButton>
+        <S.MenuButton onClick={toggleMenu}>
+          <MENU />
+        </S.MenuButton>
 
-          <S.TitleWrapper>
-            <h1>{title}</h1>
+        <S.TitleContainer>
+          <S.Title>{title}</S.Title>
 
-            {subTitle && <h2>{subTitle}</h2>}
-          </S.TitleWrapper>
-        </div>
+          {subTitle && <S.SubTitle>{subTitle}</S.SubTitle>}
+        </S.TitleContainer>
 
         {BackBtn ? (
-          <div>
-            <S.EmptySpace />
+          <S.ButtonContainer>
             <S.BackButton onClick={back}>
               <ARROW />
             </S.BackButton>
-            <S.EmptySpace />
-          </div>
+          </S.ButtonContainer>
         ) : (
-          <div>
-            <S.EmptySpace />
-            <S.EmptySpace />
-          </div>
+          <S.ButtonContainer></S.ButtonContainer>
         )}
       </S.HeaderWrapper>
 

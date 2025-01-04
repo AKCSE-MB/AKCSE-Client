@@ -34,10 +34,10 @@ export default function Login() {
       <S.MainContainer>
         <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
 
-        <S.InputContainer>
+        <S.LoginWrapper>
           <S.HeaderContainer>
-            <h1>Log In</h1>
-            <h2>AKCSE MB Admin Access</h2>
+            <S.Title>Log In</S.Title>
+            <S.SubTitle>AKCSE MB Admin Access</S.SubTitle>
           </S.HeaderContainer>
 
           <TextInput
@@ -57,7 +57,7 @@ export default function Login() {
             <DefaultButton onClick={handleLogIn}>Log In</DefaultButton>
             <ToastContainer position="bottom-center" />
           </S.ButtonContainer>
-        </S.InputContainer>
+        </S.LoginWrapper>
       </S.MainContainer>
     </>
   );
