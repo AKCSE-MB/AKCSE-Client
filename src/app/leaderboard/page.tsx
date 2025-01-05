@@ -27,7 +27,7 @@ export default function Leaderboard() {
 
         <S.Table>
           <S.TheadContainer>
-            <S.TableRow rank={0}>
+            <S.TableRow $rank={0}>
               <S.TableHeader>Rank</S.TableHeader>
               <S.TableHeader>Member</S.TableHeader>
               <S.TableHeader>Score</S.TableHeader>
@@ -35,9 +35,9 @@ export default function Leaderboard() {
           </S.TheadContainer>
           <S.TbodyContainer>
             {leaderboard.map((member, index) => (
-              <S.TableRow key={member.id} rank={index + 1}>
-                <S.TableData isRank>
-                  <S.Rank rank={index + 1}>{index + 1}</S.Rank>
+              <S.TableRow key={member.id} $rank={index + 1}>
+                <S.TableData>
+                  <S.Rank $rank={index + 1}>{index + 1}</S.Rank>
                 </S.TableData>
                 <S.TableData>{member.username}</S.TableData>
                 <S.TableData>{member.score}</S.TableData>
