@@ -23,7 +23,7 @@ export const TitleContainer = styled.div`
 
   h1,
   h2 {
-    color: ${({ theme }) => theme.colors.primary.dark_brown};
+    color: ${({ theme }) => theme.colors.dark_brown};
   }
 
   h1 {
@@ -84,7 +84,7 @@ export const MenuItem = styled.div`
   font-size: medium;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.brown};
+    color: ${({ theme }) => theme.colors.brown};
   }
 `;
 
