@@ -30,11 +30,7 @@ export const TableData = styled.td`
 
 export const TableRow = styled.tr`
   &:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  &:hover {
-    background-color: #f1f1f1;
+    background-color: ${({ theme }) => theme.colors.ivory};
   }
 `;
 
