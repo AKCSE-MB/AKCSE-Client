@@ -10,6 +10,7 @@ const colors = {
   gold: '#FFD700',
   silver: '#C0C0C0',
   bronze: '#DAA520',
+  gray: '#dddddd',
   primary: {
     y90: '#FF7002',
   },

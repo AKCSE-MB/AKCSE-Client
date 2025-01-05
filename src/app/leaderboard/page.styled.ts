@@ -9,11 +9,21 @@ export const MainContent = styled.main`
   padding-top: 100px;
 `;
 
-export const Table = styled.table`
-  width: 90%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
+export const Title = styled.h1`
+  font-weight: bolder;
+  font-size: 1.75rem;
+  padding: 15px;
   margin-top: 50px;
+  border-top: 2px solid ${({ theme }) => theme.colors.dark_brown};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.dark_brown};
+  border-radius: 30px;
+`;
+
+export const Table = styled.table`
+  width: 80%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  margin-top: 30px;
 `;
 
 export const TableHeader = styled.th`
@@ -22,7 +32,7 @@ export const TableHeader = styled.th`
   color: ${({ theme }) => theme.colors.dark_brown};
   text-align: center;
   font-weight: bolder;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 `;
 
 export const TableData = styled.td`

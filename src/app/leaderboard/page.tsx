@@ -25,6 +25,7 @@ export default function Leaderboard() {
       <S.MainContent>
         <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
 
+        <S.Title>Top 5 Standings</S.Title>
         <S.Table>
           <S.TheadContainer>
             <S.TableRow $rank={0}>
