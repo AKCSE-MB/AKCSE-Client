@@ -5,7 +5,11 @@ const colors = {
   black: '#000000',
   ivory: '#f9f9f9',
   brown: '#662E0B',
+  dark_ivory: '#f7ebcd',
   dark_brown: '#222524',
+  gold: '#FFD700',
+  silver: '#C0C0C0',
+  bronze: '#DAA520',
   primary: {
     y90: '#FF7002',
   },
