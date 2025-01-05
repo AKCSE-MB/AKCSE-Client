@@ -3,10 +3,11 @@ import { DefaultTheme } from 'styled-components';
 const colors = {
   white: '#ffffff',
   black: '#000000',
+  ivory: '#f9f9f9',
+  brown: '#662E0B',
+  dark_brown: '#222524',
   primary: {
     y90: '#FF7002',
-    brown: '#662E0B',
-    dark_brown: '#222524',
   },
   secondary: {
     o90: '#C13001',
