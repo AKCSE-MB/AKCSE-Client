@@ -8,6 +8,7 @@ const colors = {
   ivory: '#fffBf6',
   dark_brown: '#222524',
   dark_ivory: '#f7ebcd',
+  blue: '#0000EE',
   primary: {
     y90: '#FF7002',
   },
