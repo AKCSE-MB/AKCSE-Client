@@ -33,6 +33,10 @@ export const EventCard = styled.div`
   text-decoration: none;
   box-shadow: 0 4px 6px ${({ theme }) => theme.colors.gray};
   height: 300px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const EventImage = styled.img`
