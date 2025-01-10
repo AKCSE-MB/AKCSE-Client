@@ -23,38 +23,38 @@ export default function EventDetails() {
     fetchEvents();
   }, [id]);
 
-  if (event) {
-    return (
-      <S.MainContainer>
-        <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
-        <S.Title>{event.title}</S.Title>
+  return (
+    <S.MainContainer>
+      <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
 
-        <S.EventWrapper>
-          <S.EventImage src={event.imageUrl} alt={event.title} />
-          <S.EventContainer>
-            <S.LocationAndDate>
-              {event.location} • {getFormattedDate(event.startDateTime)}
-            </S.LocationAndDate>
-            <S.EventDescription>{event.description}</S.EventDescription>
-            <S.EventDurationContainer>
-              From: {getFormattedDate(event.startDateTime)} @{' '}
-              {getFormattedTime(event.startDateTime)}
-              <br />
-              To: {getFormattedDate(event.endDateTime)} @{' '}
-              {getFormattedTime(event.endDateTime)}
-            </S.EventDurationContainer>
-            <S.EventFee>Fee: ${event.fee}</S.EventFee>
-            <S.EventRSVPContainer>
-              RSVP Deadline: {getFormattedDate(event.signUpDeadline)} @{' '}
-              {getFormattedTime(event.signUpDeadline)}
-              <br />
-              <S.EventRSVP href={event.rsvpLink} target="blank">
-                Sign Up
-              </S.EventRSVP>
-            </S.EventRSVPContainer>
-          </S.EventContainer>
-        </S.EventWrapper>
-      </S.MainContainer>
-    );
-  }
+      {event && (
+        <>
+          <S.EventWrapper>
+            <S.Title>{event.title}</S.Title>
+            <S.EventImage src={event.imageUrl} alt={event.title} />
+            <S.EventContainer>
+              <S.LocationAndDate>
+                {event.location} • {getFormattedDate(event.startDateTime)}
+              </S.LocationAndDate>
+              <S.EventDescription>{event.description}</S.EventDescription>
+              <S.EventDurationContainer>
+                From: {getFormattedDate(event.startDateTime)} @{' '}
+                {getFormattedTime(event.startDateTime)}
+                To: {getFormattedDate(event.endDateTime)} @{' '}
+                {getFormattedTime(event.endDateTime)}
+              </S.EventDurationContainer>
+              <S.EventFee>Fee: ${event.fee}</S.EventFee>
+              <S.EventRSVPContainer>
+                RSVP Deadline: {getFormattedDate(event.signUpDeadline)} @{' '}
+                {getFormattedTime(event.signUpDeadline)}
+                <S.EventRSVP href={event.rsvpLink} target="blank">
+                  Sign Up
+                </S.EventRSVP>
+              </S.EventRSVPContainer>
+            </S.EventContainer>
+          </S.EventWrapper>
+        </>
+      )}
+    </S.MainContainer>
+  );
 }

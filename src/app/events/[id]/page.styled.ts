@@ -13,12 +13,14 @@ export const Title = styled.h1`
   font-size: x-large;
   padding: 15px;
   margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 export const EventWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
   width: 90%;
 `;
