@@ -31,12 +31,12 @@ export const TitleContainer = styled.div`
 
   h1 {
     font-weight: bolder;
-    font-size: large;
+    font-size: x-large;
   }
 
   h2 {
     font-weight: normal;
-    font-size: small;
+    font-size: medium;
   }
 `;
 
@@ -90,8 +90,14 @@ export const MenuItem = styled.div`
   }
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  font-weight: bolder;
+  font-size: xx-large;
+`;
 
-export const SubTitle = styled.h2``;
+export const SubTitle = styled.h2`
+  font-weight: bold;
+  font-size: large;
+`;
 
 export const ButtonContainer = styled.div``;
