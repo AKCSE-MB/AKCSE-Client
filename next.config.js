@@ -20,7 +20,7 @@ const nextConfig = {
     return [
       {
         source: '/apis/:path*',
-        destination: process.env.NEXT_PUBLIC_DEV_SERVER_URL,
+        destination: process.env.API_URL,
       },
     ];
   },
