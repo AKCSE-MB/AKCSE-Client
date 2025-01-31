@@ -6,11 +6,11 @@ export const Button = styled.button`
   justify-content: center;
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: ${({ theme }) => theme.colors.dark_brown};
+  background-color: #F3B744;
   width: fit-content;
-  color: white;
+  color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 
   &:hover {
