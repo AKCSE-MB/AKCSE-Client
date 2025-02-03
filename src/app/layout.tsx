@@ -13,6 +13,7 @@ const mainFont = localFont({
   src: '../assets/fonts/PretendardVariable.woff2',
   display: 'swap',
   variable: '--Pretendard-Variable',
+  weight: '45 920',
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
