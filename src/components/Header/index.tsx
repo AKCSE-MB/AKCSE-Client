@@ -11,12 +11,12 @@ interface Props {
   BackBtn?: boolean;
 }
 
-export default function Header({ title, subTitle, BackBtn }: Props) {
-  const { back, push } = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+export default function Header({ title, subTitle }: Props) {
+  const { push } = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoggedIn, logout } = useUser();
   const { loginHandler } = useKakaoLogin();
-  const toggleMenu = () => setIsMenuOpen(prev => !prev);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   const handleHomeClick = () => {
     toggleMenu();
