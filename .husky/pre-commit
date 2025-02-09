@@ -3,4 +3,3 @@
 
 echo "Hello, husky is running!"
 yarn lint-staged
-echo "OK. done."
