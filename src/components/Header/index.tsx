@@ -16,37 +16,35 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const { isLoggedIn, logout } = useUser();
   const { loginHandler } = useKakaoLogin();
-  const [active, setAcitve] = useState(true);
-
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
   const handleHomeClick = () => {
-    // toggleMenu();
+    toggleMenu();
     push('/');
   };
 
   const handleEventsClick = () => {
-    // toggleMenu();
+    toggleMenu();
     push('/events');
   };
 
   const handleResourcesClick = () => {
-    // toggleMenu();
+    toggleMenu();
     push('/');
   };
 
   const handleLeaderboardClick = () => {
-    // toggleMenu();
+    toggleMenu();
     push('/leaderboard');
   };
 
   const handleLoginClick = () => {
-    // toggleMenu();
+    toggleMenu();
     loginHandler();
   };
 
   const handleLogoutClick = () => {
-    // toggleMenu();
+    toggleMenu();
     logout();
   };
 
