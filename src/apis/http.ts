@@ -4,6 +4,7 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios';
+import * as Sentry from '@sentry/nextjs';
 
 class HttpClient {
   public client: AxiosInstance;
@@ -41,6 +42,7 @@ class HttpClient {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (error: any) => {
         console.log('error', error);
+        Sentry.captureException(error);
 
         return Promise.reject(error);
       },
@@ -61,6 +63,30 @@ class HttpClient {
           console.log('Invalid Login Credentials. Please Try Again.');
         }
 
+        const {
+          method,
+          url,
+          params,
+          data: requestData,
+          headers,
+        } = error.config ?? {};
+        Sentry.setContext('API Request Detail', {
+          method,
+          url,
+          params,
+          requestData,
+          headers,
+        });
+
+        if (error.response) {
+          const { data, status } = error.response;
+          Sentry.setContext('API Response Detail', {
+            status,
+            data,
+          });
+        }
+
+        Sentry.captureException(error);
         return Promise.reject(error);
       },
     );
