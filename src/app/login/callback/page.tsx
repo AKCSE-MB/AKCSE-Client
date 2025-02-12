@@ -1,6 +1,6 @@
 'use client';
 
-import Header from '@/components/Header';
+import Header from '@/components/c-header';
 import * as S from './page.styled';
 import useUser from '@/hooks/useUser';
 import { useEffect } from 'react';

@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import * as S from './page.styled';
 import DefaultButton from '@/components/Button/DefaultButton';
-import Header from '@/components/Header';
+import Header from '@/components/c-header';
 import { ToastContainer } from 'react-toastify';
 import CFooter from '@/components/CFooter';
 
