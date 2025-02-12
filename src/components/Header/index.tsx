@@ -1,10 +1,9 @@
-import ARROW from '@/assets/common/logo/arrow.svg';
-import MENU from '@/assets/common/logo/menu.svg';
 import * as S from './page.styled';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import useUser from '@/hooks/useUser';
 import useKakaoLogin from '@/hooks/useKakaoLogin';
+import CHamburgerIcon from '@/components/c-hamburger-icon';
 
 interface Props {
   title: string;
@@ -12,15 +11,12 @@ interface Props {
   BackBtn?: boolean;
 }
 
-export default function Header({ title, subTitle, BackBtn }: Props) {
-  const { back, push } = useRouter();
+export default function Header({ title, subTitle }: Props) {
+  const { push } = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoggedIn, logout } = useUser();
   const { loginHandler } = useKakaoLogin();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   const handleHomeClick = () => {
     toggleMenu();
@@ -55,25 +51,12 @@ export default function Header({ title, subTitle, BackBtn }: Props) {
   return (
     <>
       <S.HeaderWrapper>
-        <S.MenuButton onClick={toggleMenu}>
-          <MENU />
-        </S.MenuButton>
-
         <S.TitleContainer>
           <S.Title>{title}</S.Title>
 
           {subTitle && <S.SubTitle>{subTitle}</S.SubTitle>}
         </S.TitleContainer>
-
-        {BackBtn ? (
-          <S.ButtonContainer>
-            <S.BackButton onClick={back}>
-              <ARROW />
-            </S.BackButton>
-          </S.ButtonContainer>
-        ) : (
-          <S.ButtonContainer></S.ButtonContainer>
-        )}
+        <CHamburgerIcon active={isMenuOpen} clickEvent={toggleMenu} />
       </S.HeaderWrapper>
 
       {isMenuOpen && (
