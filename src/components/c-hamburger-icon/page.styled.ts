@@ -8,8 +8,8 @@ export const Container = styled.div`
   float: right;
   z-index: 9990;
   position: absolute;
-  top: 30px;
-  right: 20px;
+  top: 35px;
+  right: 36px;
   overflow: hidden;
 `;
 

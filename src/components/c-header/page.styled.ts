@@ -1,60 +1,25 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
+export const Container = styled.div`
+  max-width: 390px;
+  width: 100%;
+  height: 72px;
   position: fixed;
   top: 0px;
-  padding-top: 30px;
+  padding-top: 31.5px;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  width: 360px;
-  background: ${({ theme }) => theme.colors.ivory};
+  //TODO: need to update colour using theme
+  //https://github.com/AKCSE-MB/AKCSE-Client/pull/26
+  background: #ffff;
+  box-shadow: 0px 3px 5px #2525251a;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
   }
-
-  button {
-    justify-content: flex-start;
-  }
 `;
 
-export const TitleContainer = styled.div`
-  font-family: 'Pretendard', serif;
-  text-align: center;
-  padding-bottom: 30px;
-
-  h1,
-  h2 {
-    color: ${({ theme }) => theme.colors.dark_brown};
-  }
-
-  h1 {
-    font-weight: bolder;
-    font-size: x-large;
-  }
-
-  h2 {
-    font-weight: normal;
-    font-size: medium;
-  }
-`;
-
-export const MenuButton = styled.button`
-  /* position: absolute; */
-  /* height: 24px; */
-  /* width: 24px; */
-  /* margin-left: 10px; */
-  /* border: none; */
-  /* cursor: pointer; */
-`;
-
-export const BackButton = styled.button`
-  height: 48px;
-  width: 48px;
-  background: none;
-  border: none;
-  cursor: pointer;
+export const LogoContainer = styled.div`
+  padding-left: 36px;
 `;
 
 export const SideMenu = styled.div`
@@ -82,22 +47,9 @@ export const CloseButton = styled.button`
 export const MenuItem = styled.div`
   padding: 10px 0;
   cursor: pointer;
-  font-family: 'Pretendard', serif;
   font-size: medium;
 
   &:hover {
     color: ${({ theme }) => theme.colors.brown};
   }
 `;
-
-export const Title = styled.h1`
-  font-weight: bolder;
-  font-size: xx-large;
-`;
-
-export const SubTitle = styled.h2`
-  font-weight: bold;
-  font-size: large;
-`;
-
-export const ButtonContainer = styled.div``;
