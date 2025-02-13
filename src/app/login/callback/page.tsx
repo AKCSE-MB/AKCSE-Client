@@ -1,6 +1,6 @@
 'use client';
 
-import Header from '@/components/c-header';
+import CHeader from '@/components/c-header';
 import * as S from './page.styled';
 import useUser from '@/hooks/useUser';
 import { useEffect } from 'react';
@@ -28,7 +28,7 @@ export default function LoginCallback() {
 
   return (
     <S.MainContainer>
-      <Header title="AKCSE MANITOBA" subTitle="Young Generations" />
+      <CHeader />
       <S.LoadingMessage>Logging In...</S.LoadingMessage>
     </S.MainContainer>
   );

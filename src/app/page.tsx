@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation';
 import * as S from './page.styled';
 import DefaultButton from '@/components/Button/DefaultButton';
-import Header from '@/components/c-header';
+import CHeader from '@/components/c-header';
 import { ToastContainer } from 'react-toastify';
-import CFooter from '@/components/CFooter';
+import CFooter from '@/components/c-footer';
 
 export default function Home() {
   const { push } = useRouter();
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <S.MainContent>
-        <Header title="AKCSE MANITOBA" subTitle="Young Generations" />
+        <CHeader />
 
         <S.ButtonContainer>
           <DefaultButton onClick={() => push('/')}>HOME</DefaultButton>
