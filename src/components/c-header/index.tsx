@@ -4,14 +4,9 @@ import { useState } from 'react';
 import useUser from '@/hooks/useUser';
 import useKakaoLogin from '@/hooks/useKakaoLogin';
 import CHamburgerIcon from '@/components/c-hamburger-icon';
+import LOGO from 'assets/common/logo/logo.svg';
 
-interface Props {
-  title: string;
-  subTitle?: string;
-  BackBtn?: boolean;
-}
-
-export default function Header({ title, subTitle }: Props) {
+export default function CHeader() {
   const { push } = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoggedIn, logout } = useUser();
@@ -50,14 +45,12 @@ export default function Header({ title, subTitle }: Props) {
 
   return (
     <>
-      <S.HeaderWrapper>
-        <S.TitleContainer>
-          <S.Title>{title}</S.Title>
-
-          {subTitle && <S.SubTitle>{subTitle}</S.SubTitle>}
-        </S.TitleContainer>
+      <S.Container>
+        <S.LogoContainer>
+          <LOGO />
+        </S.LogoContainer>
         <CHamburgerIcon active={isMenuOpen} clickEvent={toggleMenu} />
-      </S.HeaderWrapper>
+      </S.Container>
 
       {isMenuOpen && (
         <S.SideMenu>
