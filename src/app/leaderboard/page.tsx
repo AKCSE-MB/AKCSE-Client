@@ -57,7 +57,7 @@ export default function Leaderboard() {
               {leaderboard.map(
                 (member, index) =>
                   index > 2 && (
-                    <S.TableRow key={member.id}>
+                    <S.TableRow key={member.id} $rank={index + 1}>
                       <S.Column1>{getFormattedNumber(index + 1)}</S.Column1>
                       <S.Column2>
                         <S.MemberInfo>

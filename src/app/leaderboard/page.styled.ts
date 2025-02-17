@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-interface PodiumItemProps {
+interface LeaderboardProps {
   $rank: number;
 }
 
 export const MainContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 116px;
 `;
 
 export const LeaderboardWrapper = styled.div`
@@ -34,7 +34,7 @@ export const Podium = styled.div`
   color: ${({ theme }) => theme.colors.dark_brown};
 `;
 
-export const PodiumItem = styled.div<PodiumItemProps>`
+export const PodiumItem = styled.div<LeaderboardProps>`
   width: 100px;
   height: ${({ $rank }) =>
     $rank === 1 ? '184px' : $rank === 2 ? '152px' : '102px'};
@@ -90,10 +90,12 @@ export const TbodyContainer = styled.tbody`
   width: 100%;
 `;
 
-export const TableRow = styled.tr`
+export const TableRow = styled.tr<LeaderboardProps>`
   display: flex;
   width: 80%;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+
+  border-bottom: ${({ $rank, theme }) =>
+    $rank < 5 ? `1px solid ${theme.colors.gray}` : 'none'};
 `;
 
 const TableData = styled.td`
