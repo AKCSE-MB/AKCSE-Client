@@ -95,7 +95,7 @@ export const TableRow = styled.tr<LeaderboardProps>`
   width: 80%;
 
   border-bottom: ${({ $rank, theme }) =>
-    $rank < 5 ? `1px solid ${theme.colors.gray}` : 'none'};
+    $rank < 10 ? `1px solid ${theme.colors.gray}` : 'none'};
 `;
 
 const TableData = styled.td`
