@@ -1,49 +1,110 @@
 import styled from 'styled-components';
 
-export const MainContent = styled.main`
+interface PodiumItemProps {
+  rank: number;
+}
+
+export const MainContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding-top: 100px;
 `;
 
+export const LeaderboardWrapper = styled.div`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const PodiumWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  column-gap: 8px;
+  margin-bottom: -10px;
+  z-index: 1;
+`;
+
+export const Podium = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PodiumItem = styled.div<PodiumItemProps>`
+  width: 100px;
+  height: ${({ rank }) =>
+    rank === 1 ? '184px' : rank === 2 ? '152px' : '102px'};
+  background: ${({ theme }) => theme.colors.orange};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+`;
+
+export const Name = styled.div`
+  font-size: 16px;
+`;
+
+export const Score = styled.div`
+  background: ${({ theme }) => theme.colors.light_orange};
+  color: ${({ theme }) => theme.colors.dark_brown};
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+`;
+
 export const Title = styled.h1`
-  font-weight: bolder;
-  font-size: x-large;
+  font-size: 36px;
+  color: ${({ theme }) => theme.colors.dark_brown};
   padding: 15px;
-  margin-top: 50px;
+  margin-left: 24px;
 `;
 
 export const Table = styled.table`
-  width: 80%;
+  position: relative;
+  z-index: 10;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0 5px;
-  margin-top: 30px;
+  border-radius: 48px 48px 0 0;
   table-layout: fixed;
-`;
-
-export const TableHeader = styled.th`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.dark_brown};
-  padding: 10px;
-  text-align: center;
-  font-weight: bolder;
-  font-size: large;
+  justify-self: center;
+  background-color: ${({ theme }) => theme.colors.white};
+  min-height: 100%;
 `;
 
 export const TableData = styled.td`
-  text-align: center;
-  vertical-align: middle;
-  height: 75px;
-  font-size: large;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 73px;
+  font-size: 24px;
+  color: ${({ theme }) => theme.colors.dark_brown};
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 `;
 
-export const TableRow = styled.tr``;
+export const TableRow = styled.tr`
+  display: flex;
+  width: 80%;
+`;
 
-export const TheadContainer = styled.thead``;
+export const TbodyContainer = styled.tbody`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
 
-export const TbodyContainer = styled.tbody``;
+export const MemberInfo = styled.div`
+  font-size: 16px;
+`;
