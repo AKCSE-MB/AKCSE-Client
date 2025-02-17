@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface PodiumItemProps {
-  rank: number;
+  $rank: number;
 }
 
 export const MainContent = styled.div`
@@ -36,8 +36,8 @@ export const Podium = styled.div`
 
 export const PodiumItem = styled.div<PodiumItemProps>`
   width: 100px;
-  height: ${({ rank }) =>
-    rank === 1 ? '184px' : rank === 2 ? '152px' : '102px'};
+  height: ${({ $rank }) =>
+    $rank === 1 ? '184px' : $rank === 2 ? '152px' : '102px'};
   background: ${({ theme }) => theme.colors.orange};
   color: ${({ theme }) => theme.colors.white};
   border-radius: 10px 10px 0 0;

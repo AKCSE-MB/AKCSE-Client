@@ -35,20 +35,20 @@ export default function Leaderboard() {
             <S.Podium>
               <S.Name>{leaderboard[1]?.username}</S.Name>
               <S.Score>{leaderboard[1]?.score}pts</S.Score>
-              <S.PodiumItem rank={2}>2</S.PodiumItem>
+              <S.PodiumItem $rank={2}>2</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
               <CROWN />
               <S.Name>{leaderboard[0]?.username}</S.Name>
               <S.Score>{leaderboard[0]?.score}pts</S.Score>
-              <S.PodiumItem rank={1}>1</S.PodiumItem>
+              <S.PodiumItem $rank={1}>1</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
               <S.Name>{leaderboard[2]?.username}</S.Name>
               <S.Score>{leaderboard[2]?.score}pts</S.Score>
-              <S.PodiumItem rank={3}>3</S.PodiumItem>
+              <S.PodiumItem $rank={3}>3</S.PodiumItem>
             </S.Podium>
           </S.PodiumWrapper>
 
