@@ -1,13 +1,13 @@
 'use client';
 
 import * as S from './page.styled';
-import Header from '@/components/Header';
 import { getLeaderboard } from '@/apis/members/leaderboard';
 import { useEffect, useState } from 'react';
 import { TopMembersResponseDTO } from '@dev-taeho/akcse_mb/lib/domain/members/dto/members.dto';
 import CROWN from '@/assets/common/logo/crown.svg';
 import { getFormattedNumber } from '@/utils/formatUtil';
-import CFooter from '@/components/CFooter';
+import CFooter from '@/components/c-footer';
+import CHeader from '@/components/c-header';
 
 export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState<TopMembersResponseDTO[]>([]);
@@ -26,7 +26,7 @@ export default function Leaderboard() {
   return (
     <>
       <S.MainContent>
-        <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
+        <CHeader />
 
         <S.Title>Leaderboard</S.Title>
 
