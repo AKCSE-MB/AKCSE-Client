@@ -24,7 +24,7 @@ export default function Leaderboard() {
   }, []);
 
   return (
-    <>
+    <S.PageWrapper>
       <S.MainContent>
         <CHeader />
 
@@ -76,6 +76,6 @@ export default function Leaderboard() {
       </S.MainContent>
 
       <CFooter />
-    </>
+    </S.PageWrapper>
   );
 }

@@ -5,11 +5,11 @@ export const Container = styled.div`
   text-align: center;
   color: white;
   background-color: #39170e;
-  position: fixed;
+  position: relative;
   width: 100%;
   max-width: 390px;
   bottom: 0;
-  z-index: 2;
+  z-index: 1;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
