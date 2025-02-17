@@ -58,15 +58,15 @@ export default function Leaderboard() {
                 (member, index) =>
                   index > 2 && (
                     <S.TableRow key={member.id}>
-                      <S.TableData>{getFormattedNumber(index + 1)}</S.TableData>
-                      <S.TableData>
+                      <S.Column1>{getFormattedNumber(index + 1)}</S.Column1>
+                      <S.Column2>
                         <S.MemberInfo>
                           {member.username}
                           <br />
                           {member.score}pts
                         </S.MemberInfo>
-                      </S.TableData>
-                      <S.TableData></S.TableData>
+                      </S.Column2>
+                      <S.Column3></S.Column3>
                     </S.TableRow>
                   ),
               )}
@@ -74,6 +74,7 @@ export default function Leaderboard() {
           </S.Table>
         </S.LeaderboardWrapper>
       </S.MainContent>
+
       <CFooter />
     </>
   );

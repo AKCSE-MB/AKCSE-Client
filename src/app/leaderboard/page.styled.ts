@@ -72,7 +72,7 @@ export const Title = styled.h1`
 
 export const Table = styled.table`
   position: relative;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 5px;
@@ -83,27 +83,38 @@ export const Table = styled.table`
   min-height: 100%;
 `;
 
-export const TableData = styled.td`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 73px;
-  font-size: 24px;
-  color: ${({ theme }) => theme.colors.dark_brown};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
-  text-overflow: ellipsis;
-`;
-
-export const TableRow = styled.tr`
-  display: flex;
-  width: 80%;
-`;
-
 export const TbodyContainer = styled.tbody`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+`;
+
+export const TableRow = styled.tr`
+  display: flex;
+  width: 80%;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+`;
+
+const TableData = styled.td`
+  display: flex;
+  align-items: center;
+  height: 73px;
+  font-size: 24px;
+  color: ${({ theme }) => theme.colors.dark_brown};
+  text-overflow: ellipsis;
+`;
+
+export const Column1 = styled(TableData)`
+  width: 56px;
+`;
+
+export const Column2 = styled(TableData)`
+  width: 240px;
+`;
+
+export const Column3 = styled(TableData)`
+  width: 16px;
 `;
 
 export const MemberInfo = styled.div`
