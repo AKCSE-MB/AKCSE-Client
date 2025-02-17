@@ -24,7 +24,6 @@ export const PodiumWrapper = styled.div`
   margin-top: 20px;
   column-gap: 8px;
   margin-bottom: -10px;
-  z-index: 1;
 `;
 
 export const Podium = styled.div`
@@ -32,6 +31,7 @@ export const Podium = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: ${({ theme }) => theme.colors.dark_brown};
 `;
 
 export const PodiumItem = styled.div<PodiumItemProps>`
@@ -49,6 +49,7 @@ export const PodiumItem = styled.div<PodiumItemProps>`
 `;
 
 export const Name = styled.div`
+  color: ${({ theme }) => theme.colors.dark_brown};
   font-size: 16px;
 `;
 
