@@ -5,23 +5,74 @@ import { getLeaderboard } from '@/apis/members/leaderboard';
 import { useEffect, useState } from 'react';
 import { TopMembersResponseDTO } from '@dev-taeho/akcse_mb/lib/domain/members/dto/members.dto';
 import CROWN from '@/assets/common/logo/crown.svg';
+import INCREASE from '@/assets/common/logo/increase.svg';
+import DECREASE from '@/assets/common/logo/decrease.svg';
 import { getFormattedNumber } from '@/utils/formatUtil';
 import CFooter from '@/components/c-footer';
 import CHeader from '@/components/c-header';
 
 export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState<TopMembersResponseDTO[]>([]);
+  const [pastLeaderboard, setPastLeaderboard] = useState<
+    TopMembersResponseDTO[]
+  >([]);
+  const [status, setStatus] = useState<string[]>([]);
+  const UP = 'up';
+  const DOWN = 'down';
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      const leaderboard = await getLeaderboard();
-      if (leaderboard) {
-        setLeaderboard(leaderboard);
+      const topTen = await getLeaderboard();
+      if (topTen) {
+        setLeaderboard(topTen);
       }
     };
 
     fetchLeaderboard();
   }, []);
+
+  useEffect(() => {
+    const cachedLeaderboard = localStorage.getItem('pastLeaderboard');
+    if (cachedLeaderboard) {
+      setPastLeaderboard(JSON.parse(cachedLeaderboard));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (leaderboard.length === 0) {
+      return;
+    }
+
+    if (pastLeaderboard.length === 0) {
+      setPastLeaderboard(leaderboard);
+      localStorage.setItem('pastLeaderboard', JSON.stringify(leaderboard));
+      return;
+    }
+
+    const getStatus = () => {
+      const changes: string[] = [];
+      const pastLeaderboardMap = new Map(
+        pastLeaderboard.map((member, index) => [member.id, index]),
+      );
+
+      leaderboard.forEach((member, currIndex) => {
+        const pastIndex = pastLeaderboardMap.get(member.id);
+
+        if (pastIndex === undefined) {
+          changes[currIndex] = UP;
+        } else if (currIndex < pastIndex) {
+          changes[currIndex] = UP;
+        } else if (currIndex > pastIndex) {
+          changes[currIndex] = DOWN;
+        }
+      });
+
+      return changes;
+    };
+
+    setStatus(getStatus());
+    localStorage.setItem('pastLeaderboard', JSON.stringify(leaderboard));
+  }, [leaderboard]);
 
   return (
     <S.PageWrapper>
@@ -66,7 +117,10 @@ export default function Leaderboard() {
                           {member.score}pts
                         </S.MemberInfo>
                       </S.Column2>
-                      <S.Column3></S.Column3>
+                      <S.Column3>
+                        {status[index] === UP && <INCREASE />}
+                        {status[index] === DOWN && <DECREASE />}
+                      </S.Column3>
                     </S.TableRow>
                   ),
               )}
