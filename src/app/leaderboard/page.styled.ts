@@ -30,7 +30,7 @@ export const PodiumWrapper = styled.div`
   gap: 15px;
   margin-top: 20px;
   column-gap: 8px;
-  margin-bottom: -10px;
+  margin-bottom: -15px;
 `;
 
 export const Podium = styled.div`
@@ -47,34 +47,48 @@ export const PodiumItem = styled.div<LeaderboardProps>`
     $rank === 1 ? '184px' : $rank === 2 ? '152px' : '102px'};
   background: ${({ theme }) => theme.colors.orange};
   color: ${({ theme }) => theme.colors.white};
-  border-radius: 10px 10px 0 0;
+  border-radius: 12px 12px 0 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  font-weight: bold;
+`;
+
+export const CrownContainer = styled.div`
+  padding-bottom: 5px;
 `;
 
 export const Name = styled.div`
   color: ${({ theme }) => theme.colors.dark_brown};
   font-size: 16px;
+  font-weight: normal;
+`;
+
+export const ScoreContainer = styled.div`
+  width: 77px;
+  height: 24px;
+  background: ${({ theme }) => theme.colors.light_orange};
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-top: 3px;
+  margin-bottom: 12px;
+  text-align: center;
 `;
 
 export const Score = styled.div`
-  background: ${({ theme }) => theme.colors.light_orange};
   color: ${({ theme }) => theme.colors.dark_brown};
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  margin-top: 4px;
-  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 export const Title = styled.h1`
   font-size: 36px;
+  font-weight: bold;
   color: ${({ theme }) => theme.colors.dark_brown};
   padding: 15px;
-  margin-left: 24px;
+  margin-left: 23px;
 `;
 
 export const Table = styled.table`
@@ -84,6 +98,7 @@ export const Table = styled.table`
   border-collapse: separate;
   border-spacing: 0 5px;
   border-radius: 48px 48px 0 0;
+  box-shadow: 0 0 5px ${({ theme }) => theme.colors.gray};
   table-layout: fixed;
   justify-self: center;
   background-color: ${({ theme }) => theme.colors.white};
@@ -116,14 +131,18 @@ const TableData = styled.td`
 
 export const Column1 = styled(TableData)`
   width: 56px;
+  font-weight: bold;
+  text-align: left;
 `;
 
 export const Column2 = styled(TableData)`
-  width: 240px;
+  width: 225px;
+  padding-left: 16px;
 `;
 
 export const Column3 = styled(TableData)`
-  width: 16px;
+  width: 56px;
+  justify-content: right;
 `;
 
 export const MemberInfo = styled.div`

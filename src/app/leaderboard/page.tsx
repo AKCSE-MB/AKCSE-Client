@@ -85,20 +85,28 @@ export default function Leaderboard() {
           <S.PodiumWrapper>
             <S.Podium>
               <S.Name>{leaderboard[1]?.username}</S.Name>
-              <S.Score>{leaderboard[1]?.score}pts</S.Score>
+              <S.ScoreContainer>
+                <S.Score>{leaderboard[1]?.score}pts</S.Score>
+              </S.ScoreContainer>
               <S.PodiumItem $rank={2}>2</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
-              <CROWN />
+              <S.CrownContainer>
+                <CROWN />
+              </S.CrownContainer>
               <S.Name>{leaderboard[0]?.username}</S.Name>
-              <S.Score>{leaderboard[0]?.score}pts</S.Score>
+              <S.ScoreContainer>
+                <S.Score>{leaderboard[0]?.score}pts</S.Score>
+              </S.ScoreContainer>
               <S.PodiumItem $rank={1}>1</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
               <S.Name>{leaderboard[2]?.username}</S.Name>
-              <S.Score>{leaderboard[2]?.score}pts</S.Score>
+              <S.ScoreContainer>
+                <S.Score>{leaderboard[2]?.score}pts</S.Score>
+              </S.ScoreContainer>
               <S.PodiumItem $rank={3}>3</S.PodiumItem>
             </S.Podium>
           </S.PodiumWrapper>
@@ -112,9 +120,8 @@ export default function Leaderboard() {
                       <S.Column1>{getFormattedNumber(index + 1)}</S.Column1>
                       <S.Column2>
                         <S.MemberInfo>
-                          {member.username}
-                          <br />
-                          {member.score}pts
+                          <S.Name>{member.username}</S.Name>
+                          <S.Score>{member.score}pts</S.Score>
                         </S.MemberInfo>
                       </S.Column2>
                       <S.Column3>
