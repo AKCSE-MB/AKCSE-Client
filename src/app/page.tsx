@@ -11,7 +11,7 @@ export default function Home() {
   const { push } = useRouter();
 
   return (
-    <>
+    <S.PageWrapper>
       <S.MainContent>
         <CHeader />
 
@@ -27,6 +27,6 @@ export default function Home() {
       </S.MainContent>
 
       <CFooter />
-    </>
+    </S.PageWrapper>
   );
 }

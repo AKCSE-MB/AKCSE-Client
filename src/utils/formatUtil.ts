@@ -12,3 +12,7 @@ export function getFormattedTime(dateTime: Date) {
     minute: '2-digit',
   });
 }
+
+export function getFormattedNumber(num: number) {
+  return num.toString().padStart(2, '0');
+}
