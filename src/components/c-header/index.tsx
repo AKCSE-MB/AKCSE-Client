@@ -1,7 +1,7 @@
 import * as S from './page.styled';
 import CHamburgerIcon from '@/components/c-hamburger-icon';
 import LOGO from '@/assets/common/logo/logo.svg';
-import { useSideBarStore } from '@/store/useSidBarStore';
+import { useSideBarStore } from '@/store/useSideBarStore';
 
 export default function CHeader() {
   const { isSideBarOpen, toggleSideBar } = useSideBarStore();
