@@ -9,17 +9,25 @@ export const MainContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-weight: bolder;
-  font-size: x-large;
+  font-weight: normal;
+  font-size: 36px;
   padding: 15px;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
 `;
 
 export const EventList = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
-  gap: 50px;
-  padding-bottom: 50px;
+  gap: 24px;
 `;
+
+export const UpcomingEvents = styled.div`
+  margin-top: 44px;
+`;
+
+export const PastEvents = styled.div`
+  margin-top: 80px;
+`;
+
+export const morePastEvents = styled.div``;
