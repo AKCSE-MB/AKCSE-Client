@@ -25,7 +25,7 @@ export const Container = styled.div<{ open: boolean }>`
   background-color: #ffff;
   top: 0;
   left: 0;
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   ${({ open }) => sideBarSettings(open)}
 
