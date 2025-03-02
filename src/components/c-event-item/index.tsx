@@ -12,7 +12,7 @@ interface Props {
   };
 }
 
-export default function CEvnetItem({
+export default function CEventItem({
   title,
   date,
   description,
