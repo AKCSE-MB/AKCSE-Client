@@ -10,6 +10,7 @@ export const MainContainer = styled.div`
 
 export const Title = styled.h1`
   font-weight: normal;
+  text-align: left;
   font-size: 36px;
   padding: 15px;
   margin-bottom: 33px;
@@ -28,6 +29,7 @@ export const UpcomingEvents = styled.div`
 
 export const PastEvents = styled.div`
   margin-top: 80px;
+  margin-bottom: 80px;
 `;
 
 export const morePastEvents = styled.div``;

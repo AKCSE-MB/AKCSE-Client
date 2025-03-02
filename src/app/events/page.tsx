@@ -78,7 +78,7 @@ export default function Events() {
                 text: 'Learn More',
                 route: `/events/${pastEvents[0]?.id}`,
               }}
-            ></CEventItem>
+            />
 
             <CEventItem
               title={pastEvents[1]?.title}
@@ -97,9 +97,9 @@ export default function Events() {
               </DefaultButton>
             )}
 
-            {showMore &&
-              pastEvents.slice(2).map((event) => (
-                <S.morePastEvents>
+            {showMore && (
+              <S.morePastEvents>
+                {pastEvents.slice(2).map((event) => (
                   <CEventItem
                     title={event.title}
                     date={getFormattedDate(event.startDateTime)}
@@ -109,13 +109,14 @@ export default function Events() {
                       text: 'Learn More',
                       route: `/events/${event.id}`,
                     }}
-                  ></CEventItem>
+                  />
+                ))}
 
-                  <DefaultButton onClick={handleLessButton}>
-                    View Less
-                  </DefaultButton>
-                </S.morePastEvents>
-              ))}
+                <DefaultButton onClick={handleLessButton}>
+                  View Less
+                </DefaultButton>
+              </S.morePastEvents>
+            )}
           </S.EventList>
         )}
       </S.PastEvents>
