@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $shadow: boolean }>`
   max-width: 390px;
   width: 100%;
   height: 72px;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   //TODO: need to update colour using theme
   //https://github.com/AKCSE-MB/AKCSE-Client/pull/26
   background: #ffff;
-  box-shadow: 0px 3px 5px #2525251a;
+  box-shadow: ${({ $shadow }) => ($shadow ? '0px 3px 5px #2525251a' : 'none')};
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
