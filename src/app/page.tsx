@@ -14,7 +14,6 @@ export default function Home() {
     <S.PageWrapper>
       <S.MainContent>
         <CHeader />
-
         <S.ButtonContainer>
           <DefaultButton onClick={() => push('/')}>HOME</DefaultButton>
           <DefaultButton onClick={() => push('/events')}>EVENTS</DefaultButton>
