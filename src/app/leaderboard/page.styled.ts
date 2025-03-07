@@ -64,6 +64,7 @@ export const Name = styled.div`
   color: ${({ theme }) => theme.colors.dark_brown};
   font-size: 16px;
   font-weight: normal;
+  margin-bottom: 3px;
 `;
 
 export const ScoreContainer = styled.div`

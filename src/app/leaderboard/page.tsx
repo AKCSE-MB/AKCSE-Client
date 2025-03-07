@@ -84,7 +84,7 @@ export default function Leaderboard() {
         <S.LeaderboardWrapper>
           <S.PodiumWrapper>
             <S.Podium>
-              <S.Name>{leaderboard[1]?.username}</S.Name>
+              <S.Name>{leaderboard[1]?.name}</S.Name>
               <S.ScoreContainer>
                 <S.Score>{leaderboard[1]?.score}pts</S.Score>
               </S.ScoreContainer>
@@ -95,7 +95,7 @@ export default function Leaderboard() {
               <S.CrownContainer>
                 <CROWN />
               </S.CrownContainer>
-              <S.Name>{leaderboard[0]?.username}</S.Name>
+              <S.Name>{leaderboard[0]?.name}</S.Name>
               <S.ScoreContainer>
                 <S.Score>{leaderboard[0]?.score}pts</S.Score>
               </S.ScoreContainer>
@@ -103,7 +103,7 @@ export default function Leaderboard() {
             </S.Podium>
 
             <S.Podium>
-              <S.Name>{leaderboard[2]?.username}</S.Name>
+              <S.Name>{leaderboard[2]?.name}</S.Name>
               <S.ScoreContainer>
                 <S.Score>{leaderboard[2]?.score}pts</S.Score>
               </S.ScoreContainer>
@@ -120,7 +120,7 @@ export default function Leaderboard() {
                       <S.Column1>{getFormattedNumber(index + 1)}</S.Column1>
                       <S.Column2>
                         <S.MemberInfo>
-                          <S.Name>{member.username}</S.Name>
+                          <S.Name>{member.name}</S.Name>
                           <S.Score>{member.score}pts</S.Score>
                         </S.MemberInfo>
                       </S.Column2>
