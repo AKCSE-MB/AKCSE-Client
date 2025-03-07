@@ -1,7 +1,7 @@
 'use client';
 
 import * as S from './page.styled';
-import Header from '@/components/Header/MainHeader';
+import CHeader from '@/components/c-header';
 import { useEffect, useState } from 'react';
 import { GetEventsOutput } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getEvents } from '@/apis/events';
@@ -29,7 +29,7 @@ export default function Events() {
 
   return (
     <S.MainContainer>
-      <Header title="AKCSE MANITOBA" subTitle="Young Generations" BackBtn />
+      <CHeader />
       <S.Title>Upcoming Events</S.Title>
 
       <S.EventList>

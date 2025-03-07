@@ -8,10 +8,11 @@ export const LayoutWrapper = styled.div`
 `;
 export const Layout = styled.div`
   position: relative;
-  max-width: 360px;
+  max-width: 390px;
   margin: 0 auto;
   width: 100%;
   background-color: rgb(255, 251, 246);
+  overflow: hidden;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
