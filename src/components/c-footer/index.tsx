@@ -30,7 +30,7 @@ export default function CFooter() {
 
   const loginInfoModal = () => {
     openModal(MODAL_TYPES.dialog, {
-      message: 'You must be Akcse memeber to access this page',
+      message: 'You must be AKCSE memeber to access this page',
       logo: <CAUTION />,
       handleConfirm: () => loginHandler(),
       handleClose: () => closeModal(MODAL_TYPES.dialog),
