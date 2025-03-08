@@ -7,6 +7,7 @@ import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import ReactQueryProvider from '../react-query/ReactQueryProvider';
 import LoginSDK from '@/components/LoginSDK';
+import GlobalModal from '@/components/Modal/GlobalModal';
 
 export default function StyledComponentsWrapper({
   children,
@@ -17,6 +18,7 @@ export default function StyledComponentsWrapper({
     <ThemeProvider theme={theme}>
       <ReactQueryProvider>
         <GlobalStyle />
+        <GlobalModal />
         <LoginSDK />
         <MobileLayout>{children}</MobileLayout>
       </ReactQueryProvider>
