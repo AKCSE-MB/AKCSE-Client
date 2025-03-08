@@ -46,9 +46,15 @@ export const Date = styled.div`
 export const Description = styled.div`
   margin-top: 16px;
   font-size: 14px;
-  white-space: nowrap;
+  width: 286px;
+  height: 60px;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  -webkit-line-clamp: 3;
 `;
 
 export const LearnMoreLink = styled.div`
