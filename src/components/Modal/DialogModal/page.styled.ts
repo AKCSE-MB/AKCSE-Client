@@ -56,7 +56,6 @@ export const Container = styled.div<{ $visible: boolean }>`
   z-index: 100;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   justify-content: center;
   align-items: center;
   position: relative;
