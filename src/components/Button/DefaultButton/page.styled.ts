@@ -8,7 +8,7 @@ export const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.5px;
-  background-color: #F3B744;
+  background-color: #f3b744;
   width: 171px;
   height: 44px;
   color: black;
@@ -21,7 +21,7 @@ export const Button = styled.button`
   }
 
   &:enabled:active {
-    opacity : 0.4;
+    opacity: 0.4;
   }
 
   &:disabled {

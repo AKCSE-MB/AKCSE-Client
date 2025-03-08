@@ -10,8 +10,11 @@ import DECREASE from '@/assets/common/logo/decrease.svg';
 import { getFormattedNumber } from '@/utils/formatUtil';
 import CFooter from '@/components/c-footer';
 import CHeader from '@/components/c-header';
+import { useRequireAuth } from '@/utils/auth';
 
 export default function Leaderboard() {
+  useRequireAuth('/');
+
   const [leaderboard, setLeaderboard] = useState<TopMembersResponseDTO[]>([]);
   const [pastLeaderboard, setPastLeaderboard] = useState<
     TopMembersResponseDTO[]
