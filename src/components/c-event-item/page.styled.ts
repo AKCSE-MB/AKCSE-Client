@@ -46,6 +46,9 @@ export const Date = styled.div`
 export const Description = styled.div`
   margin-top: 16px;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const LearnMoreLink = styled.div`
