@@ -46,6 +46,7 @@ export default function Events() {
                 route: `/events/${event?.id}`,
               }}
               key={event.id}
+              isPast={false}
             ></CEventItem>
           ))}
         </S.EventList>
@@ -66,6 +67,7 @@ export default function Events() {
                 route: `/events/${event?.id}`,
               }}
               key={event.id}
+              isPast={true}
             />
           ))}
 

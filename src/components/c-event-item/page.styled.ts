@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isPast: boolean }>`
   width: 318px;
   height: 370px;
   border-radius: 24px;
-  background-color: #f2f2f2;
+  background-color: ${({ $isPast }) => ($isPast ? '#f2f2f2' : '#ffffff')};
   box-shadow: 0 0 10px #25252526;
 `;
 

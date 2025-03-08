@@ -10,6 +10,7 @@ interface Props {
     text: string;
     route: string;
   };
+  isPast: boolean;
 }
 
 export default function CEventItem({
@@ -18,10 +19,11 @@ export default function CEventItem({
   description,
   bgUrl,
   link,
+  isPast,
 }: Props) {
   const router = useRouter();
   return (
-    <S.Container>
+    <S.Container $isPast={isPast}>
       <S.ImageContainer>
         <S.ImageItem $bgUrl={bgUrl} />
       </S.ImageContainer>
