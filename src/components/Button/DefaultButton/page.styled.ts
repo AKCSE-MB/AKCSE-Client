@@ -4,17 +4,24 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: ${({ theme }) => theme.colors.dark_brown};
-  width: fit-content;
-  color: white;
+  padding: 12px 22px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  background-color: #f3b744;
+  width: 171px;
+  height: 44px;
+  color: black;
+  font-weight: 450;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 10px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.brown};
+  }
+
+  &:enabled:active {
+    opacity: 0.4;
   }
 
   &:disabled {

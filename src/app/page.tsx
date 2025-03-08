@@ -1,10 +1,9 @@
 'use client';
 
+import DefaultButton from '@/components/Button/DefaultButton';
 import { useRouter } from 'next/navigation';
 import * as S from './page.styled';
-import DefaultButton from '@/components/Button/DefaultButton';
 import CHeader from '@/components/c-header';
-import { ToastContainer } from 'react-toastify';
 import CFooter from '@/components/c-footer';
 import { useModalStore } from '@/store/useModalStore';
 import { MODAL_TYPES } from '@/components/Modal/GlobalModal';
@@ -38,20 +37,15 @@ export default function Home() {
       <S.MainContent>
         <CHeader />
         <S.ButtonContainer>
-          <DefaultButton onClick={() => router.push('/')}>HOME</DefaultButton>
-          <DefaultButton onClick={() => router.push('/events')}>
-            EVENTS
-          </DefaultButton>
-          <DefaultButton onClick={() => router.push('/')}>
-            RESOURCES
-          </DefaultButton>
-          <DefaultButton onClick={onLeaderBoardClick}>
-            LEADERBOARD
-          </DefaultButton>
+          <DefaultButton onClick={() => router.push('/')} btnText="HOME" />
+          <DefaultButton
+            onClick={() => router.push('/events')}
+            btnText="EVENTS"
+          />
+          <DefaultButton onClick={() => router.push('/')} btnText="RESOURCES" />
+          <DefaultButton onClick={onLeaderBoardClick} btnText="LEADERBOARD" />
         </S.ButtonContainer>
-        <ToastContainer position="bottom-center" />
       </S.MainContent>
-
       <CFooter />
     </S.PageWrapper>
   );
