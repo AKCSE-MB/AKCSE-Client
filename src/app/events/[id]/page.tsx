@@ -4,13 +4,13 @@ import * as S from './page.styled';
 import CHeader from '@/components/c-header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { GetEventsOutput } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getFormattedDate, getFormattedTime } from '@/utils/formatUtil';
 import { getEventById } from '@/apis/events';
+import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 
-export default function EventDetails() {
+export default function EventInfo() {
   const { id } = useParams();
-  const [event, setEvent] = useState<GetEventsOutput>();
+  const [event, setEvent] = useState<EventDetails>();
 
   useEffect(() => {
     const fetchEvents = async () => {

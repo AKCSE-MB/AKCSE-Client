@@ -3,7 +3,7 @@
 import * as S from './page.styled';
 import CHeader from '@/components/c-header';
 import { useEffect, useState } from 'react';
-import { GetEventsOutput } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
+import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getEvents } from '@/apis/events';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
@@ -12,9 +12,8 @@ import CFooter from '@/components/c-footer';
 import { useRouter } from 'next/navigation';
 
 export default function Events() {
-  const [upcoming, setUpcoming] = useState<GetEventsOutput[]>([]);
-  const [past, setPast] = useState<GetEventsOutput[]>([]);
-
+  const [upcoming, setUpcoming] = useState<EventDetails[]>([]);
+  const [past, setPast] = useState<EventDetails[]>([]);
   const { push } = useRouter();
 
   useEffect(() => {
@@ -44,7 +43,7 @@ export default function Events() {
               bgUrl={event.imageUrl}
               link={{
                 text: 'Learn More',
-                route: `/events/${event.id}`,
+                route: `/events/${event?.id}`,
               }}
               key={event.id}
             ></CEventItem>
