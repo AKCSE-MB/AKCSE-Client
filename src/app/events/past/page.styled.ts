@@ -5,7 +5,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 100px;
+  padding-top: 72px;
 `;
 
 export const Title = styled.h1`
@@ -24,6 +24,6 @@ export const EventList = styled.div`
 `;
 
 export const PastEvents = styled.div`
-  margin-top: 80px;
+  margin-top: 44px;
   margin-bottom: 80px;
 `;

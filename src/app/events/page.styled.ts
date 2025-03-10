@@ -5,14 +5,13 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 100px;
+  padding-top: 72px;
 `;
 
 export const Title = styled.h1`
-  font-weight: normal;
+  font-weight: 600;
   text-align: left;
   font-size: 36px;
-  padding: 15px;
   margin-bottom: 33px;
 `;
 
@@ -31,5 +30,3 @@ export const PastEvents = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
 `;
-
-export const morePastEvents = styled.div``;
