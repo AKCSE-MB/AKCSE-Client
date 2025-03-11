@@ -1,6 +1,7 @@
 'use client';
 
 import DefaultButton from '@/components/Button/DefaultButton';
+import loginButton from '@/components/Button/loginButton';
 import { useRouter } from 'next/navigation';
 import * as S from './page.styled';
 import CHeader from '@/components/c-header';

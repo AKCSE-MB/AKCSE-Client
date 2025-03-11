@@ -4,6 +4,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import CLOSE from '@/assets/common/logo/close.svg';
 import CAUTION from '@/assets/common/logo/caution.svg';
 import * as S from './page.styled';
+import LoginButton from '@/components/Button/loginButton';
 
 export interface DialogModalProps {
   title?: string;
@@ -83,7 +84,7 @@ export default function DialogModal({
         </S.TextContainer>
 
         <S.ButtonContainer>
-          <S.Button onClick={onConfirm}>kakao login button</S.Button>
+          <LoginButton onClick={onConfirm} />
         </S.ButtonContainer>
       </S.Container>
     </S.Overlay>
