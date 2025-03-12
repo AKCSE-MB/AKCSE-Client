@@ -10,7 +10,7 @@ export const Container = styled.div<{ $shadow: boolean }>`
   z-index: 1;
   //TODO: need to update colour using theme
   //https://github.com/AKCSE-MB/AKCSE-Client/pull/26
-  background: #ffff;
+  background:  ${({ theme }) => theme.colors.white};
   box-shadow: ${({ $shadow }) => ($shadow ? '0px 3px 5px #2525251a' : 'none')};
 
   @media screen and (max-width: 768px) {

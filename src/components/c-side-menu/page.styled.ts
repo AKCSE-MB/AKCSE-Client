@@ -22,7 +22,7 @@ export const Container = styled.div<{ open: boolean }>`
   width: 100%;
   max-width: 390px;
   height: 100%;
-  background-color: #ffff;
+  background-color: ${({ theme }) => theme.colors.white};
   top: 0;
   left: 0;
   position: absolute;
@@ -56,7 +56,7 @@ export const MenuItem = styled.div`
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 44px;
-  color: #39170e;
+  color: ${({ theme }) => theme.colors.cherry};
   display: flex;
   justify-content: space-between;
   cursor: pointer;
