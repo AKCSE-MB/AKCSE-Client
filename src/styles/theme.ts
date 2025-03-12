@@ -24,17 +24,10 @@ const colors = {
   secondary: {
     o90: '#C13001',
   },
+  light_orange: 'rgb(243, 183, 68)',
   neutral: {
     bg90: '#253238',
     bg80: '#37474F',
-  },
-  simentic: {
-    dg90: '#207B00',
-    dg50: '#3FC500',
-    r90: '#CB2528',
-    r60: '#E53835',
-    black: '#000000',
-    white: '#FFFFFF',
   },
 };
 
