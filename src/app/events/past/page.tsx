@@ -38,7 +38,7 @@ export default function Events() {
               description={event.description}
               bgUrl={event.imageUrl}
               link={{
-                text: 'Learn More',
+                text: 'Learn More -->',
                 route: `/events/${event.id}`,
               }}
               key={event.id}

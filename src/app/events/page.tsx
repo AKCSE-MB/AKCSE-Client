@@ -42,7 +42,7 @@ export default function Events() {
               description={event.description}
               bgUrl={event.imageUrl}
               link={{
-                text: 'Learn More',
+                text: 'Learn More -->',
                 route: `/events/${event?.id}`,
               }}
               key={event.id}
@@ -63,7 +63,7 @@ export default function Events() {
               description={event?.description}
               bgUrl={event?.imageUrl}
               link={{
-                text: 'Learn More',
+                text: 'Learn More -->',
                 route: `/events/${event?.id}`,
               }}
               key={event.id}
@@ -71,9 +71,10 @@ export default function Events() {
             />
           ))}
 
-          <DefaultButton onClick={() => push('/events/past')}>
-            View More
-          </DefaultButton>
+          <DefaultButton
+            onClick={() => push('/events/past')}
+            btnText="View More"
+          />
         </S.EventList>
       </S.PastEvents>
 

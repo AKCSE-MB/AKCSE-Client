@@ -12,7 +12,6 @@ export const MainContent = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 100px;
 `;
 
 export const ButtonContainer = styled.div`

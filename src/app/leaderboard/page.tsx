@@ -77,11 +77,33 @@ export default function Leaderboard() {
     localStorage.setItem('pastLeaderboard', JSON.stringify(leaderboard));
   }, [leaderboard]);
 
+  const getRanks = (): Record<string, number> => {
+    const ranks: Record<string, number> = {};
+    let rank = 1;
+
+    leaderboard.forEach((member, index) => {
+      if (index === 0) {
+        ranks[member.id] = rank;
+      } else {
+        const prevMember = leaderboard[index - 1];
+        if (member.score === prevMember.score) {
+          ranks[member.id] = ranks[prevMember.id]; // Same rank for same score
+        } else {
+          rank = index + 1;
+          ranks[member.id] = rank;
+        }
+      }
+    });
+
+    return ranks;
+  };
+
+  const ranks = getRanks();
+
   return (
     <S.PageWrapper>
+      <CHeader />
       <S.MainContent>
-        <CHeader />
-
         <S.Title>Leaderboard</S.Title>
 
         <S.LeaderboardWrapper>
@@ -89,9 +111,9 @@ export default function Leaderboard() {
             <S.Podium>
               <S.Name>{leaderboard[1]?.name}</S.Name>
               <S.ScoreContainer>
-                <S.Score>{leaderboard[1]?.score}pts</S.Score>
+                <S.PodiumScore>{leaderboard[1]?.score}pts</S.PodiumScore>
               </S.ScoreContainer>
-              <S.PodiumItem $rank={2}>2</S.PodiumItem>
+              <S.PodiumItem $rank={2}>{ranks[leaderboard[1]?.id]}</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
@@ -100,17 +122,17 @@ export default function Leaderboard() {
               </S.CrownContainer>
               <S.Name>{leaderboard[0]?.name}</S.Name>
               <S.ScoreContainer>
-                <S.Score>{leaderboard[0]?.score}pts</S.Score>
+                <S.PodiumScore>{leaderboard[0]?.score}pts</S.PodiumScore>
               </S.ScoreContainer>
-              <S.PodiumItem $rank={1}>1</S.PodiumItem>
+              <S.PodiumItem $rank={1}>{ranks[leaderboard[0]?.id]}</S.PodiumItem>
             </S.Podium>
 
             <S.Podium>
               <S.Name>{leaderboard[2]?.name}</S.Name>
               <S.ScoreContainer>
-                <S.Score>{leaderboard[2]?.score}pts</S.Score>
+                <S.PodiumScore>{leaderboard[2]?.score}pts</S.PodiumScore>
               </S.ScoreContainer>
-              <S.PodiumItem $rank={3}>3</S.PodiumItem>
+              <S.PodiumItem $rank={3}>{ranks[leaderboard[2]?.id]}</S.PodiumItem>
             </S.Podium>
           </S.PodiumWrapper>
 
@@ -119,8 +141,10 @@ export default function Leaderboard() {
               {leaderboard.map(
                 (member, index) =>
                   index > 2 && (
-                    <S.TableRow key={member.id} $rank={index + 1}>
-                      <S.Column1>{getFormattedNumber(index + 1)}</S.Column1>
+                    <S.TableRow key={member.id} $rank={ranks[member.id]}>
+                      <S.Column1>
+                        {getFormattedNumber(ranks[member.id])}
+                      </S.Column1>
                       <S.Column2>
                         <S.MemberInfo>
                           <S.Name>{member.name}</S.Name>
@@ -138,7 +162,6 @@ export default function Leaderboard() {
           </S.Table>
         </S.LeaderboardWrapper>
       </S.MainContent>
-
       <CFooter />
     </S.PageWrapper>
   );

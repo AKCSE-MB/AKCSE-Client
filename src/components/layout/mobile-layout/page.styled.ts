@@ -17,10 +17,11 @@ export const Layout = styled.div`
     max-width: 100%;
   }
 `;
+
 export const LogoWrapper = styled.div`
   position: fixed;
   top: 0;
-  width: 360px;
+  width: 390px;
   height: 44px;
   z-index: 1;
 
@@ -29,7 +30,7 @@ export const LogoWrapper = styled.div`
   }
 
   svg {
-    width: 360px;
+    width: 390px;
 
     @media screen and (max-width: 768px) {
       width: 100%;

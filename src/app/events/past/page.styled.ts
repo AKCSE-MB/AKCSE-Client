@@ -5,25 +5,22 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 72px;
 `;
 
 export const Title = styled.h1`
   font-weight: 600;
   text-align: left;
   font-size: 36px;
-  padding: 15px;
+  color: #39170e;
   margin-bottom: 33px;
 `;
 
 export const EventList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
   gap: 24px;
 `;
 
 export const PastEvents = styled.div`
-  margin-top: 44px;
-  margin-bottom: 80px;
+  padding: 44px 0 80px 0;
 `;

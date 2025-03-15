@@ -7,14 +7,14 @@ interface LeaderboardProps {
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 `;
 
 export const MainContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-top: 116px;
+  margin-top: 44px;
+  /* max-width: calc(100vw - 32px); */
 `;
 
 export const LeaderboardWrapper = styled.div`
@@ -28,7 +28,7 @@ export const PodiumWrapper = styled.div`
   flex-direction: row;
   align-items: flex-end;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 32px;
   column-gap: 8px;
   margin-bottom: -15px;
 `;
@@ -54,6 +54,15 @@ export const PodiumItem = styled.div<LeaderboardProps>`
   justify-content: center;
   font-size: 24px;
   font-weight: bold;
+`;
+
+export const PodiumScore = styled.div`
+  color: ${({ theme }) => theme.colors.dark_brown};
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CrownContainer = styled.div`
@@ -82,13 +91,15 @@ export const Score = styled.div`
   color: ${({ theme }) => theme.colors.dark_brown};
   font-size: 16px;
   font-weight: bold;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 `;
 
 export const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.dark_brown};
-  padding: 15px;
   margin-left: 23px;
 `;
 
@@ -104,6 +115,7 @@ export const Table = styled.table`
   justify-self: center;
   background-color: ${({ theme }) => theme.colors.white};
   min-height: 100%;
+  padding-bottom: 10px;
 `;
 
 export const TbodyContainer = styled.tbody`
