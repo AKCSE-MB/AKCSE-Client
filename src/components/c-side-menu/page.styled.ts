@@ -21,11 +21,9 @@ export const fadeOut = keyframes`
 export const Container = styled.div<{ open: boolean }>`
   width: 100%;
   max-width: 390px;
-  height: 100%;
+  height: 100vh;
   background-color: #ffff;
-  top: 0;
-  left: 0;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   ${({ open }) => sideBarSettings(open)}
 
@@ -44,9 +42,8 @@ const sideBarSettings = (visible: boolean) => css`
 export const Menu = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 44px;
   height: 100%;
-  overflow: hidden;
-  margin-top: 122px;
   overflow: hidden;
 `;
 
