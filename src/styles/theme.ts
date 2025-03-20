@@ -3,35 +3,24 @@ import { DefaultTheme } from 'styled-components';
 const colors = {
   white: '#ffffff',
   black: '#000000',
-  blue: '#0000EE',
-  ivory: '#f9f9f9',
+  blue: '#385e9d',
   brown: '#662E0B',
-  dark_ivory: '#f7ebcd',
-  dark_brown: '#39170E',
-  yellow: '#FEE500',
-  gold: '#FFD700',
-  silver: '#C0C0C0',
-  bronze: '#DAA520',
-  gray: '#dddddd',
   orange: '#E68541',
-  light_orange: 'rgb(243, 183, 68)',
+  gray: '8B8B8B',
+  dark_brown: '#4f2c1d',
+  yellow: '#FEE500',
+  tangerin: '#f3b744',
+  cherry: '#39170e',
   primary: {
     y90: '#FF7002',
   },
   secondary: {
     o90: '#C13001',
   },
+  light_orange: 'rgb(243, 183, 68)',
   neutral: {
     bg90: '#253238',
     bg80: '#37474F',
-  },
-  simentic: {
-    dg90: '#207B00',
-    dg50: '#3FC500',
-    r90: '#CB2528',
-    r60: '#E53835',
-    black: '#000000',
-    white: '#FFFFFF',
   },
 };
 

@@ -53,7 +53,7 @@ export const MenuItem = styled.div`
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 44px;
-  color: #39170e;
+  color: ${({ theme }) => theme.colors.cherry};
   display: flex;
   justify-content: space-between;
   cursor: pointer;

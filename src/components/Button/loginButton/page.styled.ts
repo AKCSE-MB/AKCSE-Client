@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +32,5 @@ export const Button = styled.button`
 
   svg {
     margin-right: 10px;
-
   }
 `;

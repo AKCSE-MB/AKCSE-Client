@@ -8,7 +8,7 @@ export const Container = styled.div<{ $shadow: boolean }>`
   padding-top: 31.5px;
   position: sticky;
   z-index: 2;
-  background: #ffff;
+  background: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ $shadow }) => ($shadow ? '0px 3px 5px #2525251a' : 'none')};
 
   @media screen and (max-width: 768px) {
