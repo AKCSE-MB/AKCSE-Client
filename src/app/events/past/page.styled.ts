@@ -11,8 +11,8 @@ export const Title = styled.h1`
   font-weight: 600;
   text-align: left;
   font-size: 36px;
-  margin-bottom: 33px;
   color: #39170e;
+  margin-bottom: 33px;
 `;
 
 export const EventList = styled.div`
@@ -21,10 +21,6 @@ export const EventList = styled.div`
   gap: 24px;
 `;
 
-export const UpcomingEvents = styled.div`
-  margin-top: 44px;
-`;
-
 export const PastEvents = styled.div`
-  margin: 80px 0;
+  padding: 44px 0 80px 0;
 `;

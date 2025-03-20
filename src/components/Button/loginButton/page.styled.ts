@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Button = styled.button`
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +12,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.yellow};
   width: 100%;
   height: 47px;
+
   color: black;
   font-weight: 450;
   border: none;
@@ -28,12 +30,4 @@ export const Container = styled.div`
     opacity: 0.4;
     pointer-events: none;
   }
-`;
-
-export const LogoContainer = styled.div``;
-
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  font-size: 17px;
 `;

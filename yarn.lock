@@ -955,10 +955,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@dev-taeho/akcse_mb@0.1.1":
-  version "0.1.1"
-  resolved "https://npm.pkg.github.com/download/@dev-taeho/akcse_mb/0.1.1/31ed5ce87f078decba8661b70390706be59fbb07#31ed5ce87f078decba8661b70390706be59fbb07"
-  integrity sha512-s5Js54VBvEH9U0ve5ZxmnBmVChSaecPSMz1Z7zWETYLSvG3Y6oikX5JRU1ILjLZlFkUw2QZkJbswPrVtzEm5hQ==
+"@dev-taeho/akcse_mb@0.1.6":
+  version "0.1.6"
+  resolved "https://npm.pkg.github.com/download/@dev-taeho/akcse_mb/0.1.6/1e3bc5975e06b9126f6c0d913bae5d669097a428#1e3bc5975e06b9126f6c0d913bae5d669097a428"
+  integrity sha512-ogCTkKme8oSj6G7+JpKadn7nLwvbKqEsD4VlS3eaKjJ5leVQaQ9qAbx1C2CKAvT69BBMM960PlS61BY2i26AvQ==
   dependencies:
     "@nestia/fetcher" "^3.17.0"
     typia "^6.11.2"

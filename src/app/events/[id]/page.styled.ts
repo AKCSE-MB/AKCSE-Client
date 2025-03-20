@@ -1,46 +1,36 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 100px;
-`;
+export const Container = styled.div``;
 
 export const Title = styled.h1`
-  font-weight: bolder;
-  font-size: x-large;
-  padding: 15px;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 36px;
+  padding-top: 44px;
+  color: #39170e;
 `;
 
 export const EventWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 30px;
   width: 90%;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  color: #39170e;
+`;
+
+export const EventDurationContainer = styled.div`
+  color: #70655e;
+  font-size: 16px;
+  padding-top: 12px;
 `;
 
 export const EventImage = styled.img`
   width: 100%;
-  height: 200px;
   object-fit: cover;
-  border: 1px solid ${({ theme }) => theme.colors.gray};
-  border-radius: 10px;
-  box-shadow: 0 4px 6px ${({ theme }) => theme.colors.gray};
+  border-radius: 16px;
+  margin: 32px 0 32px 0;
 `;
 
-export const EventContainer = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.gray};
-  border-radius: 10px;
-  overflow: hidden;
-  text-decoration: none;
-  padding: 10px;
-`;
+export const EventContainer = styled.div``;
 
 export const LocationAndDate = styled.p`
   font-size: large;
@@ -48,14 +38,13 @@ export const LocationAndDate = styled.p`
 `;
 
 export const EventDescription = styled.p`
-  padding-top: 30px;
+  padding-top: 24px;
+  line-height: 20px;
+  text-align: left;
+  color: #39170e;
 `;
 
 export const EventFee = styled.p`
-  padding-top: 20px;
-`;
-
-export const EventDurationContainer = styled.div`
   padding-top: 20px;
 `;
 

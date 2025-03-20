@@ -11,7 +11,9 @@ export default function CHeader() {
       <S.LogoContainer>
         <LOGO />
       </S.LogoContainer>
-      <CHamburgerIcon active={isSideBarOpen} clickEvent={toggleSideBar} />
+      <S.HamburgerContainer>
+        <CHamburgerIcon active={isSideBarOpen} clickEvent={toggleSideBar} />
+      </S.HamburgerContainer>
     </S.Container>
   );
 }

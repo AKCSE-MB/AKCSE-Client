@@ -17,7 +17,7 @@ export const Button = styled.button`
   border-radius: 10px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.brown};
+    background-color: ${({ theme }) => theme.colors.orange};
   }
 
   &:enabled:active {
