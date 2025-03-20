@@ -8,6 +8,7 @@ const colors = {
   brown: '#662E0B',
   dark_ivory: '#f7ebcd',
   dark_brown: '#39170E',
+  yellow: '#FEE500',
   gold: '#FFD700',
   silver: '#C0C0C0',
   bronze: '#DAA520',

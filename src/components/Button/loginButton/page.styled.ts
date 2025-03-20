@@ -14,7 +14,7 @@ export const Button = styled.button`
   height: 47px;
 
   color: black;
-  font-weight: 450;
+  font-weight: 350;
   border: none;
   border-radius: 10px;
 
@@ -29,5 +29,10 @@ export const Button = styled.button`
   &:disabled {
     opacity: 0.4;
     pointer-events: none;
+  }
+
+  svg {
+    margin-right: 10px;
+
   }
 `;
