@@ -1,10 +1,11 @@
-import { ButtonHTMLAttributes } from 'react';
 import * as S from './page.styled';
+import KAKAO from '@/assets/common/logo/kakao.svg';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  btnText: string;
-}
-
-export default function LoginButton({ btnText, ...rest }: Props) {
-  return <S.Button {...rest}>{btnText}</S.Button>;
+export default function LoginButton() {
+  return (
+    <S.Button>
+      <KAKAO width={20} height={20} />
+      Login with Kakao
+    </S.Button>
+  );
 }
