@@ -52,15 +52,14 @@ class HttpClient {
   responseInterceptors() {
     return this.client.interceptors.response.use(
       (response: AxiosResponse) => {
-        console.log('axios response!!!!');
         return response;
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (error: any) => {
-        console.log('error', error.response.data.statusCode);
 
-        if (error.response.data.statusCode >= 400) {
-          console.log('Invalid Login Credentials. Please Try Again.');
+      (error) => {
+        if (error.response.data.statusCode === 401) {
+          // TODO: display modal here
+        } else if (error.response.data.statusCode >= 400) {
+          // TODO: remove log and add modal
         }
 
         const {
