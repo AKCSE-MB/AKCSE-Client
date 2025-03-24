@@ -32,12 +32,13 @@ export const LinkItem = styled.div`
   color: white;
   width: fit-content;
   flex-direction: column;
+
   cursor: pointer;
 
   &:not(:last-child)::after {
     content: '';
     display: inline-block;
-    width: 1px;
+    width: 0px;
     height: 20px;
     margin: 0 10px;
     vertical-align: middle;
@@ -45,13 +46,15 @@ export const LinkItem = styled.div`
 `;
 
 export const SnsContainer = styled.div`
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const SnsItem = styled.div`
-  width: 32px;
+  width: 50px;
+
   cursor: pointer;
 
   svg {
