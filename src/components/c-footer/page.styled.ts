@@ -53,12 +53,14 @@ export const SnsContainer = styled.div`
 `;
 
 export const SnsItem = styled.div`
-  width: 50px;
-
+  margin-right: 13px;
   cursor: pointer;
-
+  &:last-child {
+    margin-right: 0px;
+  }
   svg {
     width: 32px;
+    height: 32px;
   }
 `;
 
