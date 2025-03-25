@@ -1,11 +1,13 @@
 import useKakaoLogin from '@/hooks/useKakaoLogin';
 import * as S from './page.styled';
 import INSTAGRAM from '@/assets/common/sns/instagram.svg';
+import LINKTREE from '@/assets/common/sns/linkTree.svg';
 import useUser from '@/hooks/useUser';
 import { useModalStore } from '@/store/useModalStore';
 import { useRouter } from 'next/navigation';
 import { MODAL_TYPES } from '../Modal/GlobalModal';
 import CAUTION from '@/assets/common/logo/caution.svg';
+import KAKAOTALK from '@/assets/common/sns/kakaotalk.svg';
 
 export default function CFooter() {
   const router = useRouter();
@@ -53,6 +55,20 @@ export default function CFooter() {
           }}
         >
           <INSTAGRAM />
+        </S.SnsItem>
+        <S.SnsItem
+          onClick={() => {
+            window.open('https://linktr.ee/akcse.mb.yg');
+          }}
+        >
+          <LINKTREE />
+        </S.SnsItem>
+        <S.SnsItem
+          onClick={() => {
+            window.open('https://open.kakao.com/o/g970mHGg');
+          }}
+        >
+          <KAKAOTALK />
         </S.SnsItem>
       </S.SnsContainer>
       <S.CopyrightText>© 2025 ACKSE. ALL RIGHTS RESERVED</S.CopyrightText>
