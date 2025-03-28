@@ -22,7 +22,7 @@ export const useAxiosInterceptor = () => {
     openModal(MODAL_TYPES.dialog, {
       logo: <CAUTION />,
       message:
-        'Your login request has been made! Please wait for an admin to approve your access.',
+        'Your account has been created! Please wait for an admin to approve your access.',
       handleConfirm: () => closeModal(MODAL_TYPES.dialog),
       needClose: true,
     });
