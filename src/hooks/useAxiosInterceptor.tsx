@@ -5,6 +5,7 @@ import useModal from '@/components/Modal/GlobalModal/hooks/useModal';
 import * as Sentry from '@sentry/nextjs';
 import { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { useEffect } from 'react';
+import CAUTION from '@/assets/common/logo/caution.svg';
 
 export const useAxiosInterceptor = () => {
   const { openModal, closeModal } = useModal();
@@ -12,6 +13,16 @@ export const useAxiosInterceptor = () => {
   const errorTrigger = () => {
     openModal(MODAL_TYPES.dialog, {
       title: 'error occured',
+      handleConfirm: () => closeModal(MODAL_TYPES.dialog),
+      needClose: true,
+    });
+  };
+
+  const firstLoginTrigger = () => {
+    openModal(MODAL_TYPES.dialog, {
+      logo: <CAUTION />,
+      message:
+        'Your login request has been made! Please wait for an admin to approve your access.',
       handleConfirm: () => closeModal(MODAL_TYPES.dialog),
       needClose: true,
     });
@@ -63,7 +74,10 @@ export const useAxiosInterceptor = () => {
         });
       }
 
-      if (error.response.data.statusCode === 404) {
+      if (error.response.data.statusCode === 401) {
+        firstLoginTrigger();
+        return;
+      } else if (error.response.data.statusCode === 404) {
         errorTrigger();
         return;
       }
