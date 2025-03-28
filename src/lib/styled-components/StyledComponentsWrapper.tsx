@@ -8,12 +8,15 @@ import { ThemeProvider } from 'styled-components';
 import ReactQueryProvider from '../react-query/ReactQueryProvider';
 import LoginSDK from '@/components/LoginSDK';
 import GlobalModal from '@/components/Modal/GlobalModal';
+import { useAxiosInterceptor } from '@/hooks/useAxiosInterceptor';
 
 export default function StyledComponentsWrapper({
   children,
 }: {
   children: ReactNode;
 }) {
+  useAxiosInterceptor();
+
   return (
     <ThemeProvider theme={theme}>
       <ReactQueryProvider>

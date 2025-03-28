@@ -1,10 +1,4 @@
-import axios, {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
-} from 'axios';
-import * as Sentry from '@sentry/nextjs';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 class HttpClient {
   public client: AxiosInstance;
@@ -13,8 +7,6 @@ class HttpClient {
 
   constructor() {
     this.client = axios.create(this.axiosConfig());
-    this.requestInterceptorId = this.requestInterceptors();
-    this.responseInterceptorId = this.responseInterceptors();
   }
 
   axiosConfig() {
@@ -22,73 +14,6 @@ class HttpClient {
       baseURL: '',
       headers: {},
     };
-  }
-
-  requestInterceptors() {
-    return this.client.interceptors.request.use(
-      (request: InternalAxiosRequestConfig) => {
-        if (typeof window === undefined) return request;
-
-        if (
-          request.headers.Authorization?.toString().split(' ')[1] === 'null'
-        ) {
-          const token = (sessionStorage as Storage).getItem('token');
-          request.headers.Authorization = `Bearer ${token}`;
-          return { ...request };
-        }
-
-        return request;
-      },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (error: any) => {
-        console.log('error', error);
-        Sentry.captureException(error);
-
-        return Promise.reject(error);
-      },
-    );
-  }
-
-  responseInterceptors() {
-    return this.client.interceptors.response.use(
-      (response: AxiosResponse) => {
-        return response;
-      },
-
-      (error) => {
-        if (error.response.data.statusCode === 401) {
-          // TODO: display modal here
-        } else if (error.response.data.statusCode >= 400) {
-          // TODO: remove log and add modal
-        }
-
-        const {
-          method,
-          url,
-          params,
-          data: requestData,
-          headers,
-        } = error.config ?? {};
-        Sentry.setContext('API Request Detail', {
-          method,
-          url,
-          params,
-          requestData,
-          headers,
-        });
-
-        if (error.response) {
-          const { data, status } = error.response;
-          Sentry.setContext('API Response Detail', {
-            status,
-            data,
-          });
-        }
-
-        Sentry.captureException(error);
-        return Promise.reject(error);
-      },
-    );
   }
 
   responseBody(response: AxiosResponse) {
