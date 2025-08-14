@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTheme } from 'styled-components';
 import { useRouter } from 'next/navigation';
 import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getEvents } from '@/apis/events';
@@ -15,6 +16,7 @@ import * as S from './page.styled';
 export default function Home() {
   const { push } = useRouter();
   const [upcoming, setUpcoming] = useState<EventDetails[]>([]);
+  const theme = useTheme();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -84,26 +86,33 @@ export default function Home() {
               </S.DescriptionParagraph>
             </S.DescriptionWrapper>
 
-            <S.EventList>
-              {upcoming.map((event) => (
-                <CEventItem
-                  title={event.title}
-                  date={getFormattedDate(event.startDateTime)}
-                  description={event.description}
-                  bgUrl={event.imageUrl}
-                  link={{
-                    text: 'Learn More -->',
-                    route: `/events/${event?.id}`,
-                  }}
-                  key={event.id}
-                  isPast={false}
-                />
-              ))}
-            </S.EventList>
+            {upcoming.length > 0 ? (
+              <S.EventList>
+                {upcoming.map((event) => (
+                  <CEventItem
+                    title={event.title}
+                    date={getFormattedDate(event.startDateTime)}
+                    description={event.description}
+                    bgUrl={event.imageUrl}
+                    link={{
+                      text: 'Learn More -->',
+                      route: `/events/${event?.id}`,
+                    }}
+                    key={event.id}
+                    isPast={false}
+                  />
+                ))}
+              </S.EventList>
+            ) : (
+              <></>
+            )}
 
             <S.ButtonContainer>
               <DefaultButton
                 onClick={() => push('/events')}
+                bgColor={theme.colors.cherry}
+                hoverColor={theme.colors.brown}
+                textColor={theme.colors.white}
                 btnText="View More"
               />
             </S.ButtonContainer>
