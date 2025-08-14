@@ -3,8 +3,26 @@ import * as S from './page.styled';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   btnText: string;
+  bgColor?: string;
+  hoverColor?: string;
+  textColor?: string;
 }
 
-export default function DefaultButton({ btnText, ...rest }: Props) {
-  return <S.Button {...rest}>{btnText}</S.Button>;
+export default function DefaultButton({
+  btnText,
+  bgColor,
+  hoverColor,
+  textColor,
+  ...rest
+}: Props) {
+  return (
+    <S.Button
+      $bgColor={bgColor}
+      $hoverColor={hoverColor}
+      $textColor={textColor}
+      {...rest}
+    >
+      {btnText}
+    </S.Button>
+  );
 }
