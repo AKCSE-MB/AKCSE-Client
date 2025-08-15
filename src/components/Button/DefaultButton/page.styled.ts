@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const Button = styled.button<{
+  $bgColor?: string;
+  $hoverColor?: string;
+  $textColor?: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,16 +12,18 @@ export const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.5px;
-  background-color: ${({ theme }) => theme.colors.tangerin};
+  background-color: ${({ $bgColor, theme }) =>
+    $bgColor || theme.colors.tangerin};
   width: 171px;
   height: 44px;
-  color: black;
+  color: ${({ $textColor, theme }) => $textColor || theme.colors.black};
   font-weight: 450;
   border: none;
   border-radius: 10px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.orange};
+    background-color: ${({ $hoverColor, theme }) =>
+      $hoverColor || theme.colors.orange};
   }
 
   &:enabled:active {
