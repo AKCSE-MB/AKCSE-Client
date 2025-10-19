@@ -1,10 +1,7 @@
 import * as S from './page.styled';
-import useUser from '@/hooks/useUser';
 import CHeader from '@/components/c-header';
 import { useSideBarStore } from '@/store/useSideBarStore';
 import ARROW from '@/assets/common/logo/right_arrow.svg';
-import LoginButton from '@/components/Button/loginButton';
-import useKakaoLogin from '@/hooks/useKakaoLogin';
 
 interface Props {
   items: {
@@ -14,9 +11,7 @@ interface Props {
 }
 
 export default function CSideMenu({ items }: Props) {
-  const { isLoggedIn } = useUser();
   const { isSideBarOpen, closeSideBar } = useSideBarStore();
-  const { loginHandler } = useKakaoLogin();
 
   return (
     <S.Container open={isSideBarOpen}>
@@ -40,11 +35,6 @@ export default function CSideMenu({ items }: Props) {
             </S.MenuItem>
           );
         })}
-        {!isLoggedIn && (
-          <S.MenuItem style={{ marginTop: '90px' }}> 
-            <LoginButton onClick={loginHandler}/>
-          </S.MenuItem>
-        )}
       </S.Menu>
     </S.Container>
   );
