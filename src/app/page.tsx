@@ -42,6 +42,10 @@ export default function Home() {
           </S.OverlayTextContainer>
         </S.HeroContainer>
 
+        <div className="bg-amber-400 text-5xl font-bold text-red-50 underline">
+          Hello World!
+        </div>
+
         <S.DescriptionContainer>
           <S.DescriptionHeader>What is AKCSE?</S.DescriptionHeader>
 
