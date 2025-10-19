@@ -4,7 +4,6 @@ import { ReactNode, useEffect, useState } from 'react';
 import CLOSE from '@/assets/common/logo/close.svg';
 import CAUTION from '@/assets/common/logo/caution.svg';
 import * as S from './page.styled';
-import LoginButton from '@/components/Button/loginButton';
 import DefaultButton from '@/components/Button/DefaultButton';
 
 export interface DialogModalProps {
@@ -15,7 +14,6 @@ export interface DialogModalProps {
   handleClose?: (...arg: any[]) => any;
   handleConfirm?: (...arg: any[]) => any;
   needClose?: boolean;
-  isLogin?: boolean;
 }
 
 export default function DialogModal({
@@ -26,7 +24,6 @@ export default function DialogModal({
   handleClose,
   handleConfirm,
   needClose,
-  isLogin,
 }: DialogModalProps) {
   const [animate, setAnimate] = useState(false);
   const onClose = () => {
@@ -87,11 +84,7 @@ export default function DialogModal({
         </S.TextContainer>
 
         <S.ButtonContainer>
-          {isLogin ? (
-            <LoginButton onClick={onConfirm} />
-          ) : (
-            <DefaultButton onClick={onConfirm} btnText="OK" />
-          )}
+          <DefaultButton onClick={onConfirm} btnText="OK" />
         </S.ButtonContainer>
       </S.Container>
     </S.Overlay>

@@ -6,7 +6,6 @@ import { theme } from '@/styles/theme';
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import ReactQueryProvider from '../react-query/ReactQueryProvider';
-import LoginSDK from '@/components/LoginSDK';
 import GlobalModal from '@/components/Modal/GlobalModal';
 import { useAxiosInterceptor } from '@/hooks/useAxiosInterceptor';
 
@@ -22,7 +21,6 @@ export default function StyledComponentsWrapper({
       <ReactQueryProvider>
         <GlobalStyle />
         <GlobalModal />
-        <LoginSDK />
         <MobileLayout>{children}</MobileLayout>
       </ReactQueryProvider>
     </ThemeProvider>
