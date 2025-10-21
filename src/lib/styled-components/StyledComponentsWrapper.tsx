@@ -1,6 +1,5 @@
 'use client';
 
-import MobileLayout from '@/components/layout/mobile-layout';
 import { GlobalStyle } from '@/styles/GlobalStyle';
 import { theme } from '@/styles/theme';
 import { ReactNode } from 'react';
@@ -21,7 +20,7 @@ export default function StyledComponentsWrapper({
       <ReactQueryProvider>
         <GlobalStyle />
         <GlobalModal />
-        <MobileLayout>{children}</MobileLayout>
+        {children}
       </ReactQueryProvider>
     </ThemeProvider>
   );
