@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import ReactQueryProvider from '../react-query/ReactQueryProvider';
 import GlobalModal from '@/components/Modal/GlobalModal';
 import { useAxiosInterceptor } from '@/hooks/useAxiosInterceptor';
+import MainLayout from '@/components/layout/main-layout';
 
 export default function StyledComponentsWrapper({
   children,
@@ -20,7 +21,7 @@ export default function StyledComponentsWrapper({
       <ReactQueryProvider>
         <GlobalStyle />
         <GlobalModal />
-        {children}
+        <MainLayout>{children}</MainLayout>
       </ReactQueryProvider>
     </ThemeProvider>
   );
