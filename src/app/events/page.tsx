@@ -4,9 +4,8 @@ import * as S from './page.styled';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
-import CFooter from '@/components/c-footer';
 import { useRouter } from 'next/navigation';
-import eventSource from '@/assets/events.json';
+import eventSource from '@/assets/data/events.json';
 
 export default function Events() {
   const { push } = useRouter();
@@ -61,8 +60,6 @@ export default function Events() {
           />
         </S.EventList>
       </S.PastEvents>
-
-      <CFooter />
     </S.MainContainer>
   );
 }

@@ -7,7 +7,7 @@ import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
 import LOGO from '@/assets/common/logo/akcse_logo.svg';
 import * as S from './page.styled';
-import eventSource from '@/assets/events.json';
+import eventSource from '@/assets/data/events.json';
 
 export default function Home() {
   const { push } = useRouter();
