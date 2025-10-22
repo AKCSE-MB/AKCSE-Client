@@ -7,7 +7,6 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.cherry};
   position: relative;
   width: 100%;
-  max-width: 390px;
   bottom: 0;
   z-index: 1;
 
