@@ -4,7 +4,7 @@ import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persist
 import { QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
-import React, { useState } from 'react';
+import React from 'react';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,27 +19,15 @@ export const queryClient = new QueryClient({
 });
 
 function ReactQueryProvider({ children }: React.PropsWithChildren) {
-  const [client] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 3 * 60 * 1000,
-            retry: 2,
-            cacheTime: 3 * 60 * 1000,
-            refetchOnWindowFocus: false,
-            retryDelay: 1000,
-          },
-        },
-      })
-  );
-
   const persister = createSyncStoragePersister({
     storage: typeof window !== 'undefined' ? window.localStorage : undefined,
   });
 
   return (
-    <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
+    <PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{ persister }}
+    >
       {children}
       <ReactQueryDevtools initialIsOpen={false} />
     </PersistQueryClientProvider>
