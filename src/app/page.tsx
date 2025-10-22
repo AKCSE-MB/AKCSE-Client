@@ -1,31 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useTheme } from 'styled-components';
 import { useRouter } from 'next/navigation';
-import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
-import { getEvents } from '@/apis/events';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
 import LOGO from '@/assets/common/logo/akcse_logo.svg';
 import * as S from './page.styled';
+import eventSource from '@/assets/events.json';
 
 export default function Home() {
   const { push } = useRouter();
-  const [upcoming, setUpcoming] = useState<EventDetails[]>([]);
   const theme = useTheme();
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const events = await getEvents();
-      if (events) {
-        setUpcoming(events.upcoming);
-      }
-    };
-
-    fetchEvents();
-  }, []);
+  const events = eventSource.events;
 
   return (
     <S.PageWrapper>
@@ -82,14 +69,14 @@ export default function Home() {
               </S.DescriptionParagraph>
             </S.DescriptionWrapper>
 
-            {upcoming.length > 0 ? (
+            {events.length > 0 ? (
               <S.EventList>
-                {upcoming.map((event) => (
+                {events.map((event) => (
                   <CEventItem
                     title={event.title}
-                    date={getFormattedDate(event.startDateTime)}
+                    date={getFormattedDate(new Date(event.startDateTime))}
                     description={event.description}
-                    bgUrl={event.imageUrl}
+                    bgUrl={event.image}
                     link={{
                       text: 'Learn More -->',
                       route: `/events/${event?.id}`,

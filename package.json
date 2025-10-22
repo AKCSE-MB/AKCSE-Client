@@ -12,7 +12,6 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "dependencies": {
-    "@dev-taeho/akcse_mb": "0.1.6",
     "@sentry/nextjs": "^8",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.14",

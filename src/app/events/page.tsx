@@ -1,31 +1,17 @@
 'use client';
 
 import * as S from './page.styled';
-import { useEffect, useState } from 'react';
-import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
-import { getEvents } from '@/apis/events';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
 import CFooter from '@/components/c-footer';
 import { useRouter } from 'next/navigation';
+import eventSource from '@/assets/events.json';
 
 export default function Events() {
-  const [upcoming, setUpcoming] = useState<EventDetails[]>([]);
-  const [past, setPast] = useState<EventDetails[]>([]);
   const { push } = useRouter();
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const events = await getEvents();
-      if (events) {
-        setUpcoming(events.upcoming);
-        setPast(events.past);
-      }
-    };
-
-    fetchEvents();
-  }, []);
+  const upcoming = eventSource.events;
+  const past = eventSource.events;
 
   return (
     <S.MainContainer>
@@ -36,9 +22,9 @@ export default function Events() {
           {upcoming.map((event) => (
             <CEventItem
               title={event.title}
-              date={getFormattedDate(event.startDateTime)}
+              date={getFormattedDate(new Date(event.startDateTime))}
               description={event.description}
-              bgUrl={event.imageUrl}
+              bgUrl={event.image}
               link={{
                 text: 'Learn More -->',
                 route: `/events/${event?.id}`,
@@ -57,9 +43,9 @@ export default function Events() {
           {past.slice(0, 3).map((event) => (
             <CEventItem
               title={event?.title}
-              date={getFormattedDate(event?.startDateTime)}
+              date={getFormattedDate(new Date(event?.startDateTime))}
               description={event?.description}
-              bgUrl={event?.imageUrl}
+              bgUrl={event?.image}
               link={{
                 text: 'Learn More -->',
                 route: `/events/${event?.id}`,
