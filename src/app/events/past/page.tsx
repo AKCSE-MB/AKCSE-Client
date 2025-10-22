@@ -1,7 +1,6 @@
 'use client';
 
 import * as S from './page.styled';
-import CHeader from '@/components/c-header';
 import { useEffect, useState } from 'react';
 import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getPastEvents } from '@/apis/events';
@@ -25,8 +24,6 @@ export default function Events() {
 
   return (
     <S.MainContainer>
-      <CHeader />
-
       <S.PastEvents>
         <S.Title>Past Events</S.Title>
 

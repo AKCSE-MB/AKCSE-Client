@@ -1,7 +1,6 @@
 'use client';
 
 import * as S from './page.styled';
-import CHeader from '@/components/c-header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { getFormattedDate, getFormattedTime } from '@/utils/formatUtil';
@@ -27,8 +26,6 @@ export default function EventInfo() {
 
   return (
     <S.Container>
-      <CHeader />
-
       {event && (
         <S.EventWrapper>
           <S.Title>{event.title}</S.Title>
