@@ -6,8 +6,6 @@ import { useRouter } from 'next/navigation';
 import { EventDetails } from '@dev-taeho/akcse_mb/lib/domain/event/dto/event.dto';
 import { getEvents } from '@/apis/events';
 import { getFormattedDate } from '@/utils/formatUtil';
-import CHeader from '@/components/c-header';
-import CFooter from '@/components/c-footer';
 import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
 import LOGO from '@/assets/common/logo/akcse_logo.svg';
@@ -32,7 +30,6 @@ export default function Home() {
   return (
     <S.PageWrapper>
       <S.MainContent>
-        <CHeader />
         <S.HeroContainer>
           <S.ImageItem $bgUrl="https://akcsebucket.s3.ca-central-1.amazonaws.com/AKCSE/HomePage/Header+image.png" />
           <S.OverlayTextContainer>
@@ -41,11 +38,6 @@ export default function Home() {
             </S.OverlayText>
           </S.OverlayTextContainer>
         </S.HeroContainer>
-
-        <div className="bg-amber-400 text-5xl font-bold text-red-50 underline">
-          Hello World!
-        </div>
-
         <S.DescriptionContainer>
           <S.DescriptionHeader>What is AKCSE?</S.DescriptionHeader>
 
@@ -123,7 +115,6 @@ export default function Home() {
           </S.EventsWrapper>
         </S.EventsContainer>
       </S.MainContent>
-      <CFooter />
     </S.PageWrapper>
   );
 }
