@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
-    ${reset};
 
     * {
         font-family: var(--Pretendard-Variable) !important;
