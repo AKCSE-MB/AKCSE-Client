@@ -1,4 +1,5 @@
 import executives from '@/assets/data/team.json';
+import ExecutiveCard from '@/components/c-executive-card';
 
 export default function ExecutiveList() {
   return (
@@ -8,17 +9,8 @@ export default function ExecutiveList() {
       </h1>
 
       <div className="mx-auto grid max-w-[1050px] grid-cols-1 gap-6 md:grid-cols-3">
-        {executives.map((person) => (
-          <div
-            key={person.id}
-            className="mx-auto h-[370px] w-full md:w-[318px]"
-          >
-            <img
-              src={person.image}
-              alt={person.id}
-              className="h-full w-full rounded-[24px] object-cover shadow-[0_0_10px_rgba(37,37,37,0.15)]"
-            />
-          </div>
+        {executives.map((executive) => (
+          <ExecutiveCard key={executive.id} {...executive} />
         ))}
       </div>
     </div>
