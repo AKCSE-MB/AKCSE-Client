@@ -1,6 +1,6 @@
 'use client';
 
-import * as S from './page.styled';
+import * as S from './style';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
@@ -13,11 +13,11 @@ export default function Events() {
   const past = eventSource.events;
 
   return (
-    <S.MainContainer>
-      <S.UpcomingEvents>
-        <S.Title>Upcoming Events</S.Title>
+    <div className="mx-auto max-w-[1050px] px-4 py-10">
+      <div>
+        <div className={S.titleStyle}>Upcoming Events</div>
 
-        <S.EventList>
+        <div className={S.eventContainerStyles}>
           {upcoming.map((event) => (
             <CEventItem
               title={event.title}
@@ -32,13 +32,12 @@ export default function Events() {
               isPast={false}
             ></CEventItem>
           ))}
-        </S.EventList>
-      </S.UpcomingEvents>
+        </div>
+      </div>
 
-      <S.PastEvents>
-        <S.Title>Past Events</S.Title>
-
-        <S.EventList>
+      <div className="py-16">
+        <div className={S.titleStyle}>Past Events</div>
+        <div className={S.eventContainerStyles}>
           {past.slice(0, 3).map((event) => (
             <CEventItem
               title={event?.title}
@@ -58,8 +57,8 @@ export default function Events() {
             onClick={() => push('/events/past')}
             btnText="View More"
           />
-        </S.EventList>
-      </S.PastEvents>
-    </S.MainContainer>
+        </div>
+      </div>
+    </div>
   );
 }
