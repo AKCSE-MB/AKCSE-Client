@@ -1,6 +1,6 @@
 'use client';
 
-import * as S from './page.styled';
+import * as S from './style';
 import { getFormattedDate } from '@/utils/formatUtil';
 import CEventItem from '@/components/c-event-item';
 import eventSource from '@/assets/data/events.json';
@@ -9,11 +9,10 @@ export default function Events() {
   const pastEvents = eventSource.events;
 
   return (
-    <S.MainContainer>
-      <S.PastEvents>
-        <S.Title>Past Events</S.Title>
-
-        <S.EventList>
+    <div className="mx-auto max-w-[1050px] px-4 py-10">
+      <div>
+        <div className={S.titleStyle}> Past Events</div>
+        <div className={S.eventContainerStyles}>
           {pastEvents.map((event) => (
             <CEventItem
               title={event.title}
@@ -28,8 +27,8 @@ export default function Events() {
               isPast={true}
             />
           ))}
-        </S.EventList>
-      </S.PastEvents>
-    </S.MainContainer>
+        </div>
+      </div>
+    </div>
   );
 }
