@@ -33,7 +33,6 @@ export const OverlayTextContainer = styled.div`
   position: absolute;
   width: 318px;
   height: 232px;
-  margin-left: 24px;
   margin-top: 320px;
 `;
 
@@ -47,9 +46,16 @@ export const OverlayText = styled.h1`
 `;
 
 export const DescriptionContainer = styled.div`
-  padding-top: 48px;
-  width: 342px;
-  height: 706px;
+  padding: 50px 0;
+  max-width: 450px;
+
+  @media (min-width: 600px) {
+    max-width: 700px;
+  }
+
+  @media (min-width: 900px) {
+    max-width: 1050px;
+  }
 `;
 
 export const DescriptionHeader = styled.h1`
@@ -58,16 +64,13 @@ export const DescriptionHeader = styled.h1`
   text-align: left;
   font-size: 36px;
   padding-bottom: 24px;
-  width: 342px;
 `;
 
 export const DescriptionWrapper = styled.div`
-  width: 342px;
   color: ${({ theme }) => theme.textColor};
   font-size: 16px;
   text-align: left;
   line-height: 24px;
-  width: 342px;
 `;
 
 export const DescriptionParagraph = styled.p`
@@ -85,13 +88,7 @@ export const Link = styled.a`
   }
 `;
 
-export const ImageContainer = styled.div`
-  padding-top: 24px;
-  justify-content: center;
-  width: 342px;
-  height: 160px;
-  border-radius: 24px;
-`;
+export const ImageContainer = styled.div``;
 
 export const EventsContainer = styled.div`
   padding-top: 48px;
@@ -101,8 +98,16 @@ export const EventsContainer = styled.div`
 `;
 
 export const EventsWrapper = styled.div`
-  width: 342px;
-  margin-left: 24px;
+  max-width: 450px;
+  margin: 0 auto;
+
+  @media (min-width: 600px) {
+    max-width: 700px;
+  }
+
+  @media (min-width: 900px) {
+    max-width: 1050px;
+  }
 `;
 
 export const EventsHeader = styled.h1`
@@ -111,14 +116,17 @@ export const EventsHeader = styled.h1`
   text-align: left;
   font-size: 36px;
   padding-bottom: 24px;
-  width: 342px;
 `;
 
 export const EventList = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 24px;
   margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 `;
 
 export const ButtonContainer = styled.div`
