@@ -16,7 +16,7 @@ export const containerVariants = cva(
 );
 
 export const innerContainerStyles =
-  'relative w-full max-w-[1680px] mx-auto h-full px-6 flex items-center justify-end';
+  'relative w-full max-w-[1680px] mx-auto h-full px-6 flex items-center justify-end cursor-pointer';
 
 export const logoContainerStyles = 'fixed top-[25px] left-[24px] z-10';
 

@@ -2,6 +2,7 @@ import * as S from './style';
 import CHamburgerIcon from '@/components/c-hamburger-icon';
 import LOGO from '@/assets/common/logo/logo.svg';
 import { useSideBarStore } from '@/store/useSideBarStore';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   items: {
@@ -12,11 +13,12 @@ interface Props {
 
 export default function CHeader({ items }: Props) {
   const { isSideBarOpen, toggleSideBar } = useSideBarStore();
+  const { push } = useRouter();
 
   return (
     <div className={S.containerVariants({ shadow: !isSideBarOpen })}>
       <div className={S.innerContainerStyles}>
-        <div className={S.logoContainerStyles}>
+        <div onClick={() => push('/')} className={S.logoContainerStyles}>
           <LOGO />
         </div>
 
