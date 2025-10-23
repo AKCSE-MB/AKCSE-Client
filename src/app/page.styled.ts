@@ -31,18 +31,21 @@ export const ImageItem = styled.div<{ $bgUrl: string }>`
 
 export const OverlayTextContainer = styled.div`
   position: absolute;
-  width: 318px;
-  height: 232px;
-  margin-top: 320px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
 `;
 
 export const OverlayText = styled.h1`
-  font-weight: 600;
-  text-align: left;
-  font-size: 50px;
-  padding-bottom: 48px;
   color: ${({ theme }) => theme.colors.white};
+  font-size: clamp(24px, 4vw, 50px);
+  margin: 0;
   line-height: 58px;
+  font-weight: 600;
 `;
 
 export const DescriptionContainer = styled.div`
