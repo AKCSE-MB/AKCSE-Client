@@ -29,7 +29,6 @@ lerna-debug.log*
 
 # IDE - VSCode
 .vscode/*
-data/
 cache/
 .next
 

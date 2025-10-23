@@ -1,0 +1,53 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "신입생 OT (오리엔테이션)",
+        "startDateTime": "2025-03-10T10:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "새로운 학기를 맞이하며 신입생과 재학생이 함께하는 첫 만남의 자리입니다.",
+        "rsvpLink": "www.google.com"
+      },
+      {
+        "id": 2,
+        "title": "봄 MT (Membership Training)",
+        "startDateTime": "2025-04-05T09:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "팀워크를 다지고 친목을 쌓는 1박 2일의 즐거운 여행입니다.",
+        "rsvpLink": "www.google.com"
+      },
+      {
+        "id": 3,
+        "title": "Study Night",
+        "startDateTime": "2025-05-20T18:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "모여서 함께 공부하고 프로젝트 아이디어를 공유하는 야간 스터디 세션입니다.",
+        "rsvpLink": "www.google.com"
+      },
+      {
+        "id": 4,
+        "title": "Summer Hackathon",
+        "startDateTime": "2025-07-13T09:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "하루 동안 팀을 이루어 창의적인 아이디어를 구현하는 개발 대회입니다.",
+        "rsvpLink": "www.google.com"
+      },
+      {
+        "id": 5,
+        "title": "가을 세미나",
+        "startDateTime": "2025-09-25T14:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "다양한 분야의 발표와 토론을 통해 지식을 나누는 학술 세미나입니다.",
+        "rsvpLink": "www.google.com"
+      },
+      {
+        "id": 6,
+        "title": "송년회",
+        "startDateTime": "2025-12-20T19:00:00",
+        "image": "https://placehold.co/300x300",
+        "description": "한 해를 마무리하며 함께 추억을 돌아보고 새해를 맞이하는 자리입니다.",
+        "rsvpLink": "www.google.com"
+      }
+    ]
+  }
+  
