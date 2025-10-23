@@ -8,7 +8,7 @@ export const Container = styled.div<{ $isPast: boolean }>`
   box-shadow: 0 0 10px #25252526;
 
   @media screen and (max-width: 768px) {
-    width: calc(100vw - 72px);
+    width: calc(100vw - 40px);
   }
 `;
 
@@ -22,8 +22,6 @@ export const ImageItem = styled.div<{ $bgUrl: string }>`
   width: 100%;
   height: 152px;
   background-image: url(${({ $bgUrl }) => $bgUrl});
-  //TODO: check
-  /* background-position: center; */
   background-size: cover;
   border-radius: 16px;
 `;
