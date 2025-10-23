@@ -50,15 +50,7 @@ export const OverlayText = styled.h1`
 
 export const DescriptionContainer = styled.div`
   padding: 50px 0;
-  max-width: 450px;
-
-  @media (min-width: 600px) {
-    max-width: 700px;
-  }
-
-  @media (min-width: 900px) {
-    max-width: 1050px;
-  }
+  max-width: clamp(300px, 90vw, 1050px);
 `;
 
 export const DescriptionHeader = styled.h1`
@@ -101,16 +93,8 @@ export const EventsContainer = styled.div`
 `;
 
 export const EventsWrapper = styled.div`
-  max-width: 450px;
   margin: 0 auto;
-
-  @media (min-width: 600px) {
-    max-width: 700px;
-  }
-
-  @media (min-width: 900px) {
-    max-width: 1050px;
-  }
+  max-width: clamp(300px, 90vw, 1050px);
 `;
 
 export const EventsHeader = styled.h1`
