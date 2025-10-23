@@ -19,7 +19,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     },
     {
       name: 'Our Team',
-      clickEvent: () => push('/events'),
+      clickEvent: () => push('/our-team'),
     },
     {
       name: 'Events',
