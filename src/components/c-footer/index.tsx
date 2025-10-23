@@ -10,7 +10,7 @@ export default function CFooter() {
   const navLinks = [
     { label: 'Home', clickEvent: () => router.push('/') },
     { label: 'Events', clickEvent: () => router.push('/events') },
-    { label: 'Resources', clickEvent: () => router.push('/') },
+    { label: 'Our Team', clickEvent: () => router.push('/our-team') },
   ];
 
   return (

@@ -26,8 +26,11 @@ export default function MainLayout({ children }: MainLayoutProps) {
       clickEvent: () => push('/events'),
     },
     {
-      name: 'Resources',
-      clickEvent: () => push('/'),
+      name: 'Join Us',
+      clickEvent: () =>
+        window.open(
+          'https://docs.google.com/forms/d/e/1FAIpQLSd2pIattHv1NxclVVHLMVRQD5TiqvuGJp1nAY_K5YCrBpLcvQ/viewform',
+        ),
     },
   ];
 
