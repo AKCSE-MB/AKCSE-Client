@@ -6,11 +6,11 @@ import CEventItem from '@/components/c-event-item';
 import DefaultButton from '@/components/Button/DefaultButton';
 import { useRouter } from 'next/navigation';
 import eventSource from '@/assets/data/events.json';
+import { classifyEvents } from '@/utils/event.utils';
 
 export default function Events() {
   const { push } = useRouter();
-  const upcoming = eventSource.events;
-  const past = eventSource.events;
+  const { upcoming, past } = classifyEvents(eventSource.events);
 
   return (
     <div className="mx-auto max-w-[1050px] px-4 py-10">

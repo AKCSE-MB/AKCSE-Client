@@ -5,8 +5,9 @@ import localFont from 'next/font/local';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'akcse-mb',
-  description: 'akcse mb code',
+  title: 'AKCSE MB',
+  description:
+    'AKCSE Manitoba 공식 페이지입니다. 다양한 활동과 행사를 확인해보세요.',
 };
 
 const mainFont = localFont({
