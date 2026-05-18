@@ -2,7 +2,6 @@ import StyledComponentsRegistry from '@/lib/registry';
 import StyledComponentsWrapper from '@/lib/styled-components/StyledComponentsWrapper';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'AKCSE MB',

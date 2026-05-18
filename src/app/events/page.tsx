@@ -1,23 +1,23 @@
 'use client';
 
-import * as S from './style';
-import { getFormattedDate } from '@/utils/formatUtil';
-import CEventItem from '@/components/c-event-item';
-import DefaultButton from '@/components/Button/DefaultButton';
-import { useRouter } from 'next/navigation';
 import eventSource from '@/assets/data/events.json';
+import DefaultButton from '@/components/Button/DefaultButton';
+import CEventItem from '@/components/c-event-item';
 import { classifyEvents } from '@/utils/event.utils';
+import { getFormattedDate } from '@/utils/formatUtil';
+import { useRouter } from 'next/navigation';
+import * as S from './page.styled';
 
 export default function Events() {
   const { push } = useRouter();
   const { upcoming, past } = classifyEvents(eventSource.events);
 
   return (
-    <div className="mx-auto max-w-[1050px] px-4 py-10">
-      <div>
-        <div className={S.titleStyle}>Upcoming Events</div>
+    <S.PageWrapper>
+      <S.Section>
+        <S.Title>Upcoming Events</S.Title>
 
-        <div className={S.eventContainerStyles}>
+        <S.EventGrid>
           {upcoming.map((event) => (
             <CEventItem
               title={event.title}
@@ -30,14 +30,14 @@ export default function Events() {
               }}
               key={event.id}
               isPast={false}
-            ></CEventItem>
+            />
           ))}
-        </div>
-      </div>
+        </S.EventGrid>
+      </S.Section>
 
-      <div className="py-16">
-        <div className={S.titleStyle}>Past Events</div>
-        <div className={S.eventContainerStyles}>
+      <S.PastSection>
+        <S.Title>Past Events</S.Title>
+        <S.EventGrid>
           {past.slice(0, 3).map((event) => (
             <CEventItem
               title={event?.title}
@@ -57,8 +57,8 @@ export default function Events() {
             onClick={() => push('/events/past')}
             btnText="View More"
           />
-        </div>
-      </div>
-    </div>
+        </S.EventGrid>
+      </S.PastSection>
+    </S.PageWrapper>
   );
 }
