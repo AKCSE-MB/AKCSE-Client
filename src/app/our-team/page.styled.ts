@@ -11,7 +11,7 @@ export const Title = styled.h1`
   text-align: left;
   font-size: 36px;
   font-weight: 600;
-  color: #39170e;
+  color: ${({ theme }) => theme.colors.primary.main};
 `;
 
 export const TeamGrid = styled.div`

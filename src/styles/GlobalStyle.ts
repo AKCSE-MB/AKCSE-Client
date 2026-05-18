@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         font-family: var(--Pretendard-Variable) !important;
         box-sizing: border-box;
-        color: ${({ theme }) => theme.colors.neutral.bg80};
+        color: ${({ theme }) => theme.colors.text.default};
     }
 
     body {

@@ -3,31 +3,34 @@ import { DefaultTheme } from 'styled-components';
 const colors = {
   white: '#ffffff',
   black: '#000000',
-  blue: '#385e9d',
-  light_blue: '#3365AB',
-  brown: '#662E0B',
-  orange: '#E68541',
-  gray: '8B8B8B',
-  dark_brown: '#4f2c1d',
-  yellow: '#FEE500',
-  tangerin: '#f3b744',
-  cherry: '#39170e',
+
   primary: {
-    y90: '#FF7002',
+    main: '#39170e',
+    dark: '#4f2c1d',
+    deep: '#662E0B',
+    bg: 'rgb(255, 251, 246)',
   },
+
   secondary: {
-    o90: '#C13001',
+    tangerin: '#f3b744',
+    orange: '#E68541',
+    blue: '#385e9d',
+    lightBlue: '#3365AB',
   },
-  light_orange: 'rgb(243, 183, 68)',
-  neutral: {
-    bg90: '#253238',
-    bg80: '#37474F',
+
+  text: {
+    default: '#37474F',
+    sub: '#70655e',
+  },
+
+  bg: {
+    light: '#f2f2f2',
   },
 };
 
 export const theme: DefaultTheme = {
   colors,
-  textColor: colors.neutral.bg80,
+  textColor: colors.text.default,
 };
 
 export type Theme = typeof theme;

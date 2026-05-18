@@ -52,7 +52,7 @@ export const Bar = styled.span<{ $active: boolean }>`
   height: 2.5px;
   border-radius: 2.5px;
   width: 100%;
-  background-color:  ${({ theme }) => theme.colors.dark_brown};;
+  background-color: ${({ theme }) => theme.colors.primary.dark};
   top: 0;
 
   transition: 0.2s;

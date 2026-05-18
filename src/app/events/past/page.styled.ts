@@ -11,7 +11,7 @@ export const Title = styled.div`
   font-weight: 600;
   font-size: 36px;
   margin-bottom: 33px;
-  color: #39170e;
+  color: ${({ theme }) => theme.colors.primary.main};
 `;
 
 export const EventGrid = styled.div`
