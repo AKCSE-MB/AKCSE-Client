@@ -1,4 +1,4 @@
-import * as S from './style';
+import * as S from './page.styled';
 import CHamburgerIcon from '@/components/c-hamburger-icon';
 import LOGO from '@/assets/common/logo/logo.svg';
 import { useSideBarStore } from '@/store/useSideBarStore';
@@ -16,28 +16,24 @@ export default function CHeader({ items }: Props) {
   const { push } = useRouter();
 
   return (
-    <div className={S.containerVariants({ shadow: !isSideBarOpen })}>
-      <div className={S.innerContainerStyles}>
-        <div onClick={() => push('/')} className={S.logoContainerStyles}>
+    <S.Container $shadow={!isSideBarOpen}>
+      <S.InnerContainer>
+        <S.LogoContainer onClick={() => push('/')}>
           <LOGO />
-        </div>
+        </S.LogoContainer>
 
-        <div className="mr-8 hidden items-center gap-8 md:flex">
+        <S.NavLinks>
           {items.map((item, i) => (
-            <button
-              key={i}
-              onClick={item.clickEvent}
-              className="text-cherry text-base font-medium transition-opacity hover:opacity-70"
-            >
+            <S.NavButton key={i} onClick={item.clickEvent}>
               {item.name}
-            </button>
+            </S.NavButton>
           ))}
-        </div>
+        </S.NavLinks>
 
-        <div className={S.hamburgerContainerStyles}>
+        <S.HamburgerContainer>
           <CHamburgerIcon active={isSideBarOpen} clickEvent={toggleSideBar} />
-        </div>
-      </div>
-    </div>
+        </S.HamburgerContainer>
+      </S.InnerContainer>
+    </S.Container>
   );
 }
