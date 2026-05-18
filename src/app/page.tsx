@@ -1,13 +1,13 @@
 'use client';
 
-import { useTheme } from 'styled-components';
-import { useRouter } from 'next/navigation';
-import { getFormattedDate } from '@/utils/formatUtil';
-import CEventItem from '@/components/c-event-item';
-import DefaultButton from '@/components/Button/DefaultButton';
 import LOGO from '@/assets/common/logo/akcse_logo.svg';
-import * as S from './page.styled';
 import eventSource from '@/assets/data/events.json';
+import DefaultButton from '@/components/Button/DefaultButton';
+import CEventItem from '@/components/c-event-item';
+import { getFormattedDate } from '@/utils/formatUtil';
+import { useRouter } from 'next/navigation';
+import { useTheme } from 'styled-components';
+import * as S from './page.styled';
 
 export default function Home() {
   const { push } = useRouter();
@@ -93,8 +93,8 @@ export default function Home() {
             <S.ButtonContainer>
               <DefaultButton
                 onClick={() => push('/events')}
-                bgColor={theme.colors.cherry}
-                hoverColor={theme.colors.brown}
+                bgColor={theme.colors.primary.main}
+                hoverColor={theme.colors.primary.deep}
                 textColor={theme.colors.white}
                 btnText="View More"
               />

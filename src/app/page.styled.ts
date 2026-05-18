@@ -54,7 +54,7 @@ export const DescriptionContainer = styled.div`
 `;
 
 export const DescriptionHeader = styled.h1`
-  color: ${({ theme }) => theme.colors.light_blue};
+  color: ${({ theme }) => theme.colors.secondary.lightBlue};
   font-weight: 600;
   text-align: left;
   font-size: 36px;
@@ -79,7 +79,7 @@ export const Link = styled.a`
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.light_blue};
+    color: ${({ theme }) => theme.colors.secondary.lightBlue};
   }
 `;
 
@@ -88,7 +88,7 @@ export const ImageContainer = styled.div``;
 export const EventsContainer = styled.div`
   padding-top: 48px;
   padding-bottom: 48px;
-  background-color: ${({ theme }) => theme.colors.tangerin};
+  background-color: ${({ theme }) => theme.colors.secondary.tangerin};
   width: 100%;
 `;
 
@@ -98,7 +98,7 @@ export const EventsWrapper = styled.div`
 `;
 
 export const EventsHeader = styled.h1`
-  color: ${({ theme }) => theme.colors.cherry};
+  color: ${({ theme }) => theme.colors.primary.main};
   font-weight: 600;
   text-align: left;
   font-size: 36px;

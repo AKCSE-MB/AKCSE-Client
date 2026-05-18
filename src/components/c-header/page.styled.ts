@@ -53,7 +53,7 @@ export const NavLinks = styled.div`
 `;
 
 export const NavButton = styled.button`
-  color: ${({ theme }) => theme.colors.cherry};
+  color: ${({ theme }) => theme.colors.primary.main};
   font-size: 16px;
   font-weight: 500;
   transition-property: opacity;
