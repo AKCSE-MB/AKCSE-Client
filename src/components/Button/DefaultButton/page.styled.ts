@@ -13,7 +13,7 @@ export const Button = styled.button<{
   line-height: 24px;
   letter-spacing: 0.5px;
   background-color: ${({ $bgColor, theme }) =>
-    $bgColor || theme.colors.tangerin};
+    $bgColor || theme.colors.secondary.tangerin};
   width: 171px;
   height: 44px;
   color: ${({ $textColor, theme }) => $textColor || theme.colors.black};
@@ -23,7 +23,7 @@ export const Button = styled.button<{
 
   &:hover {
     background-color: ${({ $hoverColor, theme }) =>
-      $hoverColor || theme.colors.orange};
+      $hoverColor || theme.colors.secondary.orange};
   }
 
   &:enabled:active {

@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-bottom: 15px;
   text-align: center;
   color: white;
-  background-color: ${({ theme }) => theme.colors.cherry};
+  background-color: ${({ theme }) => theme.colors.primary.main};
   position: relative;
   width: 100%;
   bottom: 0;

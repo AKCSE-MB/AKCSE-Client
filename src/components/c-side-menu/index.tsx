@@ -1,8 +1,8 @@
-import * as S from './style';
-import { useEffect } from 'react';
-import { useSideBarStore } from '@/store/useSideBarStore';
 import ARROW from '@/assets/common/logo/right_arrow.svg';
 import CHeader from '@/components/c-header';
+import { useSideBarStore } from '@/store/useSideBarStore';
+import { useEffect } from 'react';
+import * as S from './page.styled';
 
 interface Props {
   items: {
@@ -27,23 +27,22 @@ export default function CSideMenu({ items }: Props) {
   }, [isSideBarOpen]);
 
   return (
-    <div className={S.containerVariants({ open: isSideBarOpen })}>
+    <S.Container $open={isSideBarOpen}>
       <CHeader items={items} />
-      <div className="mx-auto mt-11 flex max-w-[1200px] flex-col space-y-11 px-6">
+      <S.MenuList>
         {items.map((item, i) => (
-          <button
+          <S.MenuItem
             key={i}
             onClick={() => {
               closeSideBar();
               item.clickEvent?.();
             }}
-            className="text-cherry flex h-[29px] items-center justify-between text-2xl font-medium"
           >
             {item.name}
             <ARROW />
-          </button>
+          </S.MenuItem>
         ))}
-      </div>
-    </div>
+      </S.MenuList>
+    </S.Container>
   );
 }
