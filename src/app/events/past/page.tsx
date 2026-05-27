@@ -1,10 +1,10 @@
 'use client';
 
-import * as S from './page.styled';
-import { getFormattedDate } from '@/utils/formatUtil';
-import CEventItem from '@/components/c-event-item';
 import eventSource from '@/assets/data/events.json';
+import CEventItem from '@/components/c-event-item';
 import { classifyEvents } from '@/utils/event.utils';
+import { getFormattedDate } from '@/utils/formatUtil';
+import * as S from './page.styled';
 
 export default function Events() {
   const { past } = classifyEvents(eventSource.events);

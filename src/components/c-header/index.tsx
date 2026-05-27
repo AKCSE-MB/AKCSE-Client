@@ -1,8 +1,8 @@
-import * as S from './page.styled';
-import CHamburgerIcon from '@/components/c-hamburger-icon';
 import LOGO from '@/assets/common/logo/logo.svg';
+import CHamburgerIcon from '@/components/c-hamburger-icon';
 import { useSideBarStore } from '@/store/useSideBarStore';
 import { useRouter } from 'next/navigation';
+import * as S from './page.styled';
 
 interface Props {
   items: {

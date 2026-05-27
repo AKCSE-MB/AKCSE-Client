@@ -1,8 +1,8 @@
-import * as S from './page.styled';
-import { useEffect } from 'react';
-import { useSideBarStore } from '@/store/useSideBarStore';
 import ARROW from '@/assets/common/logo/right_arrow.svg';
 import CHeader from '@/components/c-header';
+import { useSideBarStore } from '@/store/useSideBarStore';
+import { useEffect } from 'react';
+import * as S from './page.styled';
 
 interface Props {
   items: {
