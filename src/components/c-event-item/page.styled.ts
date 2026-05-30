@@ -5,7 +5,7 @@ export const Container = styled.div<{ $isPast: boolean }>`
   height: 370px;
   border-radius: 24px;
   background-color: ${({ $isPast, theme }) =>
-    $isPast ? theme.colors.bg.light : theme.colors.white};
+    $isPast ? theme.colors.surface : theme.colors.white};
   box-shadow: 0 0 10px #25252526;
 
   @media screen and (max-width: 768px) {
@@ -39,14 +39,14 @@ export const Content = styled.div`
 export const Title = styled.div`
   font-size: 24px;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
   line-height: 32px;
 `;
 
 export const Date = styled.div`
   margin-top: 6px;
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.text.sub};
+  color: ${({ theme }) => theme.colors.subtle};
   line-height: 24px;
 `;
 
@@ -60,13 +60,13 @@ export const Description = styled.div`
   -webkit-box-orient: vertical;
   line-height: 1.5;
   -webkit-line-clamp: 3;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
   text-align: left;
   line-height: 20px;
 `;
 
 export const LearnMoreLink = styled.div`
-  color: ${({ theme }) => theme.colors.secondary.lightBlue};
+  color: ${({ theme }) => theme.colors.blue};
   font-size: 14px;
   padding-top: 16px;
   cursor: pointer;

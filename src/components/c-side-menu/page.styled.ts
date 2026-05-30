@@ -38,7 +38,7 @@ export const MenuList = styled.div`
 `;
 
 export const MenuItem = styled.button`
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
   display: flex;
   height: 29px;
   align-items: center;

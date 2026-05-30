@@ -12,8 +12,7 @@ export const Button = styled.button<{
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.5px;
-  background-color: ${({ $bgColor, theme }) =>
-    $bgColor || theme.colors.secondary.tangerin};
+  background-color: ${({ $bgColor, theme }) => $bgColor || theme.colors.gold};
   width: 171px;
   height: 44px;
   color: ${({ $textColor, theme }) => $textColor || theme.colors.black};
@@ -23,7 +22,7 @@ export const Button = styled.button<{
 
   &:hover {
     background-color: ${({ $hoverColor, theme }) =>
-      $hoverColor || theme.colors.secondary.orange};
+      $hoverColor || theme.colors.goldDark};
   }
 
   &:enabled:active {

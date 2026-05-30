@@ -58,8 +58,8 @@ export const NavLinks = styled.div`
   }
 `;
 
-export const NavButton = styled.button`
-  color: ${({ theme }) => theme.colors.primary.main};
+export const NavButton = styled.button<{ $active?: boolean }>`
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 16px;
   font-weight: ${({ $active }) => ($active ? 500 : 300)};
   transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,14 +72,14 @@ export const NavButton = styled.button`
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: ${({ theme }) => theme.colors.secondary.tangerin};
+    background-color: ${({ theme }) => theme.colors.gold};
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.secondary.tangerin};
+    color: ${({ theme }) => theme.colors.gold};
     opacity: 1;
     &::after {
       transform: scaleX(1);
@@ -107,7 +107,7 @@ export const RightSection = styled.div`
 export const CtaButton = styled.button`
   display: none;
   padding: 16px 32px;
-  background-color: ${({ theme }) => theme.colors.primary.dark};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: white;
   font-size: 15px;
   font-weight: 500;

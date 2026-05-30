@@ -34,7 +34,7 @@ export default function CHeader({ items, ctaButton }: Props) {
             <S.NavButton
               key={i}
               onClick={item.clickEvent}
-              $active={item.path && pathname === item.path}
+              $active={!!item.path && pathname === item.path}
             >
               {item.name}
             </S.NavButton>

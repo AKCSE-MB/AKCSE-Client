@@ -11,7 +11,7 @@ export const Layout = styled.div`
   max-width: 390px;
   margin: 0 auto;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary.bg};
+  background-color: ${({ theme }) => theme.colors.surfaceVariant};
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
