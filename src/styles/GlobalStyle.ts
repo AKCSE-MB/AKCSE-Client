@@ -2,13 +2,21 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
-    * {
-        font-family: var(--Pretendard-Variable) !important;
+    *, *::before, *::after {
         box-sizing: border-box;
-        color: ${({ theme }) => theme.colors.text.default};
+        margin: 0;
+        padding: 0;
+        color: ${({ theme }) => theme.colors.onSurfaceVariant};
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
     }
 
     body {
+        font-family: var(--Pretendard-Variable), sans-serif;
+        background-color: ${({ theme }) => theme.colors.surface};
         overflow-x: hidden;
     }
 
