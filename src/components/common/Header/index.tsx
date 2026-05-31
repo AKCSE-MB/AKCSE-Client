@@ -1,9 +1,9 @@
 import LOGO from '@/assets/common/logo/akcse_logo_header.png';
-import CHamburgerIcon from '@/components/c-hamburger-icon';
+import CHamburgerIcon from '@/components/common/HamburgerIcon';
 import { useSideBarStore } from '@/store/useSideBarStore';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import * as S from './page.styled';
+import * as S from './index.styled';
 
 interface Props {
   items: {

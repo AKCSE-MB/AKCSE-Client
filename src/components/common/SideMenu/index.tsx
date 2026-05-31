@@ -1,8 +1,8 @@
 import ARROW from '@/assets/common/logo/right_arrow.svg';
-import CHeader from '@/components/c-header';
+import CHeader from '@/components/common/Header';
 import { useSideBarStore } from '@/store/useSideBarStore';
 import { useEffect } from 'react';
-import * as S from './page.styled';
+import * as S from './index.styled';
 
 interface Props {
   items: {

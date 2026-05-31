@@ -1,10 +1,10 @@
 'use client';
 
-import * as S from './page.styled';
-import { useParams } from 'next/navigation';
-import { getFormattedDate, getFormattedTime } from '@/utils/formatUtil';
-import DefaultButton from '@/components/Button/DefaultButton';
 import eventSource from '@/assets/data/events.json';
+import DefaultButton from '@/components/common/Button';
+import { getFormattedDate, getFormattedTime } from '@/utils/formatUtil';
+import { useParams } from 'next/navigation';
+import * as S from './page.styled';
 
 export default function EventInfo() {
   const { id } = useParams();

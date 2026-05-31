@@ -1,8 +1,8 @@
 'use client';
 
 import eventSource from '@/assets/data/events.json';
-import DefaultButton from '@/components/Button/DefaultButton';
-import CEventItem from '@/components/c-event-item';
+import DefaultButton from '@/components/common/Button';
+import CEventItem from '@/components/common/EventCard';
 import { classifyEvents } from '@/utils/event.utils';
 import { getFormattedDate } from '@/utils/formatUtil';
 import { useRouter } from 'next/navigation';
@@ -14,51 +14,53 @@ export default function Events() {
 
   return (
     <S.PageWrapper>
-      <S.Section>
-        <S.Title>Upcoming Events</S.Title>
+      <S.Container>
+        <S.Section>
+          <S.Title>Upcoming Events</S.Title>
 
-        <S.EventGrid>
-          {upcoming.map((event) => (
-            <CEventItem
-              title={event.title}
-              date={getFormattedDate(new Date(event.startDateTime))}
-              description={event.description}
-              bgUrl={event.image}
-              link={{
-                text: 'Learn More -->',
-                route: `/events/${event?.id}`,
-              }}
-              key={event.id}
-              isPast={false}
+          <S.EventGrid>
+            {upcoming.map((event) => (
+              <CEventItem
+                title={event.title}
+                date={getFormattedDate(new Date(event.startDateTime))}
+                description={event.description}
+                bgUrl={event.image}
+                link={{
+                  text: 'Learn More -->',
+                  route: `/events/${event?.id}`,
+                }}
+                key={event.id}
+                isPast={false}
+              />
+            ))}
+          </S.EventGrid>
+        </S.Section>
+
+        <S.PastSection>
+          <S.Title>Past Events</S.Title>
+          <S.EventGrid>
+            {past.slice(0, 3).map((event) => (
+              <CEventItem
+                title={event?.title}
+                date={getFormattedDate(new Date(event?.startDateTime))}
+                description={event?.description}
+                bgUrl={event?.image}
+                link={{
+                  text: 'Learn More -->',
+                  route: `/events/${event?.id}`,
+                }}
+                key={event.id}
+                isPast={true}
+              />
+            ))}
+
+            <DefaultButton
+              onClick={() => push('/events/past')}
+              btnText="View More"
             />
-          ))}
-        </S.EventGrid>
-      </S.Section>
-
-      <S.PastSection>
-        <S.Title>Past Events</S.Title>
-        <S.EventGrid>
-          {past.slice(0, 3).map((event) => (
-            <CEventItem
-              title={event?.title}
-              date={getFormattedDate(new Date(event?.startDateTime))}
-              description={event?.description}
-              bgUrl={event?.image}
-              link={{
-                text: 'Learn More -->',
-                route: `/events/${event?.id}`,
-              }}
-              key={event.id}
-              isPast={true}
-            />
-          ))}
-
-          <DefaultButton
-            onClick={() => push('/events/past')}
-            btnText="View More"
-          />
-        </S.EventGrid>
-      </S.PastSection>
+          </S.EventGrid>
+        </S.PastSection>
+      </S.Container>
     </S.PageWrapper>
   );
 }

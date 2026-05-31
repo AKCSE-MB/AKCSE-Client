@@ -1,7 +1,7 @@
 import INSTAGRAM from '@/assets/common/sns/instagram.svg';
 import KAKAOTALK from '@/assets/common/sns/kakaotalk.svg';
 import LINKTREE from '@/assets/common/sns/linkTree.svg';
-import * as S from './page.styled';
+import * as S from './index.styled';
 
 export default function CFooter() {
   return (

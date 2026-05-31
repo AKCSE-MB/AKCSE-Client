@@ -1,6 +1,6 @@
-import * as S from './page.styled';
-import CSideMenu from '@/components/c-side-menu';
+import CSideMenu from '@/components/common/SideMenu';
 import { useRouter } from 'next/navigation';
+import * as S from './index.styled';
 
 interface Props {
   children: React.ReactNode;

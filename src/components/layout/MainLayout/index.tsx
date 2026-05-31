@@ -1,8 +1,8 @@
 'use client';
 
-import CFooter from '@/components/c-footer';
-import CHeader from '@/components/c-header';
-import CSideMenu from '@/components/c-side-menu';
+import CFooter from '@/components/common/Footer';
+import CHeader from '@/components/common/Header';
+import CSideMenu from '@/components/common/SideMenu';
 import { useRouter } from 'next/navigation';
 
 interface MainLayoutProps {

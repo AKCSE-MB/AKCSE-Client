@@ -1,27 +1,44 @@
 [
-    {
-      "id": "0",
-      "image": "/assets/team/team0.png"
-    },
-    {
-      "id": "1",
-      "image": "/assets/team/team1.png"
-    },
-    {
-      "id": "2",
-      "image": "/assets/team/team2.png"
-    },
-    {
-      "id": "3",
-      "image": "/assets/team/team3.png"
-    },
-    {
-      "id": "4",
-      "image": "/assets/team/team4.png"
-    },
-    {
-        "id": "5",
-        "image": "/assets/team/team5.png"
-    }
+  {
+    "id": "0",
+    "image": "/assets/team/team0.png",
+    "name": "Jun-su Park",
+    "role": "President",
+    "bio": "Mechanical Engineering Senior with a focus on sustainable propulsion systems."
+  },
+  {
+    "id": "1",
+    "image": "/assets/team/team1.png",
+    "name": "So-hee Lee",
+    "role": "Internal Director",
+    "bio": "Biosystems Engineering PhD candidate researching microbial soil filtration."
+  },
+  {
+    "id": "2",
+    "image": "/assets/team/team2.png",
+    "name": "Min-hyuk Choi",
+    "role": "Finance Chair",
+    "bio": "Computer Science major specializing in fintech and secure ledger technologies."
+  },
+  {
+    "id": "3",
+    "image": "/assets/team/team3.png",
+    "name": "Ji-won Kim",
+    "role": "Research Lead",
+    "bio": "Civil Engineering graduate student focusing on smart city infrastructure."
+  },
+  {
+    "id": "4",
+    "image": "/assets/team/team4.png",
+    "name": "Hyun-woo Shin",
+    "role": "Events Director",
+    "bio": "Industrial Engineering student passionate about community building and event management."
+  },
+  {
+    "id": "5",
+    "image": "/assets/team/team5.png",
+    "name": "Ji-yeon Oh",
+    "role": "Communications Lead",
+    "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
+  }
 ]
-  

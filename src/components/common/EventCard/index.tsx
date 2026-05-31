@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import * as S from './page.styled';
+import * as S from './index.styled';
 
 interface Props {
   title: string;
