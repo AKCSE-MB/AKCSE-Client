@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { ReactNode, useEffect, useState } from 'react';
-import CLOSE from '@/assets/common/logo/close.svg';
 import CAUTION from '@/assets/common/logo/caution.svg';
-import * as S from './page.styled';
-import DefaultButton from '@/components/Button/DefaultButton';
+import CLOSE from '@/assets/common/logo/close.svg';
+import DefaultButton from '@/components/common/Button';
+import { ReactNode, useEffect, useState } from 'react';
+import * as S from './index.styled';
 
 export interface DialogModalProps {
   title?: string;

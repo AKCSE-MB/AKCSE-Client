@@ -6,7 +6,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-size: 36px;
   padding-top: 44px;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const EventWrapper = styled.div`
@@ -14,11 +14,11 @@ export const EventWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
   padding-bottom: 80px;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const EventDurationContainer = styled.div`
-  color: ${({ theme }) => theme.colors.text.sub};
+  color: ${({ theme }) => theme.colors.subtle};
   font-size: 16px;
   padding-top: 12px;
 `;
@@ -34,14 +34,14 @@ export const EventContainer = styled.div``;
 
 export const LocationAndDate = styled.p`
   font-size: large;
-  color: ${({ theme }) => theme.colors.primary.dark};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const EventDescription = styled.p`
   padding-top: 24px;
   line-height: 20px;
   text-align: left;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const EventFee = styled.p`
@@ -55,7 +55,7 @@ export const EventRSVPContainer = styled.div`
 export const EventRSVP = styled.a`
   &:hover {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.secondary.blue};
+    color: ${({ theme }) => theme.colors.blue};
     cursor: pointer;
   }
 `;
@@ -69,5 +69,5 @@ export const LoadingMsgContainer = styled.div`
 export const LoadingMsg = styled.h1`
   font-weight: bold;
   font-size: x-large;
-  color: ${({ theme }) => theme.colors.primary.dark};
+  color: ${({ theme }) => theme.colors.primary};
 `;

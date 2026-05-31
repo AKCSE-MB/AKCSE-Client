@@ -1,6 +1,7 @@
 import StyledComponentsRegistry from '@/lib/registry';
 import StyledComponentsWrapper from '@/lib/styled-components/StyledComponentsWrapper';
 import { Metadata } from 'next';
+import { Outfit } from 'next/font/google';
 import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
@@ -16,6 +17,13 @@ const mainFont = localFont({
   weight: '45 920',
 });
 
+const outfitFont = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  weight: ['400', '600', '700', '800'],
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +37,10 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </head>
-      <body className={`${mainFont.variable}`} suppressHydrationWarning>
+      <body
+        className={`${mainFont.variable} ${outfitFont.variable}`}
+        suppressHydrationWarning
+      >
         <StyledComponentsRegistry>
           <StyledComponentsWrapper>{children}</StyledComponentsWrapper>
         </StyledComponentsRegistry>
