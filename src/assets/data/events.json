@@ -2,51 +2,121 @@
   "events": [
     {
       "id": 1,
-      "title": "신입생 OT (오리엔테이션)",
-      "startDateTime": "2025-03-10T10:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "새로운 학기를 맞이하며 신입생과 재학생이 함께하는 첫 만남의 자리입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "Summer Networking Night 2026",
+      "startDateTime": "2026-06-14T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "A welcome-back mixer for returning members and first-years entering STEM at UofM. Light refreshments provided.",
+      "rsvpLink": "#",
+      "location": "EITC, Room 204",
+      "timeDisplay": "6:00 – 9:00 PM",
+      "tags": ["Seminar"],
+      "featuredTags": ["Featured"],
+      "statusBadge": "open"
     },
     {
       "id": 2,
-      "title": "봄 MT (Membership Training)",
-      "startDateTime": "2025-04-05T09:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "팀워크를 다지고 친목을 쌓는 1박 2일의 즐거운 여행입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "Resume & LinkedIn Clinic",
+      "startDateTime": "2026-07-08T17:30:00",
+      "image": "https://placehold.co/800x500",
+      "description": "1:1 reviews with industry mentors from Manitoba Hydro, Boeing Canada and Price Industries. Bring a draft.",
+      "rsvpLink": "#",
+      "location": "Fletcher Argue 219",
+      "timeDisplay": "5:30 – 8:00 PM",
+      "tags": ["Workshop"],
+      "featuredTags": [],
+      "statusBadge": "open"
     },
     {
       "id": 3,
-      "title": "Study Night",
-      "startDateTime": "2025-05-20T18:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "모여서 함께 공부하고 프로젝트 아이디어를 공유하는 야간 스터디 세션입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "CKC 2026 — Canada Korea Conference",
+      "startDateTime": "2026-08-21T09:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Annual national conference. Travel grants available for UofM delegates. Submit your abstract by Jul 25.",
+      "rsvpLink": "#",
+      "location": "In-person, Toronto",
+      "dateDisplay": "Aug 21 – 23, 2026",
+      "deadline": "Jul 25, 2026",
+      "tags": ["Conference"],
+      "featuredTags": ["National"],
+      "statusBadge": "early-bird"
     },
     {
       "id": 4,
-      "title": "Summer Hackathon",
-      "startDateTime": "2025-07-13T09:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "하루 동안 팀을 이루어 창의적인 아이디어를 구현하는 개발 대회입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "End-of-Summer BBQ at Assiniboine Park",
+      "startDateTime": "2026-08-30T12:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Members + family welcome. Korean BBQ & lawn games. RSVP required by Aug 25 for headcount.",
+      "rsvpLink": "#",
+      "location": "Lyric Theatre Field",
+      "timeDisplay": "12:00 – 4:00 PM",
+      "tags": ["Social"],
+      "featuredTags": [],
+      "statusBadge": "open"
     },
     {
       "id": 5,
-      "title": "가을 세미나",
-      "startDateTime": "2025-09-25T14:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "다양한 분야의 발표와 토론을 통해 지식을 나누는 학술 세미나입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "Spring Welcome Mixer",
+      "startDateTime": "2026-05-03T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Kickoff event for the summer term. ~45 attendees.",
+      "rsvpLink": "#"
     },
     {
       "id": 6,
-      "title": "송년회",
-      "startDateTime": "2025-12-20T19:00:00",
-      "image": "https://placehold.co/300x300",
-      "description": "한 해를 마무리하며 함께 추억을 돌아보고 새해를 맞이하는 자리입니다.",
-      "rsvpLink": "www.google.com"
+      "title": "Career Panel: Industry & Grad School",
+      "startDateTime": "2026-03-02T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "5 alumni speakers across engineering and CS. Hosted in EITC.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 7,
+      "title": "Lunar New Year Dinner",
+      "startDateTime": "2026-02-14T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Members & families. Held at Korean Pavilion, Folklorama site.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 8,
+      "title": "Year-end Gala & Awards Night",
+      "startDateTime": "2025-11-22T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Awarded outstanding members. Featured guest: Dr. Han.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 9,
+      "title": "Networking Night: Summer Internship Debrief",
+      "startDateTime": "2025-09-12T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "8 members shared internship experiences from coast to coast.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 10,
+      "title": "Intro Python Workshop for Engineers",
+      "startDateTime": "2025-08-05T14:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "3-hour hands-on session. NumPy & matplotlib basics covered.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 11,
+      "title": "Summer Welcome Picnic",
+      "startDateTime": "2025-06-15T13:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "First social of the term. ~60 attendees at the Forks.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 12,
+      "title": "First Chapter Meeting",
+      "startDateTime": "2025-03-18T15:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "The founding meeting of AKCSE at the University of Manitoba. Where it all began.",
+      "rsvpLink": "#",
+      "isOrigin": true
     }
   ]
 }
