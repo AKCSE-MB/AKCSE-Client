@@ -6,7 +6,7 @@ import { getFormattedDate } from '@/utils/formatUtil';
 import React from 'react';
 import * as S from './page.styled';
 
-type EventData = {
+interface EventData {
   id: number;
   title: string;
   startDateTime: string;
@@ -21,7 +21,7 @@ type EventData = {
   featuredTags?: string[];
   statusBadge?: string;
   isOrigin?: boolean;
-};
+}
 
 function classifyEvents(events: EventData[]) {
   const now = new Date();
@@ -187,7 +187,6 @@ export default function Events() {
         </S.HeroTabs>
       </PageHero>
 
-      {/* Upcoming Events */}
       <S.UpcomingSection id="upcoming">
         <S.SectionHeaderRow>
           <div>
