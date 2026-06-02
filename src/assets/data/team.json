@@ -1,51 +1,55 @@
-[
-  {
-    "id": "0",
-    "image": "",
-    "name": "유아진",
-    "role": "President",
-    "bio": "Mechanical Engineering Senior with a focus on sustainable propulsion systems."
-  },
-  {
-    "id": "1",
-    "image": "",
-    "name": "김우진",
-    "role": "Vice Director",
-    "bio": "Biosystems Engineering PhD candidate researching microbial soil filtration."
-  },
-  {
-    "id": "2",
-    "image": "",
-    "name": "명채현",
-    "role": "Treasurer",
-    "bio": "Computer Science major specializing in fintech and secure ledger technologies."
-  },
-  {
-    "id": "3",
-    "image": "",
-    "name": "이서연",
-    "role": "Marketing",
-    "bio": "Civil Engineering graduate student focusing on smart city infrastructure."
-  },
-  {
-    "id": "4",
-    "image": "",
-    "name": "김민지",
-    "role": "Developer",
-    "bio": "Industrial Engineering student passionate about community building and event management."
-  },
-  {
-    "id": "5",
-    "image": "",
-    "name": "양동건",
-    "role": "Developer",
-    "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
-  },
-  {
-    "id": "6",
-    "image": "",
-    "name": "김우진",
-    "role": "Developer",
-    "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
-  }
-]
+{
+  "executive": [
+    {
+      "id": "0",
+      "image": "",
+      "name": "유아진",
+      "role": "President",
+      "bio": "Mechanical Engineering Senior with a focus on sustainable propulsion systems."
+    },
+    {
+      "id": "1",
+      "image": "",
+      "name": "김우진",
+      "role": "Vice President",
+      "bio": "Biosystems Engineering PhD candidate researching microbial soil filtration."
+    },
+    {
+      "id": "2",
+      "image": "",
+      "name": "명채현",
+      "role": "Treasurer",
+      "bio": "Computer Science major specializing in fintech and secure ledger technologies."
+    },
+    {
+      "id": "3",
+      "image": "",
+      "name": "이서연",
+      "role": "Marketing",
+      "bio": "Civil Engineering graduate student focusing on smart city infrastructure."
+    }
+  ],
+  "dev": [
+    {
+      "id": "4",
+      "image": "",
+      "name": "김민지",
+      "role": "Developer",
+      "bio": "Industrial Engineering student passionate about community building and event management."
+    },
+    {
+      "id": "5",
+      "image": "",
+      "name": "양동건",
+      "role": "Developer",
+      "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
+    },
+    {
+      "id": "6",
+      "image": "",
+      "name": "김우진",
+      "role": "Developer",
+      "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
+    }
+  ]
+}

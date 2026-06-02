@@ -7,8 +7,8 @@ import PageHero from '@/components/common/PageHero';
 import * as S from './page.styled';
 
 export default function ExecutiveList() {
-  const executives = teamSource.slice(0, 4);
-  const developers = teamSource.slice(4);
+  const executives = teamSource.executive;
+  const developers = teamSource.dev;
 
   return (
     <S.PageWrapper>

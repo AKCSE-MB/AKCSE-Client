@@ -11,6 +11,7 @@ export default function TeamSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const teamMembers = [...teamSource.executive, ...teamSource.dev];
 
   const updateNavState = useCallback(() => {
     const el = scrollRef.current;
@@ -64,7 +65,7 @@ export default function TeamSection() {
         </S.Header>
 
         <S.ScrollContainer ref={scrollRef} onScroll={updateNavState}>
-          {teamSource.map((member) => (
+          {teamMembers.map((member) => (
             <TeamMemberCard
               key={member.id}
               name={member.name}
