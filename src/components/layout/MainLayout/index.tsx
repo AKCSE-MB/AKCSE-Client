@@ -4,6 +4,7 @@ import CFooter from '@/components/common/Footer';
 import CHeader from '@/components/common/Header';
 import CSideMenu from '@/components/common/SideMenu';
 import { useRouter } from 'next/navigation';
+import * as S from './index.styled';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -31,10 +32,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
     {
       name: 'News',
       path: '/news',
+      clickEvent: () => push('/news'),
     },
     {
       name: 'Research',
       path: '/research',
+      clickEvent: () => push('/research'),
     },
   ];
 
@@ -47,11 +50,11 @@ export default function MainLayout({ children }: MainLayoutProps) {
   };
 
   return (
-    <>
+    <S.Wrapper>
       <CHeader items={menuItems} ctaButton={ctaButton} />
       <CSideMenu items={[...menuItems, ctaButton]} />
-      {children}
+      <S.Main>{children}</S.Main>
       <CFooter />
-    </>
+    </S.Wrapper>
   );
 }
