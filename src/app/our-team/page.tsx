@@ -35,7 +35,6 @@ export default function ExecutiveList() {
               bio={member.bio}
               imageSrc={member.image}
               imageAlt={`Portrait of ${member.name}`}
-              variant="executive"
             />
           ))}
         </S.ExecutiveGrid>
