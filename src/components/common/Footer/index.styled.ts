@@ -3,23 +3,28 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  padding: 80px 160px 48px;
+  padding: 80px 0 48px;
 
   @media (max-width: 768px) {
-    padding: 32px 0px 32px;
+    padding: 40px 0 32px;
   }
 `;
 
 export const TopSection = styled.div`
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 48px;
   align-items: flex-start;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
     margin-bottom: 32px;
   }
 `;
@@ -28,6 +33,10 @@ export const InnerContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 80px;
+
+  @media (max-width: 1024px) {
+    padding: 0 48px;
+  }
 
   @media (max-width: 768px) {
     padding: 0 24px;
@@ -41,6 +50,11 @@ export const OrgName = styled.h2`
   line-height: 1.4;
   margin: 0;
 
+  @media (max-width: 1024px) {
+    grid-column: 1 / -1;
+    font-size: 24px;
+  }
+
   @media (max-width: 768px) {
     font-size: 18px;
   }
@@ -50,7 +64,6 @@ export const InfoColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 200px;
 `;
 
 export const InfoTitle = styled.p`
