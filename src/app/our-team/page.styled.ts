@@ -170,7 +170,9 @@ export const CTAButton = styled.a`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: auto;
+    height: 52px;
+    align-self: center;
   }
 `;
 
