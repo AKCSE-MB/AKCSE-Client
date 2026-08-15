@@ -2,7 +2,7 @@
   "executive": [
     {
       "id": "0",
-      "image": "",
+      "image": "/assets/team/team0.png",
       "name": "유아진",
       "role": "President",
       "bio": "Mechanical Engineering Senior with a focus on sustainable propulsion systems."
@@ -16,14 +16,14 @@
     },
     {
       "id": "2",
-      "image": "",
+      "image": "/assets/team/team2.png",
       "name": "명채현",
       "role": "Treasurer",
       "bio": "Computer Science major specializing in fintech and secure ledger technologies."
     },
     {
       "id": "3",
-      "image": "",
+      "image": "/assets/team/team3.png",
       "name": "이서연",
       "role": "Marketing",
       "bio": "Civil Engineering graduate student focusing on smart city infrastructure."
@@ -32,14 +32,14 @@
   "dev": [
     {
       "id": "4",
-      "image": "",
+      "image": "/assets/team/team4.png",
       "name": "김민지",
       "role": "Developer",
-      "bio": "Industrial Engineering student passionate about community building and event management."
+      "bio": "CS student passionate about algorithms and problem-solving"
     },
     {
       "id": "5",
-      "image": "",
+      "image": "/assets/team/team5.png",
       "name": "양동건",
       "role": "Developer",
       "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
