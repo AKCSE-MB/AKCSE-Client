@@ -517,7 +517,7 @@ export const PhotoGrid = styled.div<{ $isEven: boolean }>`
   }
 `;
 
-export const PhotoBox = styled.div`
+export const PhotoBox = styled.div<{ $bgUrl?: string }>`
   aspect-ratio: 1;
   border-radius: 8px;
   background-color: #fbf6ec;
@@ -528,9 +528,14 @@ export const PhotoBox = styled.div`
   font-family: monospace;
   font-size: 9px;
   color: rgba(79, 44, 29, 0.3);
-  background-image: repeating-linear-gradient(
+  background-size: cover;
+  background-position: center;
+  background-image: ${({ $bgUrl }) =>
+    $bgUrl
+      ? `url(${$bgUrl})`
+      : `repeating-linear-gradient(
     45deg,
     rgba(79, 44, 29, 0.04) 0 8px,
     transparent 8px 16px
-  );
+  )`};
 `;
