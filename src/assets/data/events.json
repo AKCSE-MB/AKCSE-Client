@@ -2,32 +2,6 @@
   "events": [
     {
       "id": 1,
-      "title": "Summer Networking Night 2026",
-      "startDateTime": "2026-06-14T18:00:00",
-      "image": "https://placehold.co/800x500",
-      "description": "A welcome-back mixer for returning members and first-years entering STEM at UofM. Light refreshments provided.",
-      "rsvpLink": "#",
-      "location": "EITC, Room 204",
-      "timeDisplay": "6:00 – 9:00 PM",
-      "tags": ["Seminar"],
-      "featuredTags": ["Featured"],
-      "statusBadge": "open"
-    },
-    {
-      "id": 2,
-      "title": "Resume & LinkedIn Clinic",
-      "startDateTime": "2026-07-08T17:30:00",
-      "image": "https://placehold.co/800x500",
-      "description": "1:1 reviews with industry mentors from Manitoba Hydro, Boeing Canada and Price Industries. Bring a draft.",
-      "rsvpLink": "#",
-      "location": "Fletcher Argue 219",
-      "timeDisplay": "5:30 – 8:00 PM",
-      "tags": ["Workshop"],
-      "featuredTags": [],
-      "statusBadge": "open"
-    },
-    {
-      "id": 3,
       "title": "CKC 2026 — Canada Korea Conference",
       "startDateTime": "2026-08-21T09:00:00",
       "image": "https://placehold.co/800x500",
@@ -41,7 +15,7 @@
       "statusBadge": "early-bird"
     },
     {
-      "id": 4,
+      "id": 2,
       "title": "End-of-Summer BBQ at Assiniboine Park",
       "startDateTime": "2026-08-30T12:00:00",
       "image": "https://placehold.co/800x500",
@@ -54,69 +28,85 @@
       "statusBadge": "open"
     },
     {
+      "id": 3,
+      "title": "2025-2026 AKCSE YG Orientation",
+      "startDateTime": "2025-10-03T17:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "A fresh start to the new semester — meet new people, play games.",
+      "rsvpLink": "#",
+      "isOrigin": true
+    },
+    {
+      "id": 4,
+      "title": "Midterm Study Session with AKCSE",
+      "startDateTime": "2025-10-17T13:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "3.5-hour study session. Group study for midterms, with snacks provided.",
+      "rsvpLink": "#"
+    },
+    {
       "id": 5,
+      "title": "Program Talk Talk",
+      "startDateTime": "2025-11-28T16:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Program Talk Talk panel featuring students from Science, Computer Science, Engineering, Medicine, Dentistry, Pharmacy, and Nursing.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 6,
+      "title": "Cocktailmas: Christmas Party 2025",
+      "startDateTime": "2025-12-20T18:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "A joint holiday mixer with AKCSE MB YP featuring cocktails, music, and games.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 7,
+      "title": "Snack Pack Giveaway",
+      "startDateTime": "2026-01-22T12:00:00",
+      "image": "https://placehold.co/800x500",
+      "description": "Kicked off the new term with snack packs for members, handed out by the exec team at Elizabeth Dafoe Library.",
+      "rsvpLink": "#"
+    },
+    {
+      "id": 8,
       "title": "Spring Welcome Mixer",
-      "startDateTime": "2026-05-03T18:00:00",
+      "startDateTime": "2026-01-22T18:00:00",
       "image": "https://placehold.co/800x500",
       "description": "Kickoff event for the summer term. ~45 attendees.",
       "rsvpLink": "#"
     },
     {
-      "id": 6,
-      "title": "Career Panel: Industry & Grad School",
-      "startDateTime": "2026-03-02T18:00:00",
-      "image": "https://placehold.co/800x500",
-      "description": "5 alumni speakers across engineering and CS. Hosted in EITC.",
-      "rsvpLink": "#"
-    },
-    {
-      "id": 7,
-      "title": "Lunar New Year Dinner",
+      "id": 9,
+      "title": "Winter Retreat (AKCSE MT)",
       "startDateTime": "2026-02-14T18:00:00",
       "image": "https://placehold.co/800x500",
-      "description": "Members & families. Held at Korean Pavilion, Folklorama site.",
-      "rsvpLink": "#"
-    },
-    {
-      "id": 8,
-      "title": "Year-end Gala & Awards Night",
-      "startDateTime": "2025-11-22T18:00:00",
-      "image": "https://placehold.co/800x500",
-      "description": "Awarded outstanding members. Featured guest: Dr. Han.",
-      "rsvpLink": "#"
-    },
-    {
-      "id": 9,
-      "title": "Networking Night: Summer Internship Debrief",
-      "startDateTime": "2025-09-12T18:00:00",
-      "image": "https://placehold.co/800x500",
-      "description": "8 members shared internship experiences from coast to coast.",
+      "description": "An overnight retreat on Feb 14–15 filled with games, food, and time to bond as a group.",
       "rsvpLink": "#"
     },
     {
       "id": 10,
-      "title": "Intro Python Workshop for Engineers",
-      "startDateTime": "2025-08-05T14:00:00",
+      "title": "AKCSE MB Regular Meeting",
+      "startDateTime": "2026-02-26T17:00:00",
       "image": "https://placehold.co/800x500",
-      "description": "3-hour hands-on session. NumPy & matplotlib basics covered.",
+      "description": "Joint event with AKCSE MB YP featuring research talks on galaxy collisions and influenza therapeutics, plus a panel on science and technology in the AI era.",
       "rsvpLink": "#"
     },
     {
       "id": 11,
-      "title": "Summer Welcome Picnic",
-      "startDateTime": "2025-06-15T13:00:00",
+      "title": "AKCSE Study Café",
+      "startDateTime": "2026-03-13T15:00:00",
       "image": "https://placehold.co/800x500",
-      "description": "First social of the term. ~60 attendees at the Forks.",
+      "description": "End-of-semester study session at EITC E2-125 with snacks and access to past exam materials shared by upper-year students.",
       "rsvpLink": "#"
     },
     {
       "id": 12,
-      "title": "First Chapter Meeting",
-      "startDateTime": "2025-03-18T15:00:00",
+      "title": "AKCSE Final Lap",
+      "startDateTime": "2026-04-26T15:50:00",
       "image": "https://placehold.co/800x500",
-      "description": "The founding meeting of AKCSE at the University of Manitoba. Where it all began.",
-      "rsvpLink": "#",
-      "isOrigin": true
+      "description": "The year's closing event, chosen by member vote: a go-kart race capped at 20 participants, free of charge.",
+      "rsvpLink": "#"
     }
   ]
 }
