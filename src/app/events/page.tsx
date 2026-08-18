@@ -11,6 +11,7 @@ interface EventData {
   title: string;
   startDateTime: string;
   image: string;
+  images?: string[];
   description: string;
   rsvpLink: string;
   location?: string;
@@ -154,9 +155,9 @@ function TimelineItemRow({
 
       <S.TimelinePhotoCol $isEven={isEven}>
         <S.PhotoGrid $isEven={isEven}>
-          <S.PhotoBox>photo</S.PhotoBox>
-          <S.PhotoBox>photo</S.PhotoBox>
-          <S.PhotoBox>photo</S.PhotoBox>
+          {[0, 1, 2].map((i) => (
+            <S.PhotoBox key={i} $bgUrl={event.images?.[i]} />
+          ))}
         </S.PhotoGrid>
       </S.TimelinePhotoCol>
     </S.TimelineItem>

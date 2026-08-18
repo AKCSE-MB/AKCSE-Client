@@ -32,6 +32,11 @@
       "title": "2025-2026 AKCSE YG Orientation",
       "startDateTime": "2025-10-03T17:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event1_1.png",
+        "/assets/events/event1_2.png",
+        "/assets/events/event1_3.png"
+      ],
       "description": "A fresh start to the new semester — meet new people, play games.",
       "rsvpLink": "#",
       "isOrigin": true
@@ -41,6 +46,11 @@
       "title": "Midterm Study Session with AKCSE",
       "startDateTime": "2025-10-17T13:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event2_1.png",
+        "/assets/events/event2_2.png",
+        "/assets/events/event2_3.png"
+      ],
       "description": "3.5-hour study session. Group study for midterms, with snacks provided.",
       "rsvpLink": "#"
     },
@@ -49,6 +59,11 @@
       "title": "Program Talk Talk",
       "startDateTime": "2025-11-28T16:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event3_1.png",
+        "/assets/events/event3_2.png",
+        "/assets/events/event3_3.png"
+      ],
       "description": "Program Talk Talk panel featuring students from Science, Computer Science, Engineering, Medicine, Dentistry, Pharmacy, and Nursing.",
       "rsvpLink": "#"
     },
@@ -57,6 +72,11 @@
       "title": "Cocktailmas: Christmas Party 2025",
       "startDateTime": "2025-12-20T18:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event4_1.png",
+        "/assets/events/event4_2.png",
+        "/assets/events/event4_3.png"
+      ],
       "description": "A joint holiday mixer with AKCSE MB YP featuring cocktails, music, and games.",
       "rsvpLink": "#"
     },
@@ -65,46 +85,61 @@
       "title": "Snack Pack Giveaway",
       "startDateTime": "2026-01-22T12:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event5_1.png",
+        "/assets/events/event5_2.png",
+        "/assets/events/event5_3.png"
+      ],
       "description": "Kicked off the new term with snack packs for members, handed out by the exec team at Elizabeth Dafoe Library.",
       "rsvpLink": "#"
     },
     {
       "id": 8,
-      "title": "Spring Welcome Mixer",
-      "startDateTime": "2026-01-22T18:00:00",
-      "image": "https://placehold.co/800x500",
-      "description": "Kickoff event for the summer term. ~45 attendees.",
-      "rsvpLink": "#"
-    },
-    {
-      "id": 9,
       "title": "Winter Retreat (AKCSE MT)",
       "startDateTime": "2026-02-14T18:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event6_1.png",
+        "/assets/events/event6_2.png",
+        "/assets/events/event6_3.png"
+      ],
       "description": "An overnight retreat on Feb 14–15 filled with games, food, and time to bond as a group.",
       "rsvpLink": "#"
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "AKCSE MB Regular Meeting",
       "startDateTime": "2026-02-26T17:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event10_1.png"
+      ],
       "description": "Joint event with AKCSE MB YP featuring research talks on galaxy collisions and influenza therapeutics, plus a panel on science and technology in the AI era.",
       "rsvpLink": "#"
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "AKCSE Study Café",
       "startDateTime": "2026-03-13T15:00:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event7_1.png",
+        "/assets/events/event7_2.png",
+        "/assets/events/event7_3.png"
+      ],
       "description": "End-of-semester study session at EITC E2-125 with snacks and access to past exam materials shared by upper-year students.",
       "rsvpLink": "#"
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "AKCSE Final Lap",
       "startDateTime": "2026-04-26T15:50:00",
       "image": "https://placehold.co/800x500",
+      "images": [
+        "/assets/events/event8_1.png",
+        "/assets/events/event8_2.png",
+        "/assets/events/event8_3.png"
+      ],
       "description": "The year's closing event, chosen by member vote: a go-kart race capped at 20 participants, free of charge.",
       "rsvpLink": "#"
     }
