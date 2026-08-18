@@ -5,28 +5,28 @@
       "image": "/assets/team/team0.png",
       "name": "유아진",
       "role": "President",
-      "bio": "Mechanical Engineering Senior with a focus on sustainable propulsion systems."
+      "bio": "Statistics major dedicated to transforming complex data into actionable insights for data-driven decision-making."
     },
     {
       "id": "1",
       "image": "",
       "name": "김우진",
       "role": "Vice President",
-      "bio": "Biosystems Engineering PhD candidate researching microbial soil filtration."
+      "bio": "CS student."
     },
     {
       "id": "2",
       "image": "/assets/team/team2.png",
       "name": "명채현",
       "role": "Treasurer",
-      "bio": "Computer Science major specializing in fintech and secure ledger technologies."
+      "bio": "School of Business"
     },
     {
       "id": "3",
       "image": "/assets/team/team3.png",
       "name": "이서연",
       "role": "Marketing",
-      "bio": "Civil Engineering graduate student focusing on smart city infrastructure."
+      "bio": "Pre-Dentistry student with a love for healthcare, creativity and bringing students together."
     }
   ],
   "dev": [
@@ -42,14 +42,14 @@
       "image": "/assets/team/team5.png",
       "name": "양동건",
       "role": "Developer",
-      "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
+      "bio": "CS student interested in software development and problem-solving."
     },
     {
       "id": "6",
       "image": "",
       "name": "김우진",
       "role": "Developer",
-      "bio": "Biochemistry researcher bridging academic innovation with community outreach initiatives."
+      "bio": "CS student."
     }
   ]
 }
