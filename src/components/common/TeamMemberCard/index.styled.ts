@@ -28,7 +28,6 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
   transition:
     filter 1000ms ease-out,
     transform 1000ms ease-out;
