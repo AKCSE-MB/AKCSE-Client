@@ -26,10 +26,10 @@ export const Container = styled.div<{ $open?: boolean }>`
 export const TopBar = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 28px 22px 0;
+  padding: 24px 22px 0;
 
   @supports (padding: max(0px)) {
-    padding-top: max(28px, env(safe-area-inset-top));
+    padding-top: max(20px, env(safe-area-inset-top));
   }
 `;
 
