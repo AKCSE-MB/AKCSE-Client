@@ -4,7 +4,6 @@ import EventsSection from '@/components/home/EventsSection';
 import HeroSection from '@/components/home/HeroSection';
 import InfoSection from '@/components/home/InfoSection';
 import NewsSection from '@/components/home/NewsSection';
-import ResearchSection from '@/components/home/ResearchSection';
 import TeamSection from '@/components/home/TeamSection';
 import * as S from './page.styled';
 
@@ -16,7 +15,6 @@ export default function Home() {
       <EventsSection />
       <TeamSection />
       <NewsSection />
-      <ResearchSection />
     </S.PageWrapper>
   );
 }
