@@ -12,7 +12,8 @@
       "deadline": "Jul 25, 2026",
       "tags": ["Conference"],
       "featuredTags": ["National"],
-      "statusBadge": "early-bird"
+      "statusBadge": "early-bird",
+      "excludeFromPastTimeline": true
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@
       "timeDisplay": "12:00 – 4:00 PM",
       "tags": ["Social"],
       "featuredTags": [],
-      "statusBadge": "open"
+      "statusBadge": "open",
+      "excludeFromPastTimeline": true
     },
     {
       "id": 3,

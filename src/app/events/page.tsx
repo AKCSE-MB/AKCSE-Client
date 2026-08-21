@@ -22,6 +22,7 @@ interface EventData {
   featuredTags?: string[];
   statusBadge?: string;
   isOrigin?: boolean;
+  excludeFromPastTimeline?: boolean;
 }
 
 function classifyEvents(events: EventData[]) {
@@ -167,7 +168,8 @@ function TimelineItemRow({
 export default function Events() {
   const events = eventSource.events as unknown as EventData[];
   const { upcoming, past } = classifyEvents(events);
-  const grouped = groupByYear(past);
+  const pastTimeline = past.filter((e) => !e.excludeFromPastTimeline);
+  const grouped = groupByYear(pastTimeline);
   const sortedYears = Object.keys(grouped).sort((a, b) => +b - +a);
 
   let timelineIndex = 0;

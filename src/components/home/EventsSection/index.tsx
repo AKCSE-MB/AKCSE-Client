@@ -5,14 +5,15 @@ import IconClock from '@/assets/common/icons/IconClock.svg';
 import IconLocation from '@/assets/common/icons/IconLocation.svg';
 import eventSource from '@/assets/data/events.json';
 import SectionHeading from '@/components/common/SectionHeading';
+import { classifyEvents } from '@/utils/event.utils';
 import { getFormattedDate } from '@/utils/formatUtil';
 import Link from 'next/link';
 import * as S from './index.styled';
 
 export default function EventsSection() {
-  const events = eventSource.events;
-  const featured = events[0];
-  const sidebarEvents = events.slice(1, 3);
+  const { upcoming, past } = classifyEvents(eventSource.events);
+  const featured = upcoming[0];
+  const sidebarEvents = past.slice(1, 3);
 
   return (
     <S.Section>
@@ -76,19 +77,13 @@ export default function EventsSection() {
               <S.TimelineWrapper>
                 <S.DashedLine />
                 {sidebarEvents.map((event) => (
-                  <Link
-                    key={event.id}
-                    href={`/events/${event.id}`}
-                    style={{ textDecoration: 'none' }}
-                  >
-                    <S.TimelineItem>
-                      <S.TimelineDot />
-                      <S.TimelineDate>
-                        {getFormattedDate(new Date(event.startDateTime))}
-                      </S.TimelineDate>
-                      <S.TimelineEventTitle>{event.title}</S.TimelineEventTitle>
-                    </S.TimelineItem>
-                  </Link>
+                  <S.TimelineItem>
+                    <S.TimelineDot />
+                    <S.TimelineDate>
+                      {getFormattedDate(new Date(event.startDateTime))}
+                    </S.TimelineDate>
+                    <S.TimelineEventTitle>{event.title}</S.TimelineEventTitle>
+                  </S.TimelineItem>
                 ))}
 
                 <S.SeminarCallout>
