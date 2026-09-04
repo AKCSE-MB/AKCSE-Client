@@ -28,7 +28,7 @@
     "react-dom": "19.2.8",
     "styled-components": "^6.0.5",
     "typescript": "5.1.6",
-    "zustand": "^5.0.13"
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^5.101.4",
