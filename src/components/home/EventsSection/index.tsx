@@ -1,18 +1,43 @@
 'use client';
 
+import { getEvents } from '@/apis/events/mapper';
+import { QUERY_KEYS } from '@/apis/queryKeys';
 import IconCalendar from '@/assets/common/icons/IconCalendar.svg';
 import IconClock from '@/assets/common/icons/IconClock.svg';
 import IconLocation from '@/assets/common/icons/IconLocation.svg';
-import eventSource from '@/assets/data/events.json';
 import SectionHeading from '@/components/common/SectionHeading';
 import { getFormattedDate } from '@/utils/formatUtil';
+import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import * as S from './index.styled';
 
 export default function EventsSection() {
-  const events = eventSource.events;
-  const featured = events[0];
-  const sidebarEvents = events.slice(1, 3);
+  const { data: events = [] } = useQuery({
+    queryKey: QUERY_KEYS.events,
+    queryFn: getEvents,
+  });
+
+  const now = Date.now();
+
+  // 가장 가까운 예정 이벤트를 대표로 세우고, 없으면 가장 최근 이벤트를 보여준다.
+  const upcoming = events
+    .filter((event) => new Date(event.startDateTime).getTime() >= now)
+    .sort(
+      (a, b) =>
+        new Date(a.startDateTime).getTime() -
+        new Date(b.startDateTime).getTime(),
+    );
+
+  const past = events
+    .filter((event) => new Date(event.startDateTime).getTime() < now)
+    .sort(
+      (a, b) =>
+        new Date(b.startDateTime).getTime() -
+        new Date(a.startDateTime).getTime(),
+    );
+
+  const featured = upcoming[0] ?? past[0];
+  const sidebarEvents = past.slice(0, 2);
 
   return (
     <S.Section>
@@ -29,7 +54,9 @@ export default function EventsSection() {
           {featured && (
             <S.FeaturedCard>
               <S.FeaturedImageWrap>
-                <S.FeaturedImg src={featured.image} alt={featured.title} />
+                {featured.image && (
+                  <S.FeaturedImg src={featured.image} alt={featured.title} />
+                )}
               </S.FeaturedImageWrap>
 
               <S.FeaturedContent>

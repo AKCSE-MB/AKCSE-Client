@@ -1,9 +1,11 @@
 'use client';
 
-import teamSource from '@/assets/data/team.json';
+import { getTeam } from '@/apis/executives/mapper';
+import { QUERY_KEYS } from '@/apis/queryKeys';
 import CarouselNavButtons from '@/components/common/CarouselNavButton';
 import SectionHeading from '@/components/common/SectionHeading';
 import TeamMemberCard from '@/components/common/TeamMemberCard';
+import { useQuery } from '@tanstack/react-query';
 import { useCallback, useRef, useState } from 'react';
 import * as S from './index.styled';
 
@@ -11,7 +13,16 @@ export default function TeamSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
-  const teamMembers = [...teamSource.executive, ...teamSource.dev];
+
+  const { data } = useQuery({
+    queryKey: QUERY_KEYS.executives,
+    queryFn: getTeam,
+  });
+
+  const teamMembers = [
+    ...(data?.executives ?? []),
+    ...(data?.developers ?? []),
+  ];
 
   const updateNavState = useCallback(() => {
     const el = scrollRef.current;

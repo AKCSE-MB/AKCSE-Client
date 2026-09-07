@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import http from '@/apis/http';
+import { axiosInstance } from '@/apis/http';
 import { MODAL_TYPES } from '@/components/Modal/GlobalModal';
 import useModal from '@/components/Modal/GlobalModal/hooks/useModal';
 import * as Sentry from '@sentry/nextjs';
@@ -9,30 +9,24 @@ import { useEffect } from 'react';
 export const useAxiosInterceptor = () => {
   const { openModal, closeModal } = useModal();
 
-  const errorTrigger = () => {
+  const errorTrigger = (title: string) => {
     openModal(MODAL_TYPES.dialog, {
-      title: 'error occured',
+      title,
       handleConfirm: () => closeModal(MODAL_TYPES.dialog),
       needClose: true,
     });
   };
 
-  const requestInterceptor = http.client.interceptors.request.use(
-    (request: InternalAxiosRequestConfig) => {
-      if (typeof window === undefined) return request;
-
-      return request;
-    },
+  const requestInterceptor = axiosInstance.interceptors.request.use(
+    (request: InternalAxiosRequestConfig) => request,
     (error: any) => {
       Sentry.captureException(error);
       return Promise.reject(error);
     },
   );
 
-  const responseInterceptor = http.client.interceptors.response.use(
-    (response: AxiosResponse) => {
-      return response;
-    },
+  const responseInterceptor = axiosInstance.interceptors.response.use(
+    (response: AxiosResponse) => response,
     (error: any) => {
       const {
         method,
@@ -57,11 +51,16 @@ export const useAxiosInterceptor = () => {
         });
       }
 
-      if (error.response.data.statusCode === 401) {
-        return;
-      } else if (error.response.data.statusCode === 404) {
-        errorTrigger();
-        return;
+      const statusCode =
+        error.response?.data?.statusCode ?? error.response?.status;
+
+      if (statusCode === 401) {
+        return Promise.reject(error);
+      }
+
+      if (statusCode === 404) {
+        errorTrigger('요청한 데이터를 찾을 수 없습니다.');
+        return Promise.reject(error);
       }
 
       Sentry.captureException(error);
@@ -71,8 +70,8 @@ export const useAxiosInterceptor = () => {
 
   useEffect(() => {
     return () => {
-      http.client.interceptors.request.eject(requestInterceptor);
-      http.client.interceptors.response.eject(responseInterceptor);
+      axiosInstance.interceptors.request.eject(requestInterceptor);
+      axiosInstance.interceptors.response.eject(responseInterceptor);
     };
   }, [requestInterceptor, responseInterceptor]);
 };

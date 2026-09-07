@@ -12,6 +12,24 @@ const nextConfig = {
 
     return config;
   },
+
+  rewrites: async () => {
+    const destination = process.env.NEXT_PUBLIC_SERVER_URL;
+
+    if (!destination) {
+      console.warn(
+        '[next.config] NEXT_PUBLIC_SERVER_URL is not set — /apis/* proxy is disabled, falling back to bundled JSON.',
+      );
+      return [];
+    }
+
+    return [
+      {
+        source: '/apis/:path*',
+        destination,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

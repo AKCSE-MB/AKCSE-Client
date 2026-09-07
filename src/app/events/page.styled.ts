@@ -517,8 +517,13 @@ export const PhotoGrid = styled.div<{ $isEven: boolean }>`
   }
 `;
 
-export const PhotoBox = styled.div<{ $bgUrl?: string }>`
+export const PhotoBox = styled.button<{
+  $bgUrl?: string;
+  $clickable?: boolean;
+}>`
   aspect-ratio: 1;
+  padding: 0;
+  border: none;
   border-radius: 8px;
   background-color: #fbf6ec;
   filter: grayscale(1);
@@ -538,4 +543,19 @@ export const PhotoBox = styled.div<{ $bgUrl?: string }>`
     rgba(79, 44, 29, 0.04) 0 8px,
     transparent 8px 16px
   )`};
+  cursor: ${({ $clickable }) => ($clickable ? 'zoom-in' : 'default')};
+  transition:
+    filter 0.35s,
+    transform 0.35s;
+
+  /* Releasing the grayscale on hover previews what the lightbox does on open. */
+  &:hover:not(:disabled) {
+    filter: grayscale(0);
+    transform: scale(1.03);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.gold};
+    outline-offset: 2px;
+  }
 `;
