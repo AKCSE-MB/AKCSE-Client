@@ -76,15 +76,15 @@ function EventCardItem({ event }: { event: EventResponse }) {
           </S.DetailItem>
 
           <S.DetailItem>
+            <S.DetailLabel>Location</S.DetailLabel>
+            <S.DetailValue>{event.location}</S.DetailValue>
+          </S.DetailItem>
+
+          <S.DetailItem>
             <S.DetailLabel>Time</S.DetailLabel>
             <S.DetailValue>
               {getTimeRange(event.startDateTime, event.endDateTime)}
             </S.DetailValue>
-          </S.DetailItem>
-
-          <S.DetailItem>
-            <S.DetailLabel>Location</S.DetailLabel>
-            <S.DetailValue>{event.location}</S.DetailValue>
           </S.DetailItem>
 
           <S.DetailItem>
@@ -115,14 +115,13 @@ function TimelineItemRow({
   isOrigin: boolean;
 }) {
   const dateStr = getFormattedDate(new Date(event.startDateTime));
-  const displayDate = isOrigin ? `${dateStr} • Origin` : dateStr;
 
   return (
     <S.TimelineItem>
       <S.TimelineDot $isOrigin={isOrigin} />
 
       <S.TimelineTextCol $isEven={isEven}>
-        <S.TimelineDate $isOrigin={isOrigin}>{displayDate}</S.TimelineDate>
+        <S.TimelineDate $isOrigin={isOrigin}>{dateStr}</S.TimelineDate>
         <S.TimelineTitle>{event.title}</S.TimelineTitle>
         <S.TimelineDesc>{event.description}</S.TimelineDesc>
       </S.TimelineTextCol>

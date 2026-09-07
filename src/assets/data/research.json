@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "category": "Life",
+    "titleKo": "영화 속의 과학: 프로젝트 헤일메리",
+    "subtitle": "Science in Cinema: Project Hail Mary",
+    "placeholder": {
+      "label": "★",
+      "gradient": "linear-gradient(135deg, #0a1e4d 0%, #1c4684 50%, #f2a900 100%)",
+      "dark": true
+    }
+  },
+  {
+    "id": 2,
+    "category": "Life",
+    "titleKo": "The Microscopic Crisis",
+    "subtitle": "The Antibiotic Resistance Crisis",
+    "author": "Yoonjong Kang, Suyeon Seo, Geena Kim, Seoyun Heo",
+    "placeholder": {
+      "label": "infographic",
+      "bgColor": "#FBF6EC",
+      "dark": false
+    }
+  },
+  {
+    "id": 3,
+    "category": "Tech",
+    "titleKo": "양자 컴퓨팅",
+    "subtitle": "차세대 컴퓨팅 혁명인가, 장기적 연구 과제인가",
+    "placeholder": {
+      "label": "quantum",
+      "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #f2a900 100%)",
+      "dark": true
+    }
+  },
+  {
+    "id": 4,
+    "category": "Tech",
+    "titleKo": "스페이스X 위성통신 서비스 '스타링크'",
+    "subtitle": "한국 서비스 개시!",
+    "placeholder": {
+      "label": "satellite",
+      "gradient": "linear-gradient(135deg, #001233 0%, #023e8a 100%)",
+      "dark": true
+    }
+  },
+  {
+    "id": 5,
+    "category": "Tech",
+    "titleKo": "누리호 4차 발사",
+    "subtitle": "민간 우주 시대의 서막",
+    "placeholder": {
+      "label": "rocket",
+      "gradient": "linear-gradient(135deg, #0d0d0d 0%, #2d4a3e 100%)",
+      "dark": true
+    }
+  },
+  {
+    "id": 6,
+    "category": "Life",
+    "titleKo": "The New Paradigm of Weight Loss",
+    "subtitle": "Wegovy & Ozempic",
+    "author": "Geena Kim, Seoyun Heo",
+    "editor": "Yoonjong Kang, Suyeon Seo",
+    "placeholder": {
+      "label": "pen",
+      "bgColor": "#e8f0ea",
+      "dark": false
+    }
+  },
+  {
+    "id": 7,
+    "category": "Tech",
+    "titleKo": "테스트 게시글입니다",
+    "subtitle": "Load more 버튼 동작 확인용 더미 아티클",
+    "placeholder": {
+      "label": "test",
+      "gradient": "linear-gradient(135deg, #3a1c1c 0%, #7f5700 100%)",
+      "dark": true
+    }
+  }
+]

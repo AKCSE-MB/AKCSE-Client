@@ -14,7 +14,7 @@ export default function EventsSection() {
   const { events } = useEvents();
   const { upcoming, past } = classifyEvents(events);
   const featured = upcoming[0];
-  const sidebarEvents = past.slice(1, 3);
+  const sidebarEvents = past.slice(0, 2);
 
   return (
     <S.Section>
