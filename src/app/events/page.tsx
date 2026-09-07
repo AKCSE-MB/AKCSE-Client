@@ -168,7 +168,7 @@ function TimelineItemRow({
 export default function Events() {
   const events = eventSource.events as unknown as EventData[];
   const { upcoming, past } = classifyEvents(events);
-  const pastTimeline = past.filter((e) => !e.excludeFromPastTimeline);
+  const pastTimeline = past.filter(e => !e.excludeFromPastTimeline);
   const grouped = groupByYear(pastTimeline);
   const sortedYears = Object.keys(grouped).sort((a, b) => +b - +a);
 
