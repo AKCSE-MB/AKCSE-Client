@@ -1,13 +1,6 @@
-interface Event {
-  id: number;
-  title: string;
-  startDateTime: string;
-  image: string;
-  description: string;
-  rsvpLink: string;
-}
+import { EventResponse } from '@/types';
 
-export const classifyEvents = (events: Event[]) => {
+export const classifyEvents = (events: EventResponse[]) => {
   const now = new Date();
 
   const upcoming = events

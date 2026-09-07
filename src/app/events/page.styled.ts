@@ -160,11 +160,14 @@ export const EventCard = styled.article`
   }
 `;
 
-export const EventCardImage = styled.div`
+export const EventCardImage = styled.div<{ $bgUrl?: string }>`
   position: relative;
   aspect-ratio: 16 / 10;
   background-color: #fbf6ec;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  ${({ $bgUrl }) => ($bgUrl ? `background-image: url(${$bgUrl});` : '')}
 `;
 
 export const EventCardImgPattern = styled.div`

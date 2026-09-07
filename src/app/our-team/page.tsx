@@ -1,14 +1,16 @@
 'use client';
 
-import teamSource from '@/assets/data/team.json';
 import DeveloperCard from '@/components/common/DeveloperCard';
 import OurTeamCard from '@/components/common/OurTeamCard';
 import PageHero from '@/components/common/PageHero';
+import { useExecutives } from '@/hooks/queries/useExecutives';
+import { getFormattedNumber } from '@/utils/formatUtil';
+import { splitTeam } from '@/utils/team.utils';
 import * as S from './page.styled';
 
 export default function ExecutiveList() {
-  const executives = teamSource.executive;
-  const developers = teamSource.dev;
+  const { executives: members } = useExecutives();
+  const { executive: executives, dev: developers } = splitTeam(members);
 
   return (
     <S.PageWrapper>
@@ -23,7 +25,9 @@ export default function ExecutiveList() {
         <S.SectionHeader>
           <S.SectionTitle>Executive Board</S.SectionTitle>
           <S.SectionLine />
-          <S.SectionCount>04 MEMBERS</S.SectionCount>
+          <S.SectionCount>
+            {getFormattedNumber(executives.length)} MEMBERS
+          </S.SectionCount>
         </S.SectionHeader>
 
         <S.ExecutiveGrid>
@@ -31,9 +35,9 @@ export default function ExecutiveList() {
             <OurTeamCard
               key={member.id}
               name={member.name}
-              role={member.role}
+              role={member.position}
               bio={member.bio}
-              imageSrc={member.image}
+              imageSrc={member.image?.full}
               imageAlt={`Portrait of ${member.name}`}
             />
           ))}
@@ -43,7 +47,9 @@ export default function ExecutiveList() {
           <S.SectionHeader>
             <S.SectionTitle>Development Team</S.SectionTitle>
             <S.SectionLine />
-            <S.SectionCount>03 BUILDERS</S.SectionCount>
+            <S.SectionCount>
+              {getFormattedNumber(developers.length)} BUILDERS
+            </S.SectionCount>
           </S.SectionHeader>
 
           <S.DeveloperGrid>
@@ -51,8 +57,8 @@ export default function ExecutiveList() {
               <DeveloperCard
                 key={member.id}
                 name={member.name}
-                role={member.role}
-                imageSrc={member.image}
+                role={member.position}
+                imageSrc={member.image?.full}
                 imageAlt={`Photo of ${member.name}`}
               />
             ))}

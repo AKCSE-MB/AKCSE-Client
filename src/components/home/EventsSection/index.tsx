@@ -3,15 +3,16 @@
 import IconCalendar from '@/assets/common/icons/IconCalendar.svg';
 import IconClock from '@/assets/common/icons/IconClock.svg';
 import IconLocation from '@/assets/common/icons/IconLocation.svg';
-import eventSource from '@/assets/data/events.json';
 import SectionHeading from '@/components/common/SectionHeading';
+import { useEvents } from '@/hooks/queries/useEvents';
 import { classifyEvents } from '@/utils/event.utils';
 import { getFormattedDate } from '@/utils/formatUtil';
 import Link from 'next/link';
 import * as S from './index.styled';
 
 export default function EventsSection() {
-  const { upcoming, past } = classifyEvents(eventSource.events);
+  const { events } = useEvents();
+  const { upcoming, past } = classifyEvents(events);
   const featured = upcoming[0];
   const sidebarEvents = past.slice(1, 3);
 
@@ -30,7 +31,10 @@ export default function EventsSection() {
           {featured && (
             <S.FeaturedCard>
               <S.FeaturedImageWrap>
-                <S.FeaturedImg src={featured.image} alt={featured.title} />
+                <S.FeaturedImg
+                  src={featured.image?.full ?? ''}
+                  alt={featured.title}
+                />
               </S.FeaturedImageWrap>
 
               <S.FeaturedContent>
@@ -49,7 +53,7 @@ export default function EventsSection() {
                       <S.MetaIcon aria-hidden="true">
                         <IconLocation />
                       </S.MetaIcon>
-                      University of Manitoba
+                      {featured.location}
                     </S.MetaItem>
                   </S.MetaRow>
                 </S.FeaturedTop>
@@ -77,7 +81,7 @@ export default function EventsSection() {
               <S.TimelineWrapper>
                 <S.DashedLine />
                 {sidebarEvents.map((event) => (
-                  <S.TimelineItem>
+                  <S.TimelineItem key={event.id}>
                     <S.TimelineDot />
                     <S.TimelineDate>
                       {getFormattedDate(new Date(event.startDateTime))}

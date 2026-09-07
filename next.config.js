@@ -1,8 +1,20 @@
+const API_URL = process.env.API_URL?.replace(/\/$/, '');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
   compiler: {
     styledComponents: true,
+  },
+  async rewrites() {
+    if (!API_URL) return [];
+
+    return [
+      {
+        source: '/v1/:path*',
+        destination: `${API_URL}/v1/:path*`,
+      },
+    ];
   },
   webpack: (config) => {
     config.module.rules.push({

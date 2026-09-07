@@ -1,9 +1,10 @@
 'use client';
 
-import teamSource from '@/assets/data/team.json';
 import CarouselNavButtons from '@/components/common/CarouselNavButton';
 import SectionHeading from '@/components/common/SectionHeading';
 import TeamMemberCard from '@/components/common/TeamMemberCard';
+import { useExecutives } from '@/hooks/queries/useExecutives';
+import { splitTeam } from '@/utils/team.utils';
 import { useCallback, useRef, useState } from 'react';
 import * as S from './index.styled';
 
@@ -11,7 +12,9 @@ export default function TeamSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
-  const teamMembers = [...teamSource.executive, ...teamSource.dev];
+  const { executives } = useExecutives();
+  const { executive, dev } = splitTeam(executives);
+  const teamMembers = [...executive, ...dev];
 
   const updateNavState = useCallback(() => {
     const el = scrollRef.current;
@@ -69,9 +72,9 @@ export default function TeamSection() {
             <TeamMemberCard
               key={member.id}
               name={member.name}
-              role={member.role}
+              role={member.position}
               bio={member.bio}
-              imageSrc={member.image}
+              imageSrc={member.image?.full ?? ''}
               imageAlt={`Portrait of ${member.name}`}
             />
           ))}
