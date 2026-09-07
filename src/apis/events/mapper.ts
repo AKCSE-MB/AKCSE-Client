@@ -18,6 +18,7 @@ export interface EventData {
   featuredTags?: string[];
   statusBadge?: string;
   isOrigin?: boolean;
+  excludeFromPastTimeline?: boolean;
 }
 
 /**
@@ -35,6 +36,7 @@ type DisplayFields = Pick<
   | 'timeDisplay'
   | 'dateDisplay'
   | 'deadline'
+  | 'excludeFromPastTimeline'
 >;
 
 /** AKCSE MB is based in Winnipeg; the API returns UTC timestamps. */
@@ -54,6 +56,7 @@ function pickDisplayFields(event: EventData): DisplayFields {
     timeDisplay,
     dateDisplay,
     deadline,
+    excludeFromPastTimeline,
   } = event;
 
   return {
@@ -65,6 +68,7 @@ function pickDisplayFields(event: EventData): DisplayFields {
     timeDisplay,
     dateDisplay,
     deadline,
+    excludeFromPastTimeline,
   };
 }
 

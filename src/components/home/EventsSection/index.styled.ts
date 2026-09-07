@@ -266,7 +266,6 @@ export const DashedLine = styled.div`
 
 export const TimelineItem = styled.div`
   position: relative;
-  cursor: pointer;
 `;
 
 export const TimelineDot = styled.div`
