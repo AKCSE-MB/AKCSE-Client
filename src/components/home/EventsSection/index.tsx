@@ -13,7 +13,7 @@ import * as S from './index.styled';
 export default function EventsSection() {
   const { upcoming, past } = classifyEvents(eventSource.events);
   const featured = upcoming[0];
-  const sidebarEvents = past.slice(1, 3);
+  const sidebarEvents = past.slice(0, 2);
 
   return (
     <S.Section>
@@ -77,7 +77,7 @@ export default function EventsSection() {
               <S.TimelineWrapper>
                 <S.DashedLine />
                 {sidebarEvents.map((event) => (
-                  <S.TimelineItem>
+                  <S.TimelineItem key={event.id}>
                     <S.TimelineDot />
                     <S.TimelineDate>
                       {getFormattedDate(new Date(event.startDateTime))}

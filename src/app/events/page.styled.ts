@@ -1,9 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-const pulse = keyframes`
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-`;
+import styled from 'styled-components';
 
 export const HeroTabs = styled.div`
   margin-top: 48px;
@@ -183,34 +178,6 @@ export const EventCardImgPattern = styled.div`
     rgba(79, 44, 29, 0.04) 0 12px,
     transparent 12px 24px
   );
-`;
-
-export const EventStatusBadge = styled.div<{ $variant: 'open' | 'early-bird' }>`
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  border-radius: 9999px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background-color: ${({ $variant }) =>
-    $variant === 'early-bird' ? '#f2a900' : '#4f2c1d'};
-  color: ${({ $variant }) =>
-    $variant === 'early-bird' ? '#4f2c1d' : '#ffffff'};
-`;
-
-export const StatusDot = styled.span`
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #f2a900;
-  animation: ${pulse} 2s ease-in-out infinite;
 `;
 
 export const EventCardBody = styled.div`

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "CKC 2026 — Canada Korea Conference",
-      "startDateTime": "2026-08-21T09:00:00",
+      "startDateTime": "2026-09-21T09:00:00",
       "image": "https://placehold.co/800x500",
       "description": "Annual national conference. Travel grants available for UofM delegates. Submit your abstract by Jul 25.",
       "rsvpLink": "#",
@@ -12,13 +12,12 @@
       "deadline": "Jul 25, 2026",
       "tags": ["Conference"],
       "featuredTags": ["National"],
-      "statusBadge": "early-bird",
       "excludeFromPastTimeline": true
     },
     {
       "id": 2,
       "title": "End-of-Summer BBQ at Assiniboine Park",
-      "startDateTime": "2026-08-30T12:00:00",
+      "startDateTime": "2026-09-30T12:00:00",
       "image": "https://placehold.co/800x500",
       "description": "Members + family welcome. Korean BBQ & lawn games. RSVP required by Aug 25 for headcount.",
       "rsvpLink": "#",
@@ -26,7 +25,6 @@
       "timeDisplay": "12:00 – 4:00 PM",
       "tags": ["Social"],
       "featuredTags": [],
-      "statusBadge": "open",
       "excludeFromPastTimeline": true
     },
     {

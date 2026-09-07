@@ -20,7 +20,6 @@ interface EventData {
   deadline?: string;
   tags?: string[];
   featuredTags?: string[];
-  statusBadge?: string;
   isOrigin?: boolean;
   excludeFromPastTimeline?: boolean;
 }
@@ -59,19 +58,11 @@ function groupByYear(events: EventData[]): Record<string, EventData[]> {
 function EventCardItem({ event }: { event: EventData }) {
   const dateStr =
     event.dateDisplay || getFormattedDate(new Date(event.startDateTime));
-  const isCKC = !!event.deadline;
-  const badge = event.statusBadge as 'open' | 'early-bird' | undefined;
 
   return (
     <S.EventCard>
       <S.EventCardImage>
         <S.EventCardImgPattern>[ event photo ]</S.EventCardImgPattern>
-        {badge && (
-          <S.EventStatusBadge $variant={badge}>
-            {badge === 'open' && <S.StatusDot />}
-            {badge === 'open' ? 'Open for sign-up' : 'Early bird'}
-          </S.EventStatusBadge>
-        )}
       </S.EventCardImage>
 
       <S.EventCardBody>
@@ -97,31 +88,20 @@ function EventCardItem({ event }: { event: EventData }) {
             <S.DetailValue>{dateStr}</S.DetailValue>
           </S.DetailItem>
 
-          {isCKC ? (
-            <S.DetailItem>
-              <S.DetailLabel>Format</S.DetailLabel>
-              <S.DetailValue>{event.location}</S.DetailValue>
-            </S.DetailItem>
-          ) : (
-            <S.DetailItem>
-              <S.DetailLabel>Time</S.DetailLabel>
-              <S.DetailValue>{event.timeDisplay}</S.DetailValue>
-            </S.DetailItem>
-          )}
+          <S.DetailItem>
+            <S.DetailLabel>Location</S.DetailLabel>
+            <S.DetailValue>{event.location || '—'}</S.DetailValue>
+          </S.DetailItem>
 
-          {isCKC ? (
-            <S.DetailItem>
-              <S.DetailLabel>Deadline</S.DetailLabel>
-              <S.DetailValue>{event.deadline}</S.DetailValue>
-            </S.DetailItem>
-          ) : (
-            <S.DetailItem>
-              <S.DetailLabel>Location</S.DetailLabel>
-              <S.DetailValue>{event.location}</S.DetailValue>
-            </S.DetailItem>
-          )}
+          <S.DetailItem>
+            <S.DetailLabel>Time</S.DetailLabel>
+            <S.DetailValue>{event.timeDisplay || '—'}</S.DetailValue>
+          </S.DetailItem>
 
-          <S.DetailItem />
+          <S.DetailItem>
+            <S.DetailLabel>Deadline</S.DetailLabel>
+            <S.DetailValue>{event.deadline || '—'}</S.DetailValue>
+          </S.DetailItem>
         </S.DetailGrid>
 
         <S.CardButton onClick={() => window.open(event.rsvpLink, '_blank')}>
@@ -140,16 +120,13 @@ function TimelineItemRow({
   isEven: boolean;
 }) {
   const dateStr = getFormattedDate(new Date(event.startDateTime));
-  const displayDate = event.isOrigin ? `${dateStr} • Origin` : dateStr;
 
   return (
     <S.TimelineItem>
       <S.TimelineDot $isOrigin={!!event.isOrigin} />
 
       <S.TimelineTextCol $isEven={isEven}>
-        <S.TimelineDate $isOrigin={!!event.isOrigin}>
-          {displayDate}
-        </S.TimelineDate>
+        <S.TimelineDate $isOrigin={!!event.isOrigin}>{dateStr}</S.TimelineDate>
         <S.TimelineTitle>{event.title}</S.TimelineTitle>
         <S.TimelineDesc>{event.description}</S.TimelineDesc>
       </S.TimelineTextCol>
@@ -168,7 +145,7 @@ function TimelineItemRow({
 export default function Events() {
   const events = eventSource.events as unknown as EventData[];
   const { upcoming, past } = classifyEvents(events);
-  const pastTimeline = past.filter(e => !e.excludeFromPastTimeline);
+  const pastTimeline = past.filter((e) => !e.excludeFromPastTimeline);
   const grouped = groupByYear(pastTimeline);
   const sortedYears = Object.keys(grouped).sort((a, b) => +b - +a);
 
