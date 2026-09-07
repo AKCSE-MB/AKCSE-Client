@@ -11,7 +11,6 @@ class HttpClient {
 
   axiosConfig() {
     return {
-      baseURL: '',
       headers: {},
     };
   }

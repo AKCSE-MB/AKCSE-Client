@@ -57,9 +57,12 @@ export const useAxiosInterceptor = () => {
         });
       }
 
-      if (error.response.data.statusCode === 401) {
+      const statusCode =
+        error.response?.data?.statusCode ?? error.response?.status;
+
+      if (statusCode === 401) {
         return;
-      } else if (error.response.data.statusCode === 404) {
+      } else if (statusCode === 404) {
         errorTrigger();
         return;
       }
