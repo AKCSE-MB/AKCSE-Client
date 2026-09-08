@@ -12,8 +12,6 @@ interface ResearchArticle {
   category: Category;
   titleKo: string;
   subtitle: string;
-  author?: string;
-  editor?: string;
   placeholder: {
     label: string;
     gradient?: string;
@@ -56,7 +54,7 @@ export default function ResearchPage() {
         eyebrow="AKCSE UofM • Member Publications"
         title="Research"
         titleSub="& Literature"
-        description="Monthly publications on medicine and technology"
+        description="Monthly publications on life and technology"
       />
 
       <S.Section>
@@ -139,18 +137,6 @@ export default function ResearchPage() {
 
                 <S.CardTitle>{article.titleKo}</S.CardTitle>
                 <S.CardSubtitle>{article.subtitle}</S.CardSubtitle>
-
-                {article.author && (
-                  <S.CardMeta>
-                    <S.CardMetaLabel>Author:</S.CardMetaLabel> {article.author}
-                  </S.CardMeta>
-                )}
-                {article.editor && (
-                  <S.CardMeta>
-                    <S.CardMetaLabel>Edited by:</S.CardMetaLabel>{' '}
-                    {article.editor}
-                  </S.CardMeta>
-                )}
               </S.Card>
             ))}
           </S.Grid>

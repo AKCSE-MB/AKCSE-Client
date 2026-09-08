@@ -162,17 +162,6 @@ export const CardSubtitle = styled.p`
   margin-bottom: 12px;
 `;
 
-export const CardMeta = styled.p`
-  font-size: 12px;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.colors.subtle};
-`;
-
-export const CardMetaLabel = styled.span`
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.onSurfaceVariant};
-`;
-
 export const EmptyState = styled.div`
   display: flex;
   flex-direction: column;

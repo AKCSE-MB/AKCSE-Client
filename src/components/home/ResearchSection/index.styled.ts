@@ -53,13 +53,38 @@ export const SectionDesc = styled.p`
   color: ${({ theme }) => theme.colors.onSurfaceVariant};
 `;
 
-export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+export const ScrollContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 16px;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 78%;
+  }
+
+  @media (min-width: 640px) {
+    & > * {
+      width: 46%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    gap: 32px;
+
+    & > * {
+      width: calc((100% - 64px) / 3);
+    }
   }
 `;
 
