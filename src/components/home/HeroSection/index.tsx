@@ -3,7 +3,7 @@
 import * as S from './index.styled';
 
 const JOIN_US_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSd2pIattHv1NxclVVHLMVRQD5TiqvuGJp1nAY_K5YCrBpLcvQ/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSdDb6vLL-WMoAltOlxGfXJufiis3M5tA0bl4tKOdbm4DrjMgA/viewform?usp=dialog';
 const HERO_IMAGE_URL = '/assets/images/header-image-hd.png';
 
 export default function HeroSection() {
