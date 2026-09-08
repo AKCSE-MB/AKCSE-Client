@@ -13,7 +13,7 @@ import * as S from './index.styled';
 export default function EventsSection() {
   const { upcoming, past } = classifyEvents(eventSource.events);
   const featured = upcoming[0];
-  const sidebarEvents = past.slice(0, 2);
+  const sidebarEvents = past.slice(0, 4);
 
   return (
     <S.Section>
@@ -85,15 +85,6 @@ export default function EventsSection() {
                     <S.TimelineEventTitle>{event.title}</S.TimelineEventTitle>
                   </S.TimelineItem>
                 ))}
-
-                <S.SeminarCallout>
-                  <S.SeminarLabel>Seminar Notice</S.SeminarLabel>
-                  <S.SeminarText>
-                    New research findings on Nanotechnology to be presented by
-                    Dr. Kim next week.
-                  </S.SeminarText>
-                  <S.SeminarLink href="#">Read Briefing →</S.SeminarLink>
-                </S.SeminarCallout>
               </S.TimelineWrapper>
             </S.SidebarCard>
           </S.Sidebar>
