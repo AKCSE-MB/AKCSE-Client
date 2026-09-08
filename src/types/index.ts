@@ -1,4 +1,4 @@
-/** Cloudinary delivery urls for a single image. `null` when the record has no image. */
+/** Cloudinary delivery urls for a single image. */
 export interface ImageResponse {
   publicId: string;
   full: string;
@@ -22,7 +22,8 @@ export interface EventResponse {
   signUpDeadline: string;
   /** empty string if not set */
   rsvpLink: string;
-  image: ImageResponse | null;
+  /** ordered, empty array if the event has no image */
+  images: ImageResponse[];
   createdAt: string;
   updatedAt: string;
 }

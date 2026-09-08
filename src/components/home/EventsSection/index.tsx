@@ -32,7 +32,7 @@ export default function EventsSection() {
             <S.FeaturedCard>
               <S.FeaturedImageWrap>
                 <S.FeaturedImg
-                  src={featured.image?.full ?? ''}
+                  src={featured.images[0]?.full ?? ''}
                   alt={featured.title}
                 />
               </S.FeaturedImageWrap>
