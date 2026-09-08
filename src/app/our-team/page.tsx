@@ -75,7 +75,7 @@ export default function ExecutiveList() {
           </S.CTAContent>
 
           <S.CTAButton
-            href="https://docs.google.com/forms/d/1BIihCKUoat1SOy8cO4l4iEWs4pp_65zvJrdPhaYd2vE/edit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdDb6vLL-WMoAltOlxGfXJufiis3M5tA0bl4tKOdbm4DrjMgA/viewform?usp=dialog"
             target="_blank"
             rel="noopener noreferrer"
           >
