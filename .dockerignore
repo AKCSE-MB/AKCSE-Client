@@ -6,3 +6,6 @@ README.md
 .git
 .vscode
 .husky
+.env
+.env.*
+!.env.sample
