@@ -160,14 +160,26 @@ export const EventCard = styled.article`
   }
 `;
 
-export const EventCardImage = styled.div<{ $bgUrl?: string }>`
+export const EventCardImage = styled.div<{ $clickable?: boolean }>`
   position: relative;
   aspect-ratio: 16 / 10;
   background-color: #fbf6ec;
   overflow: hidden;
+  cursor: ${({ $clickable }) => ($clickable ? 'pointer' : 'default')};
+`;
+
+/* Separate layer so the hover zoom does not scale the status badge with it. */
+export const EventCardImageLayer = styled.div<{ $bgUrl?: string }>`
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   ${({ $bgUrl }) => ($bgUrl ? `background-image: url(${$bgUrl});` : '')}
+
+  ${EventCardImage}:hover & {
+    transform: scale(1.05);
+  }
 `;
 
 export const EventCardImgPattern = styled.div`
@@ -520,11 +532,22 @@ export const PhotoGrid = styled.div<{ $isEven: boolean }>`
   }
 `;
 
-export const PhotoBox = styled.div<{ $bgUrl?: string }>`
+export const PhotoBox = styled.div<{ $bgUrl?: string; $clickable?: boolean }>`
   aspect-ratio: 1;
   border-radius: 8px;
   background-color: #fbf6ec;
   filter: grayscale(1);
+  cursor: ${({ $clickable }) => ($clickable ? 'pointer' : 'default')};
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+
+  ${({ $clickable }) =>
+    $clickable &&
+    `&:hover {
+      filter: grayscale(0);
+      transform: scale(1.05);
+    }`}
   display: flex;
   align-items: center;
   justify-content: center;

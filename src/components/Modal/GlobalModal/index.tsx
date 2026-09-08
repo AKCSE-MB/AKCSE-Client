@@ -5,9 +5,11 @@ import { ComponentProps, FunctionComponent, useEffect } from 'react';
 import useModal from './hooks/useModal';
 
 const DialogModal = dynamic(() => import('../DialogModal'), { ssr: false });
+const ImageModal = dynamic(() => import('../ImageModal'), { ssr: false });
 
 export const MODAL_TYPES = {
   dialog: DialogModal as FunctionComponent<ComponentProps<typeof DialogModal>>,
+  image: ImageModal as FunctionComponent<ComponentProps<typeof ImageModal>>,
 };
 
 export default function GlobalModal() {
