@@ -1,5 +1,7 @@
 'use client';
 
+import { MODAL_TYPES } from '@/components/Modal/GlobalModal';
+import useModal from '@/components/Modal/GlobalModal/hooks/useModal';
 import PageHero from '@/components/common/PageHero';
 import { useEvents } from '@/hooks/queries/useEvents';
 import { EventResponse } from '@/types';
@@ -40,13 +42,35 @@ function getFeeLabel(fee: number) {
   return fee > 0 ? `$${fee} CAD` : 'Free';
 }
 
+/** Opens the clicked event photo full screen in the global modal stack. */
+function useEventLightbox() {
+  const { openModal, closeModal } = useModal();
+
+  return (event: EventResponse, index: number) => {
+    if (!event.images[index]) return;
+
+    openModal(MODAL_TYPES.image, {
+      images: event.images,
+      initialIndex: index,
+      title: event.title,
+      handleClose: () => closeModal(MODAL_TYPES.image),
+    });
+  };
+}
+
 function EventCardItem({ event }: { event: EventResponse }) {
   const isSignUpOpen = new Date(event.signUpDeadline) >= new Date();
+  const openLightbox = useEventLightbox();
+  const hasImage = event.images.length > 0;
 
   return (
     <S.EventCard>
-      <S.EventCardImage $bgUrl={event.images[0]?.full}>
-        {event.images.length === 0 && (
+      <S.EventCardImage
+        $clickable={hasImage}
+        onClick={() => openLightbox(event, 0)}
+      >
+        <S.EventCardImageLayer $bgUrl={event.images[0]?.full} />
+        {!hasImage && (
           <S.EventCardImgPattern>[ event photo ]</S.EventCardImgPattern>
         )}
         {isSignUpOpen && (
@@ -115,6 +139,7 @@ function TimelineItemRow({
   isOrigin: boolean;
 }) {
   const dateStr = getFormattedDate(new Date(event.startDateTime));
+  const openLightbox = useEventLightbox();
 
   return (
     <S.TimelineItem>
@@ -129,7 +154,12 @@ function TimelineItemRow({
       <S.TimelinePhotoCol $isEven={isEven}>
         <S.PhotoGrid $isEven={isEven}>
           {[0, 1, 2].map((i) => (
-            <S.PhotoBox key={i} $bgUrl={event.images[i]?.full} />
+            <S.PhotoBox
+              key={i}
+              $bgUrl={event.images[i]?.full}
+              $clickable={Boolean(event.images[i])}
+              onClick={() => openLightbox(event, i)}
+            />
           ))}
         </S.PhotoGrid>
       </S.TimelinePhotoCol>
