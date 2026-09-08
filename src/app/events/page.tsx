@@ -45,8 +45,8 @@ function EventCardItem({ event }: { event: EventResponse }) {
 
   return (
     <S.EventCard>
-      <S.EventCardImage $bgUrl={event.image?.full}>
-        {!event.image && (
+      <S.EventCardImage $bgUrl={event.images[0]?.full}>
+        {event.images.length === 0 && (
           <S.EventCardImgPattern>[ event photo ]</S.EventCardImgPattern>
         )}
         {isSignUpOpen && (
@@ -129,10 +129,7 @@ function TimelineItemRow({
       <S.TimelinePhotoCol $isEven={isEven}>
         <S.PhotoGrid $isEven={isEven}>
           {[0, 1, 2].map((i) => (
-            <S.PhotoBox
-              key={i}
-              $bgUrl={i === 0 ? event.image?.full : undefined}
-            />
+            <S.PhotoBox key={i} $bgUrl={event.images[i]?.full} />
           ))}
         </S.PhotoGrid>
       </S.TimelinePhotoCol>
