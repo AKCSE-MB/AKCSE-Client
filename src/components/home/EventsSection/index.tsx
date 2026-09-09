@@ -7,7 +7,6 @@ import SectionHeading from '@/components/common/SectionHeading';
 import { useEvents } from '@/hooks/queries/useEvents';
 import { classifyEvents } from '@/utils/event.utils';
 import { getFormattedDate } from '@/utils/formatUtil';
-import Link from 'next/link';
 import * as S from './index.styled';
 
 export default function EventsSection() {
@@ -58,12 +57,13 @@ export default function EventsSection() {
                   </S.MetaRow>
                 </S.FeaturedTop>
 
-                <Link
-                  href={`/events/${featured.id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <S.CtaButton>Apply Now</S.CtaButton>
-                </Link>
+                {featured.rsvpLink && (
+                  <S.CtaButton
+                    onClick={() => window.open(featured.rsvpLink, '_blank')}
+                  >
+                    Apply Now
+                  </S.CtaButton>
+                )}
               </S.FeaturedContent>
             </S.FeaturedCard>
           )}
