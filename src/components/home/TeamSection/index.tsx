@@ -1,6 +1,7 @@
 'use client';
 
 import CarouselNavButtons from '@/components/common/CarouselNavButton';
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 import SectionHeading from '@/components/common/SectionHeading';
 import TeamMemberCard from '@/components/common/TeamMemberCard';
 import { useExecutives } from '@/hooks/queries/useExecutives';
@@ -12,7 +13,7 @@ export default function TeamSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
-  const { executives } = useExecutives();
+  const { executives, isLoading } = useExecutives();
   const { executive, dev } = splitTeam(executives);
   const teamMembers = [...executive, ...dev];
 
@@ -67,18 +68,24 @@ export default function TeamSection() {
           />
         </S.Header>
 
-        <S.ScrollContainer ref={scrollRef} onScroll={updateNavState}>
-          {teamMembers.map((member) => (
-            <TeamMemberCard
-              key={member.id}
-              name={member.name}
-              role={member.position}
-              bio={member.bio}
-              imageSrc={member.image?.full ?? ''}
-              imageAlt={`Portrait of ${member.name}`}
-            />
-          ))}
-        </S.ScrollContainer>
+        {isLoading ? (
+          <S.LoadingWrap>
+            <LoadingSpinner />
+          </S.LoadingWrap>
+        ) : (
+          <S.ScrollContainer ref={scrollRef} onScroll={updateNavState}>
+            {teamMembers.map((member) => (
+              <TeamMemberCard
+                key={member.id}
+                name={member.name}
+                role={member.position}
+                bio={member.bio}
+                imageSrc={member.image?.full ?? ''}
+                imageAlt={`Portrait of ${member.name}`}
+              />
+            ))}
+          </S.ScrollContainer>
+        )}
       </S.Inner>
     </S.Section>
   );

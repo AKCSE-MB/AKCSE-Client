@@ -3,6 +3,7 @@
 import IconCalendar from '@/assets/common/icons/IconCalendar.svg';
 import IconClock from '@/assets/common/icons/IconClock.svg';
 import IconLocation from '@/assets/common/icons/IconLocation.svg';
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 import SectionHeading from '@/components/common/SectionHeading';
 import { useEvents } from '@/hooks/queries/useEvents';
 import { classifyEvents } from '@/utils/event.utils';
@@ -10,7 +11,7 @@ import { getFormattedDate } from '@/utils/formatUtil';
 import * as S from './index.styled';
 
 export default function EventsSection() {
-  const { events } = useEvents();
+  const { events, isLoading } = useEvents();
   const { upcoming, past } = classifyEvents(events);
   const featured = upcoming[0];
   const sidebarEvents = past.slice(0, 4);
@@ -25,74 +26,80 @@ export default function EventsSection() {
           <S.ViewAllLink href="/events">View all events →</S.ViewAllLink>
         </S.SectionHeader>
 
-        <S.Grid>
-          {/* Featured Event */}
-          {featured && (
-            <S.FeaturedCard>
-              <S.FeaturedImageWrap>
-                <S.FeaturedImg
-                  src={featured.images[0]?.full ?? ''}
-                  alt={featured.title}
-                />
-              </S.FeaturedImageWrap>
+        {isLoading ? (
+          <S.LoadingWrap>
+            <LoadingSpinner />
+          </S.LoadingWrap>
+        ) : (
+          <S.Grid>
+            {/* Featured Event */}
+            {featured && (
+              <S.FeaturedCard>
+                <S.FeaturedImageWrap>
+                  <S.FeaturedImg
+                    src={featured.images[0]?.full ?? ''}
+                    alt={featured.title}
+                  />
+                </S.FeaturedImageWrap>
 
-              <S.FeaturedContent>
-                <S.FeaturedTop>
-                  <S.EventBadge>Upcoming</S.EventBadge>
-                  <S.FeaturedTitle>{featured.title}</S.FeaturedTitle>
-                  <S.FeaturedDesc>{featured.description}</S.FeaturedDesc>
-                  <S.MetaRow>
-                    <S.MetaItem>
-                      <S.MetaIcon aria-hidden="true">
-                        <IconCalendar />
-                      </S.MetaIcon>
-                      {getFormattedDate(new Date(featured.startDateTime))}
-                    </S.MetaItem>
-                    <S.MetaItem>
-                      <S.MetaIcon aria-hidden="true">
-                        <IconLocation />
-                      </S.MetaIcon>
-                      {featured.location}
-                    </S.MetaItem>
-                  </S.MetaRow>
-                </S.FeaturedTop>
+                <S.FeaturedContent>
+                  <S.FeaturedTop>
+                    <S.EventBadge>Upcoming</S.EventBadge>
+                    <S.FeaturedTitle>{featured.title}</S.FeaturedTitle>
+                    <S.FeaturedDesc>{featured.description}</S.FeaturedDesc>
+                    <S.MetaRow>
+                      <S.MetaItem>
+                        <S.MetaIcon aria-hidden="true">
+                          <IconCalendar />
+                        </S.MetaIcon>
+                        {getFormattedDate(new Date(featured.startDateTime))}
+                      </S.MetaItem>
+                      <S.MetaItem>
+                        <S.MetaIcon aria-hidden="true">
+                          <IconLocation />
+                        </S.MetaIcon>
+                        {featured.location}
+                      </S.MetaItem>
+                    </S.MetaRow>
+                  </S.FeaturedTop>
 
-                {featured.rsvpLink && (
-                  <S.CtaButton
-                    onClick={() => window.open(featured.rsvpLink, '_blank')}
-                  >
-                    Apply Now
-                  </S.CtaButton>
-                )}
-              </S.FeaturedContent>
-            </S.FeaturedCard>
-          )}
+                  {featured.rsvpLink && (
+                    <S.CtaButton
+                      onClick={() => window.open(featured.rsvpLink, '_blank')}
+                    >
+                      Apply Now
+                    </S.CtaButton>
+                  )}
+                </S.FeaturedContent>
+              </S.FeaturedCard>
+            )}
 
-          {/* Past Events Sidebar */}
-          <S.Sidebar>
-            <S.SidebarCard>
-              <S.SidebarTitle>
-                <S.SidebarTitleIcon aria-hidden="true">
-                  <IconClock />
-                </S.SidebarTitleIcon>
-                Past Events
-              </S.SidebarTitle>
+            {/* Past Events Sidebar */}
+            <S.Sidebar>
+              <S.SidebarCard>
+                <S.SidebarTitle>
+                  <S.SidebarTitleIcon aria-hidden="true">
+                    <IconClock />
+                  </S.SidebarTitleIcon>
+                  Past Events
+                </S.SidebarTitle>
 
-              <S.TimelineWrapper>
-                <S.DashedLine />
-                {sidebarEvents.map((event) => (
-                  <S.TimelineItem key={event.id}>
-                    <S.TimelineDot />
-                    <S.TimelineDate>
-                      {getFormattedDate(new Date(event.startDateTime))}
-                    </S.TimelineDate>
-                    <S.TimelineEventTitle>{event.title}</S.TimelineEventTitle>
-                  </S.TimelineItem>
-                ))}
-              </S.TimelineWrapper>
-            </S.SidebarCard>
-          </S.Sidebar>
-        </S.Grid>
+                <S.TimelineWrapper>
+                  <S.DashedLine />
+                  {sidebarEvents.map((event) => (
+                    <S.TimelineItem key={event.id}>
+                      <S.TimelineDot />
+                      <S.TimelineDate>
+                        {getFormattedDate(new Date(event.startDateTime))}
+                      </S.TimelineDate>
+                      <S.TimelineEventTitle>{event.title}</S.TimelineEventTitle>
+                    </S.TimelineItem>
+                  ))}
+                </S.TimelineWrapper>
+              </S.SidebarCard>
+            </S.Sidebar>
+          </S.Grid>
+        )}
       </S.Inner>
     </S.Section>
   );

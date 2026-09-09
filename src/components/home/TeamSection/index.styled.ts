@@ -20,6 +20,13 @@ export const Inner = styled.div`
   }
 `;
 
+export const LoadingWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+`;
+
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
