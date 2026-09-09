@@ -16,6 +16,13 @@ export const Container = styled.div`
   }
 `;
 
+export const LoadingWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 24px;
+`;
+
 export const SectionHeader = styled.div`
   display: flex;
   align-items: center;

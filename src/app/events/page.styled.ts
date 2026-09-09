@@ -131,6 +131,13 @@ export const UpcomingSection = styled.section`
   }
 `;
 
+export const LoadingWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 24px;
+`;
+
 export const EventsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;

@@ -2,6 +2,7 @@
 
 import { MODAL_TYPES } from '@/components/Modal/GlobalModal';
 import useModal from '@/components/Modal/GlobalModal/hooks/useModal';
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 import PageHero from '@/components/common/PageHero';
 import { useEvents } from '@/hooks/queries/useEvents';
 import { EventResponse } from '@/types';
@@ -168,7 +169,7 @@ function TimelineItemRow({
 }
 
 export default function Events() {
-  const { events } = useEvents();
+  const { events, isLoading } = useEvents();
   const { upcoming, past } = classifyEvents(events);
   const grouped = groupByYear(past);
   const sortedYears = Object.keys(grouped).sort((a, b) => +b - +a);
@@ -194,63 +195,71 @@ export default function Events() {
         </S.HeroTabs>
       </PageHero>
 
-      <S.UpcomingSection id="upcoming">
-        <S.SectionHeaderRow>
-          <div>
-            <S.SectionBadge>
-              <S.SectionBadgeStar>✦</S.SectionBadgeStar> Upcoming
-            </S.SectionBadge>
-            <S.SectionTitle>What&apos;s coming up</S.SectionTitle>
-            <S.SectionUnderline />
-          </div>
-        </S.SectionHeaderRow>
+      {isLoading ? (
+        <S.LoadingWrap>
+          <LoadingSpinner />
+        </S.LoadingWrap>
+      ) : (
+        <>
+          <S.UpcomingSection id="upcoming">
+            <S.SectionHeaderRow>
+              <div>
+                <S.SectionBadge>
+                  <S.SectionBadgeStar>✦</S.SectionBadgeStar> Upcoming
+                </S.SectionBadge>
+                <S.SectionTitle>What&apos;s coming up</S.SectionTitle>
+                <S.SectionUnderline />
+              </div>
+            </S.SectionHeaderRow>
 
-        <S.EventsGrid>
-          {upcoming.map((event) => (
-            <EventCardItem key={event.id} event={event} />
-          ))}
-        </S.EventsGrid>
-      </S.UpcomingSection>
+            <S.EventsGrid>
+              {upcoming.map((event) => (
+                <EventCardItem key={event.id} event={event} />
+              ))}
+            </S.EventsGrid>
+          </S.UpcomingSection>
 
-      <S.PastSection id="past">
-        <S.PastInner>
-          <S.SectionHeaderRow>
-            <div>
-              <S.PastBadge>
-                <span>○</span> Past Events
-              </S.PastBadge>
-              <S.SectionTitle>A look back</S.SectionTitle>
-              <S.PastSectionUnderline />
-            </div>
-          </S.SectionHeaderRow>
+          <S.PastSection id="past">
+            <S.PastInner>
+              <S.SectionHeaderRow>
+                <div>
+                  <S.PastBadge>
+                    <span>○</span> Past Events
+                  </S.PastBadge>
+                  <S.SectionTitle>A look back</S.SectionTitle>
+                  <S.PastSectionUnderline />
+                </div>
+              </S.SectionHeaderRow>
 
-          <S.TimelineWrapper>
-            <S.TimelineLine />
+              <S.TimelineWrapper>
+                <S.TimelineLine />
 
-            {sortedYears.map((year) => (
-              <React.Fragment key={year}>
-                <S.YearMarkerRow>
-                  <S.YearMarkerPill $isCurrent={year === currentYear}>
-                    {year}
-                  </S.YearMarkerPill>
-                </S.YearMarkerRow>
+                {sortedYears.map((year) => (
+                  <React.Fragment key={year}>
+                    <S.YearMarkerRow>
+                      <S.YearMarkerPill $isCurrent={year === currentYear}>
+                        {year}
+                      </S.YearMarkerPill>
+                    </S.YearMarkerRow>
 
-                {grouped[year].map((event) => {
-                  const idx = timelineIndex++;
-                  return (
-                    <TimelineItemRow
-                      key={event.id}
-                      event={event}
-                      isEven={idx % 2 === 0}
-                      isOrigin={event.id === originId}
-                    />
-                  );
-                })}
-              </React.Fragment>
-            ))}
-          </S.TimelineWrapper>
-        </S.PastInner>
-      </S.PastSection>
+                    {grouped[year].map((event) => {
+                      const idx = timelineIndex++;
+                      return (
+                        <TimelineItemRow
+                          key={event.id}
+                          event={event}
+                          isEven={idx % 2 === 0}
+                          isOrigin={event.id === originId}
+                        />
+                      );
+                    })}
+                  </React.Fragment>
+                ))}
+              </S.TimelineWrapper>
+            </S.PastInner>
+          </S.PastSection>
+        </>
+      )}
     </>
   );
 }
