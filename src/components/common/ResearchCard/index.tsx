@@ -8,6 +8,7 @@ interface Placeholder {
 }
 
 interface Props {
+  href?: string;
   image?: string;
   alt?: string;
   placeholder?: Placeholder;
@@ -19,6 +20,7 @@ interface Props {
 }
 
 export default function ResearchCard({
+  href,
   image,
   alt,
   placeholder,
@@ -28,7 +30,7 @@ export default function ResearchCard({
   title,
   subtitle,
 }: Props) {
-  return (
+  const card = (
     <S.Card>
       <S.ImageWrap
         $gradient={placeholder?.gradient}
@@ -62,4 +64,6 @@ export default function ResearchCard({
       </S.Content>
     </S.Card>
   );
+
+  return href ? <S.CardLink href={href}>{card}</S.CardLink> : card;
 }

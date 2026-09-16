@@ -79,6 +79,7 @@ export default function ResearchSection() {
             return (
               <ResearchCard
                 key={article.id}
+                href={`/research/${article.id}`}
                 image={article.thumbnail}
                 alt={article.titleKo}
                 placeholder={article.placeholder}
