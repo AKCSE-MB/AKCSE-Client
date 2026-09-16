@@ -83,6 +83,14 @@ export const ImageWrap = styled.div<{ $gradient?: string; $bgColor?: string }>`
     $gradient || $bgColor || '#FBF6EC'};
 `;
 
+export const ThumbnailImage = styled.img`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const PlaceholderCenter = styled.div`
   position: absolute;
   inset: 0;
