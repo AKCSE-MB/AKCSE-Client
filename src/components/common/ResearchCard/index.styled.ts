@@ -1,6 +1,14 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
+export const CardLink = styled(Link)`
+  display: block;
+  height: 100%;
+  cursor: pointer;
+`;
+
 export const Card = styled.div`
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 24px;
   border: 1px solid rgba(229, 231, 235, 0.6);
