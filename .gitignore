@@ -37,3 +37,7 @@ cache/
 .env
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Storybook
+/storybook-static
+*storybook.log
