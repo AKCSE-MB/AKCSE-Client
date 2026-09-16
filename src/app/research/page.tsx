@@ -2,30 +2,12 @@
 
 import researchSource from '@/assets/data/research.json';
 import PageHero from '@/components/common/PageHero';
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import * as S from './page.styled';
+import { Category, ResearchArticle } from './types';
 
-type Category = 'Life' | 'Tech' | 'Engineering';
-
-interface ResearchArticle {
-  id: number;
-  category: Category;
-  titleKo: string;
-  subtitle: string;
-  placeholder: {
-    label: string;
-    gradient?: string;
-    bgColor?: string;
-    dark: boolean;
-  };
-}
-
-const CATEGORIES: Array<'All' | Category> = [
-  'All',
-  'Life',
-  'Tech',
-  'Engineering',
-];
+const CATEGORIES: Array<'All' | Category> = ['All', 'Life', 'Tech'];
 const ITEMS_PER_PAGE = 6;
 
 const articles = researchSource as ResearchArticle[];
@@ -54,7 +36,7 @@ export default function ResearchPage() {
         eyebrow="AKCSE UofM • Member Publications"
         title="Research"
         titleSub="& Literature"
-        description="Monthly publications on life and technology"
+        description="A space for AKCSE members to share their work, ideas, and insights"
       />
 
       <S.Section>
@@ -113,31 +95,40 @@ export default function ResearchPage() {
         {filteredArticles.length > 0 && (
           <S.Grid>
             {visibleArticles.map((article) => (
-              <S.Card key={article.id}>
-                <S.ImageWrap
-                  $gradient={article.placeholder.gradient}
-                  $bgColor={article.placeholder.bgColor}
-                >
-                  <S.PlaceholderCenter>
-                    <div>
-                      <S.PlaceholderLabel $dark={article.placeholder.dark}>
-                        {article.placeholder.label}
-                      </S.PlaceholderLabel>
-                      <S.PlaceholderText $dark={article.placeholder.dark}>
-                        [ image ]
-                      </S.PlaceholderText>
-                    </div>
-                  </S.PlaceholderCenter>
+              <Link key={article.id} href={`/research/${article.id}`}>
+                <S.Card>
+                  <S.ImageWrap
+                    $gradient={article.placeholder.gradient}
+                    $bgColor={article.placeholder.bgColor}
+                  >
+                    {article.thumbnail ? (
+                      <S.ThumbnailImage
+                        src={article.thumbnail}
+                        alt={article.titleKo}
+                      />
+                    ) : (
+                      <S.PlaceholderCenter>
+                        <div>
+                          <S.PlaceholderLabel $dark={article.placeholder.dark}>
+                            {article.placeholder.label}
+                          </S.PlaceholderLabel>
+                          <S.PlaceholderText $dark={article.placeholder.dark}>
+                            [ image ]
+                          </S.PlaceholderText>
+                        </div>
+                      </S.PlaceholderCenter>
+                    )}
 
-                  <S.CategoryBadge>
-                    <S.BadgeDot />
-                    {article.category}
-                  </S.CategoryBadge>
-                </S.ImageWrap>
+                    <S.CategoryBadge>
+                      <S.BadgeDot />
+                      {article.category}
+                    </S.CategoryBadge>
+                  </S.ImageWrap>
 
-                <S.CardTitle>{article.titleKo}</S.CardTitle>
-                <S.CardSubtitle>{article.subtitle}</S.CardSubtitle>
-              </S.Card>
+                  <S.CardTitle>{article.titleKo}</S.CardTitle>
+                  <S.CardSubtitle>{article.subtitle}</S.CardSubtitle>
+                </S.Card>
+              </Link>
             ))}
           </S.Grid>
         )}

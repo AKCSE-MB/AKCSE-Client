@@ -79,6 +79,8 @@ export default function ResearchSection() {
             return (
               <ResearchCard
                 key={article.id}
+                image={article.thumbnail}
+                alt={article.titleKo}
                 placeholder={article.placeholder}
                 category={article.category}
                 badgeColor={badge.color}
