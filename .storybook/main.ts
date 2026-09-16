@@ -7,7 +7,11 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  staticDirs: ['../public'],
+  staticDirs: [
+    '../public',
+    // next/font/local in preview.tsx loads from ./src/assets/fonts at runtime
+    { from: '../src/assets/fonts', to: 'src/assets/fonts' },
+  ],
   webpackFinal: async (config) => {
     // Mirror next.config.js: import SVGs as React components via @svgr/webpack.
     // Exclude .svg from Storybook's default asset rule so the two don't conflict.
